@@ -18,7 +18,7 @@ const data = [
 
 
 let html = "";
-let githubProfile = "https://github.com/avinashpro/";
+let githubProfile = "https://github.com/AvinashPro/";
 data.forEach(obj => {
     if(obj.page) {
         html += 
@@ -27,7 +27,7 @@ data.forEach(obj => {
                 <div>
                     <h2 class="project-name">${obj.repo}</h2>
                     <a href="files/${obj.repo}/index.html" class="button secondary-btn">View</a>
-                    <a href="${githubProfile}avinashprogrammer.github.io/tree/main/files/${obj.repo}" class="button primary-btn">Code</a>
+                    <a href="${githubProfile}avinashpro.github.io/tree/main/files/${obj.repo}" class="button primary-btn">Code</a>
                 </div>
             </div>
         `;
@@ -39,7 +39,7 @@ data.forEach(obj => {
             <div class="card">
                 <div>
                     <h2 class="project-name">${obj.repo}</h2>
-                    <a href="${githubProfile}avinashprogrammer.github.io/tree/main/files/${obj.repo}" class="button primary-btn">Code</a>
+                    <a href="${githubProfile}avinashpro.github.io/tree/main/files/${obj.repo}" class="button primary-btn">Code</a>
                 </div>
             </div>
         `;
