@@ -9,10 +9,6 @@ const data = [
         page: true
     },
     {
-        repo: "Sweet alert",
-        page: false
-    },
-    {
         repo: "T-rex Runner Game",
         page: true
     },
