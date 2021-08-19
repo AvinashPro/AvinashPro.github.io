@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", Sans-Serif;
+}
+body {
+    /*display: grid;
+    place-items: center;
+    min-height: 100vh;*/
+    background: #f8f9fb;
+}
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+.container {
+    width: 300px;
+    width: 100%;
+    height: 500px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: 0 0 20px #ddd;
+}
+.dateSection {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    background: url("img/background.jpg");
+    background-size: 100% 100%;
+}
+#date {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    font-size: 18px;
+    color: #fff;
+}
+.todoSection {
+    width: 100%;
+    height: calc(100% - (160px + 45px));
+    overflow: scroll;
+}
+.todoSection .msg {
+    margin: 10px;
+    color: #999;
+}
+.todo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 12px;
+}
+.todo > * {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.todo input[type="checkbox"] {
+    position: relative;
+    -webkit-appearance: none;
+    width: 22px;
+    height: 18px;
+    border: 1px solid #4EABF8;
+    outline: none;
+    border-radius: 3px;
+}
+.todo input[type="checkbox"]:before {
+    content: "\f00c";
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 300;
+    position: absolute;
+    display: grid;
+    place-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background: #4EABF8;
+    opacity: 0;
+    transition: .5s;
+    border-radius: 2px;
+}
+.todo input[type="checkbox"]:checked:before {
+    opacity: 1;
+}
+.todo input[type="checkbox"]:checked ~ label {
+    text-decoration: line-through;
+    color: #999;
+}
+.todo label {
+    color: #495759;
+    width: 100%;
+    transition: .5s;
+    word-break: break-word;
+}
+.todo .delete {
+    width: 18px;
+    height: 18px;
+    background: transparent;
+    color: #495759;
+    border: none;
+    outline: none;
+    transition: .5s;
+    font-size: 18px;
+}
+.todo .delete:hover {
+    color: #ff0064;
+}
+.add {
+    display: flex;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 45px;
+    width: 100vw;
+    border-top: 1px solid #ddd;
+}
+.add #input {
+    width: 85%;
+    height: 100%;
+    background: #fff;
+    border: none;
+    outline: none;
+    padding: 15px 10px 0 10px;
+    color: #495759;
+}
+.add .addBtn {
+    width: 15%;
+    height: 100%;
+    background: #4EABF8;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    transition: .5s;
+}
+.add .addBtn:hover {
+    background: #0a74cc;
+}
