@@ -22,7 +22,7 @@ const data = [
 
 
 let html = "";
-let githubProfile = "https://github.com/avinashprogrammer/";
+let githubProfile = "https://github.com/avinashpro/";
 data.forEach(obj => {
     if(obj.page) {
         html += 
