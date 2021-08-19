@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --primary-font: "Rubik", sans-serif;
+    --secondary-font: "Poppins", sans-serif;
+    
+    --primary-color: #495359;
+    
+    --primary-btn: #0091ff;
+    --secondary-btn: #ff00a0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+body {
+    background: #f3f6fb;
+}
+.container {
+    position: relative;
+    padding: 15px;
+}
+.heading {
+    color: var(--primary-color);
+    font-family: var(--primary-font);
+    text-align: center;
+}
+
+.card {
+    display: grid;
+    place-items: center;
+    position: relative;
+    width: 80%;
+    min-height: 180px;
+    background: #fff;
+    border-radius: 20px;
+    margin: 20px auto;
+    padding: 10px;
+    box-shadow: 0 0 20px rgb(0, 112, 255, 0.07);
+}
+.project-name {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-family: var(--primary-font);
+    color: #0091ff;
+}
+.button {
+    text-decoration: none;
+    display: grid;
+    color: #fff;
+    background: #ff00a0;
+    width: 100px;
+    height: 35px;
+    margin: 10px auto;
+    place-items: center;
+    border-radius: 4px;
+    transition: 0.5s;
+    font-family: var(--primary-font);
+}
+.button:hover {
+    transform: scale(0.9);
+}
+
+.primary-btn {
+    background: var(--primary-btn);
+}
+.secondary-btn {
+    background: var(--secondary-btn);
+}
