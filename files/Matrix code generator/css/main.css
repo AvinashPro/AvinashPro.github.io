@@ -1,0 +1,162 @@
+
+        @import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
+        @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Rubik", Sans-Serif;
+        }
+        body {
+            display: grid;
+            place-items: center;
+            width: 100vw;
+            min-height: 100vh;
+            background: #f3f6fb;
+        }
+        canvas {
+            image-rendering: pixelated;
+        }
+        #tools {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            height: 80px;
+            padding: 5px;
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        #color {
+            background: #0000;
+            border: none;
+            margin-left: 10px;
+            width: 20px;
+            outline: none;
+        }
+        #tools .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+        }
+        .box:nth-child(1) {
+            border-top: 1px solid #ddd;
+            border-left: 1px solid #ddd;
+        }
+        .box:nth-child(2) {
+            border-top: 1px solid #ddd;
+        }
+        .box:nth-child(3) {
+            border-left: 1px solid #ddd;
+        }
+        
+        #input {
+            background: #0000;
+            border: none;
+            border-bottom: 2px solid #ddd;
+            outline: none;
+            text-align: center;
+            width: 50px;
+            transition: .5s;
+        }
+        #input:focus {
+            border-bottom-color: #09f;
+        }
+        #btn {
+            display: block;
+            border: none;
+            background: #09f;
+            border-radius: 4px;
+            outline: none;
+            color: #fff;
+            padding: 8px;
+            margin: auto;
+            user-select: none;
+            transition: .5s;
+            transform: scale(0.8);
+        }
+        #btn:hover {
+            background: #0089e5;
+        }
+        
+        #output {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100vw;
+            min-height: 100vh;
+            background: #f3f6fb;
+            transition: left 0.25s;
+        }
+        #output-nav {
+            position: sticky;
+            display: flex;
+            align-items: center;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 40px;
+            background: #202830;
+            color: #fff;
+            z-index: 10000;
+        }
+        .row {
+            display: flex;
+            align-items: center;
+        }
+        .row > * {
+            margin-left: 10px;
+        }
+        .icon {
+            font-size: 22px;
+        }
+        
+        #backBtn {
+            display: grid;
+            place-items: center;
+            width: 25px;
+            height: 25px;
+        }
+        
+        #code {
+            display: block;
+            width: 90%;
+            margin: 15px auto;
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 10px;
+            color: #495359;
+            overflow: scroll;
+        }
+        
+        #copy-btn {
+            display: block;
+            border: none;
+            background: #09f;
+            border-radius: 4px;
+            outline: none;
+            color: #fff;
+            padding: 8px;
+            width: 65px;
+            margin: auto;
+            user-select: none;
+            transition: .5s;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #copy-btn:hover {
+            background: #0089e5;
+        }
+        label {
+            margin-left: 5px;
+        }
+    
+        .span-2 {
+            grid-column: span 2;
+        }
+    
