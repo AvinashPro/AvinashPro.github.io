@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game Matrix code generator tool</title>
+    <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+    <div id="tools">
+        <div class="box">
+            <input type="text" value="#000" id="input"/>
+            <input type="color" id="color"/>
+        </div>
+        <div class="box">
+            <input type="checkbox" id="eraser" name="eraser"/>
+            <label for="eraser">Eraser</label>
+        </div>
+        <div class="box span-2">
+            <button id="btn">Get Matrix Code</button>
+        </div>
+    </div>
+    
+    <div id="output">
+        <div id="output-nav">
+            <div class="row">
+                <div id="backBtn">
+                    <i class="fad fa-angle-left icon"></i>
+                </div>
+                <p>Matrix Generator</p>
+            </div>
+        </div>
+        
+        <div id="code"></div>
+        <div id="copy-btn">Copy</div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
