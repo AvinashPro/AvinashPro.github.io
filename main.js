@@ -5,6 +5,10 @@ const data = [
         page: true
     },
     {
+        repo: "2D JS Platformer Collision and Response",
+        page: true
+    },
+    {
         repo: "Simple todo list creator",
         page: true
     },
