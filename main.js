@@ -5,6 +5,10 @@ const data = [
         page: true
     },
     {
+        repo: "Platformer Game",
+        page: true
+    },
+    {
         repo: "2D JS Platformer Collision and Response",
         page: true
     },
