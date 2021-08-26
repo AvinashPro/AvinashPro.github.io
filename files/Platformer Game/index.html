@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        body {
+            width: 100vw;
+            background: #202830;
+        }
+        canvas {
+            display: block;
+            image-rendering: pixelated;
+            margin: 120px auto 0 auto;
+        }
+        #controls {
+            margin: 20px 0;
+            width: 100vw;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .row {
+            display: flex;
+        }
+        .btn {
+            display: grid;
+            place-items: center;
+            width: 40px;
+            height: 40px;
+            background: #08f;
+            margin-right: 10px;
+            background: #232e39;
+            text-transform: uppercase;
+            font-family: Sans-Serif;
+            color: #4f6880;
+            font-size: 10px;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+  <canvas id="game"></canvas>
+  <div id="controls">
+        <div class="row">
+            <div id="left" class="btn">left</div>
+            <div id="right" class="btn">right</div>
+        </div>
+        <div class="row">
+            <div></div>
+            <div id="jump" class="btn">jump</div>
+        </div>
+    </div>
+<script>
+    const canvas = document.querySelector("#game");
+    canvas.width = 300;
+    canvas.height = 300;
+    const ctx = canvas.getContext("2d");
+    let animation;
+    
+    
+    class Tilemap {
+        constructor(data, image, imageLength, imgTilesNum) {
+            this.data = data;
+            this.image = image;
+            this.columns = data[0].length;
+            this.rows = data.length;
+            this.imgTilesNum = imgTilesNum;
+            this.tileWidth = canvas.width/this.columns;
+            this.tileHeight = canvas.height/this.rows;
+            this.imageLength = imageLength;
+            this.tileSize = this.imageLength/imgTilesNum;
+            
+            this.bg = images[2];
+            this.bgWidth = 1024;
+            this.bgHeight = 1024;
+            this.fisrtbgDx = 0;
+            this.secondbgDx = canvas.width;
+        }
+        draw() {
+            for(let r = 0; r < this.rows; r++) {
+                for(let c = 0; c < this.columns; c++) {
+                    let tile = this.data[r][c];
+                    let sx = Math.floor(tile%this.imgTilesNum) * this.tileSize;
+                    let sy = Math.floor(tile/this.imgTilesNum) * this.tileSize;
+                    
+                    // if tile value is not for sky
+                    if(tile != 50) {
+                      ctx.drawImage(this.image, sx, sy, this.tileSize, this.tileSize, c * this.tileWidth, r * this.tileHeight, this.tileWidth, this.tileHeight);
+                    }
+                    // For sky
+                    /*else {
+                      ctx.fillStyle = skyColor;
+                      ctx.fillRect(c * this.tileWidth, r * this.tileHeight, this.tileWidth, this.tileHeight);
+                    }*/
+                    
+                    
+                }
+            }
+        }
+        update() {
+          
+          
+          this.draw();
+        }
+    }
+    class Player {
+      constructor(img, imgWidth, imgHeight, x, y, w, h, color) {
+        this.img = img;
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h;
+        this.velocity = {
+          x: 0, y: 0
+        };
+        this.old_x = x;
+        this.old_y = y;
+        this.color = color;
+        this.jumping = false;
+        this.sx = 0;
+        this.sy = 0;
+        this.noOfSprite = {
+          x: 4,
+          y: 4
+        }
+        this.imgWidth = imgWidth;
+        this.imgHeight = imgHeight;
+        this.sw = this.imgWidth/this
+        .noOfSprite.x;
+        this.sh = this.imgHeight/this.noOfSprite.y;
+      }
+      draw() {
+        ctx.fillStyle = this.color;
+        ctx.fillRect(this.x, this.y, this.w, this.h);
+        
+        //ctx.drawImage(this.img, this.sx, this.sy, this.sw, this.sh, this.x, this.y, this.w, this.h);
+      }
+      update() {
+        this.draw();
+        camera.x = this.x - (canvas.width/2) * (1/camera.zoom);
+        camera.y = this.y - (canvas.height/2) * (1/camera.zoom);
+      }
+    }
+    
+    
+    
+    // Images Array for loading the images
+    let images = [
+      "img/tileset.png", // Tile set
+      "img/player.png", // Player spritesheet
+      "img/bg.jpg" // Background
+    ];
+    
+    // function to load images
+    function loadImages() {
+      images.forEach((src, index) => {
+        const img = new Image();
+        img.src = src;
+        images[index] = img;
+      })
+    }
+    loadImages();
+    
+    
+    // Tilemap data array for drawing
+    let tilemapData = [
+    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+    [50,50,50,24,24,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+    [00,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01],
+    [08,09,09,09,09,09,09,09,09,09,09,09,09,09,09,09,09,09,09,09,09,09,09,09,09,09],
+    [08,09,09,09,09,09,09,09,09,09,09,09,09,09,09,09,09,09,09,09,09,09,09,09,09,09]
+    ];
+    let collisionMap = [
+    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
+    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
+    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
+    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
+    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
+    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
+    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
+    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
+    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
+    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
+    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
+    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
+    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
+    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
+    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
+    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
+    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
+    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
+    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
+    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
+    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
+    [00,00,00,05,05,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
+    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
+    [05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05],
+    [05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05],
+    [05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05]
+    ];
+    
+    // Creating Tilemap
+    const skyColor = "#d2f3f8";
+    const tilemapImg = images[0];
+    const tilemap = new Tilemap(tilemapData, tilemapImg, 512, 8);
+    console.log(tilemap);
+    
+    // Creating Player 
+    let playerImg = images[1];
+    let player = new Player(playerImg, 256, 256, 10, canvas.height/2 + 60, 8, 8, "#09f");
+    
+    // Controller and other variables
+    let controller = {
+      left: false,
+      right: false,
+      up: false
+    };
+    let isUpPressed;
+    
+    // camera 
+    let camera = {
+      x: 0,
+      y: 0,
+      w: canvas.width,
+      h: canvas.height,
+      zoom: 2
+    };
+    
+    
+    let fisrtbgDx = 0;
+    let secondbgDx = canvas.width;
+    function drawBackground() {
+      ctx.drawImage(images[2], 0, 0, 1024, 1024, fisrtbgDx, 0, canvas.width, canvas.height);
+        ctx.drawImage(images[2], 0, 0, 1024, 1024, secondbgDx, 0, canvas.width, canvas.height);
+          
+        fisrtbgDx -= 0.4;
+        secondbgDx -= 0.4;
+          
+        if(fisrtbgDx <= -canvas.width) {
+          fisrtbgDx = canvas.width;
+        }
+        if(secondbgDx <= -canvas.width) {
+          secondbgDx = canvas.width;
+        }
+    }
+    
+    
+    function animate() {
+        animation = requestAnimationFrame(animate);
+        ctx.fillStyle = "#202830";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        drawBackground();
+        ctx.save();
+        ctx.scale(camera.zoom, camera.zoom);
+        ctx.translate(Math.floor(-camera.x), Math.floor(-camera.y));
+        tilemap.update();
+        player.update();
+        ctx.restore();
+        
+        
+        
+        //Move player if controls are active
+        if(controller.left) {
+          player.velocity.x -= 0.16;
+        }
+        if(controller.right) {
+          player.velocity.x += 0.16;
+        }
+        if(controller.up) {
+          player.velocity.y = -5;
+          player.jumping = true;
+        }
+        
+        // Add gravity
+        player.velocity.y += 0.2;
+        
+        // update old x and 
+        player.old_x = player.x;
+        player.old_y = player.y;
+        
+        // add velocity to x and y
+        player.x += player.velocity.x;
+        player.y += player.velocity.y;
+        
+        // check for wall collision 
+        if(player.x < 0) {
+          player.velocity.x = 0;
+          player.old_x = player.x = 0;
+        }
+        else if (player.x + player.w > canvas.width) {
+          player.velocity.x = 0;
+          player.old_x = player.x = canvas.width - player.w - 0.01;
+        }
+        
+        if(player.y < 0) {
+          player.velocity.y = 0;
+          player.old_y = player.y = 0;
+        }
+        else if (player.y + player.h > canvas.height) {
+          player.velocity.y = 0;
+          player.old_y = player.y = canvas.height - player.h;
+        }
+        
+        checkForCollision();
+        
+        // add friction
+        player.velocity.x *= 0.9;
+        player.velocity.y *= 0.9;
+        
+        // if you keep holding jump control
+        if(player.jumping) {
+          controller.up = false;
+        }
+        if(isUpPressed && !player.jumping) {
+          player.jumping = true;
+          controller.up = true;
+        }
+        
+        
+    }
+    animate()
+    
+    
+    
+    
+    // function for tile collision and response
+    let collision = {
+      // left of tile
+      1: function(object, row, column) {
+        this.leftCollision(object, column);
+      },
+      
+      // right of tile
+      2:function(object, row, column) {
+        this.rightCollision(object, column);
+
+      },
+      
+      // top of tile
+      3:function(object, row, column) {
+        this.topCollision(object, row);
+      },
+      
+      // bottom of tile
+      4:function(object, row, column) {
+        this.bottomCollision(object, row);
+      },
+      
+      // All side of tile
+      5:function(object, row, column) {
+        if(this.topCollision(object, row)) { return; }
+        if(this.leftCollision(object, column)) { return; }
+        if(this.rightCollision(object, column)) { return; }
+        this.bottomCollision(object, row);
+      },
+      
+      // Top and right side of tile
+      6:function(object, row, column) {
+        if(this.topCollision(object, row)) { return; }
+        this.rightCollision(object, column);
+      },
+      
+      
+      topCollision(object, row) {
+        if(object.y - object.old_y > 0) {
+          let top = row * tilemap.tileHeight;
+          
+          if(object.y + object.h > top && object.old_y + object.h <= top) {
+            object.jumping = false;
+            object.velocity.y = 0;
+            object.old_y = object.y = top - object.h - 0.01;
+            
+            return true;
+          }
+          
+        }
+        return false;
+      },
+      
+      bottomCollision(object, row) {
+        if (object.y - object.old_y < 0) {
+
+          var bottom = (row + 1) * tilemap.tileHeight;
+
+          if (object.y < bottom && object.old_y >= bottom) {
+
+            object.velocity.y = 0;
+            object.old_y = object.y = bottom;
+
+          }
+
+        }
+
+      },
+      
+      rightCollision(object, column) {
+        if (object.x - object.old_x < 0) {
+
+          var right = (column + 1) * tilemap.tileWidth;
+
+          if (object.x < right && object.old_x >= right) {
+
+            object.velocity.x = 0;
+            object.old_x = object.x = right;
+            
+            return true;
+
+          }
+
+        }
+        return false;
+      },
+      
+      leftCollision(object, column) {
+        if(object.x - object.old_x > 0) {
+          let left = column * tilemap.tileWidth;
+          
+          if(object.x + object.w > left && object.old_x + object.w <= left) {
+            object.velocity.x = 0;
+            object.x = object.old_x = left - object.w - 0.001;
+            
+            return true;
+          }
+        }
+        
+        return false;
+      }
+    };
+    
+    
+    function checkForCollision() {
+      // if player is moving left
+      if(player.x - player.old_x < 0) {
+        let column = Math.floor(player.x / tilemap.tileWidth);
+        let row = Math.floor((player.y + player.h) / tilemap.tileHeight);
+        let valueAtIndex = collisionMap[row][column];
+        
+        if (valueAtIndex != 0) {
+          collision[valueAtIndex](player, row, column);
+        }
+
+        var topRow = Math.floor(player.y / tilemap.tileWidth);
+        valueAtIndex = collisionMap[topRow][column];
+
+        if (valueAtIndex != 0) {
+          collision[valueAtIndex](player, topRow, column);
+        }
+      }
+      
+      // if player is moving right
+      else if (player.x - player.old_x > 0) {
+        let column = Math.floor((player.x + player.w) / tilemap.tileWidth);
+        let row = Math.floor((player.y + player.h) / tilemap.tileWidth);
+        let valueAtIndex = collisionMap[row][column];
+
+        if (valueAtIndex != 0) {
+          collision[valueAtIndex](player, row, column);
+        }
+
+        var topRow = Math.floor(player.y / tilemap.tileWidth);
+        valueAtIndex = collisionMap[topRow][column];
+
+        if (valueAtIndex != 0) {
+          collision[valueAtIndex](player, topRow, column);
+        }
+      }
+      
+      // if player is moving down
+      if (player.y - player.old_y < 0) {
+        let column = Math.floor(player.x / tilemap.tileWidth);
+        let row = Math.floor(player.y / tilemap.tileWidth);
+        let valueAtIndex = collisionMap[row][column];
+
+        if (valueAtIndex != 0) {
+          collision[valueAtIndex](player, row, column);
+        }
+
+        let rightColumn = Math.floor((player.x + player.w) / tilemap.tileWidth);
+        valueAtIndex = collisionMap[row][rightColumn];
+
+        if (valueAtIndex != 0) {
+          collision[valueAtIndex](player, row, rightColumn);
+        }
+      }
+      
+      // Bottom of tile
+      else if (player.y - player.old_y > 0) {
+
+        let column = Math.floor(player.x / tilemap.tileWidth);
+        let row = Math.floor((player.y + player.h) / tilemap.tileWidth);
+        let valueAtIndex = collisionMap[row][column];
+
+        if (valueAtIndex != 0) {
+          collision[valueAtIndex](player, row, column);
+        }
+
+        let rightColumn = Math.floor((player.x + player.w) / tilemap.tileWidth);
+        valueAtIndex = collisionMap[row][rightColumn];
+
+        if (valueAtIndex != 0) {
+          collision[valueAtIndex](player, row, rightColumn);
+        }
+
+      } 
+    }
+    
+    
+    
+    
+    document.querySelector("#left").addEventListener("touchstart", () => {
+      controller.left = true;
+    })
+    document.querySelector("#left").addEventListener("touchend", () => {
+      controller.left = false;
+    })
+    
+    document.querySelector("#right").addEventListener("touchstart", () => {
+      controller.right = true;
+    })
+    document.querySelector("#right").addEventListener("touchend", () => {
+      controller.right = false;
+    })
+    
+    document.querySelector("#jump").addEventListener("touchstart", () => {
+      isUpPressed = true;
+      
+      let leftColumn = Math.floor(player.x / tilemap.tileWidth);
+      let topRow = Math.floor(player.y / tilemap.tileHeight);
+      let valueAtIndex = collisionMap[topRow][leftColumn];
+
+        if (valueAtIndex != 0) {
+          controller.up = true;
+        }
+      
+    })
+    document.querySelector("#jump").addEventListener("touchend", () => {
+      isUpPressed = false;
+      controller.up = false;
+    })
+</script>
+</body>
+</html>
