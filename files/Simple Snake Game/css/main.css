@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #202830;
+}
+#score-display {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  margin: 15px 0;
+  font-size: 20px;
+  user-select: none;
+  font-style: italic;
+  font-family: Sans-Serif;
+}
+canvas {
+  position: relative;
+  display: block;
+  margin: 10px auto;
+}
+#controls {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#controls .btn {
+  position: relative;
+  margin-left: 10px;
+  width: 50px;
+  height: 50px;
+  background: #008ad3;
+  color: #fff;
+  font-size: 24px;
+  border: none;
+  outline: none;
+  transition: .5s;
+  user-select: none;
+}
