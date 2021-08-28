@@ -17,6 +17,10 @@ const data = [
         page: true
     },
     {
+        repo: "Simple Snake Game",
+        page: true
+    },
+    {
         repo: "T-rex Runner Game",
         page: true
     },
