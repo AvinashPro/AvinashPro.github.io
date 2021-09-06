@@ -9,6 +9,10 @@ const data = [
         page: true
     },
     {
+        repo: "Parallax Background",
+        page: true
+    },
+    {
         repo: "2D JS Platformer Collision and Response",
         page: true
     },
