@@ -7,13 +7,13 @@ let animation;
 
 
 const images = [
-    "../img/clouds1.png",
-    "../img/clouds2.png",
-    "../img/clouds3.png",
-    "../img/clouds4.png",
-    "../img/rocks1.png",
-    "../img/rocks2.png",
-    "../img/sky.png"
+    "img/clouds1.png",
+    "img/clouds2.png",
+    "img/clouds3.png",
+    "img/clouds4.png",
+    "img/rocks1.png",
+    "img/rocks2.png",
+    "img/sky.png"
 ];
 function loadImages() {
     images.forEach((src, index) => {
