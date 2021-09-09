@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Color Explorer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+    <nav>
+        <p>Color Palette</p>
+        <div id="home"><i class="fas fa-arrow-right"></i></div>
+    </nav>
+    <section id="homePage" class="show">
+        <div class="card" id="gradientBtn">
+            <img src="svg/svg1.svg"/>
+            <h4 class="title">Gradients</h4>
+            <p class="description">Explore some attractive gradients</p>
+        </div>
+        
+        <div class="card" id="colorPickerBtn">
+            <img src="svg/svg2.svg"/>
+            <h4 class="title">Color picker</h4>
+            <p class="description">Pick your favourite color using color picker</p>
+        </div>
+        
+        <div class="card" id="materialColorBtn">
+            <img src="svg/svg3.svg"/>
+            <h4 class="title">Material colors</h4>
+            <p class="description">Explore the standard colors for Material Design</p>
+        </div>
+        <div class="card" id="socialColorBtn">
+            <img src="svg/svg4.svg"/>
+            <h4 class="title">Social colors</h4>
+            <p class="description">Explore colors which are used by various Social Networks</p>
+        </div>
+    </section>
+    <section id="gradient"></section>
+    <section id="colorPicker">
+        <div class="container">
+            <div class="colorBox" id="colorPickerBox"></div>
+            
+            <div id="box">
+                <label for="red">Red - <span id="redValue">50</span></label>
+                <input type="range" name="red" id="red" value="50" min="0" max="255" class="rangeSlider"/>
+        
+                <label for="green">Green - <span id="greenValue">120</span></label>
+                <input type="range" name="green" id="green" value="120" min="0" max="255" class="rangeSlider"/>
+        
+                <label for="blue">Blue - <span id="blueValue">230</span></label>
+                <input type="range" name="blue" id="blue" value="230" min="0" max="255" class="rangeSlider"/>
+                <input type="text" placeholder="Custom Color" id="customColor"/>
+            </div>
+        </div>
+    </section>
+    <section id="materialColor">
+        <div id="colorPanel"></div>
+        <div id="colorContent"></div>
+    </section>
+    <section id="socialColor"></section>
+    <div id="alert">
+        Successfully! Copied to Clipboard
+    </div>
+    
+<script src="js/main.js"></script>
+<script src="js/gradient-color.js"></script>
+<script src="js/color-picker.js"></script>
+<script src="js/material-color.js"></script>
+<script src="js/social-color.js"></script>
+</body>
+</html>
