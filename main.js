@@ -17,6 +17,10 @@ const data = [
         page: true
     },
     {
+        repo: "Color Palette",
+        page: true
+    },
+    {
         repo: "Simple todo list creator",
         page: true
     },
