@@ -1,0 +1,368 @@
+[
+    {
+        "color1": "#1FA2FF",
+        "color2": "#12D8FA",
+        "color3": "#A6FFCB",
+        "css":"linear-gradient(90deg, #1FA2FF, #12D8FA, #A6FFCB)"
+    },
+    {
+        "color1": "#00416A",
+        "color2": "",
+        "color3": "#E4E5E6",
+        "css":"linear-gradient(90deg, #00416A, #E4E5E6)"
+    },
+    {
+        "color1": "#5433FF",
+        "color2": "",
+        "color3": "#A5FECB",
+        "css":"linear-gradient(90deg, #5433FF, #A5FECB)"
+    },
+    {
+        "color1": "#ACB6E5",
+        "color2": "",
+        "color3": "#86FDE8",
+        "css":"linear-gradient(90deg, #ACB6E5, #86FDE8)"
+    },
+    {
+        "color1": "#833AB4",
+        "color2": "#FD1D1D",
+        "color3": "#FCB045",
+        "css":"linear-gradient(90deg, #833AB4, #FD1D1D, #FCB045)"
+    },
+    {
+        "color1": "#FFE000",
+        "color2": "",
+        "color3": "#799F0C",
+        "css":"linear-gradient(90deg, #FFE000, #799F0C)"
+    },
+    {
+        "color1": "#F7F8F8",
+        "color2": "",
+        "color3": "#ACBB78",
+        "css":"linear-gradient(90deg, #F7F8F8, #ACBB78)"
+    },
+    {
+        "color1": "#00416A",
+        "color2": "#799F0C",
+        "color3": "#FFE000",
+        "css":"linear-gradient(90deg, #00416A, #799F0C, #FFE000)"
+    },
+    {
+        "color1": "#334D50",
+        "color2": "",
+        "color3": "#CBCAA5",
+        "css":"linear-gradient(90deg, #334D50, #CBCAA5)"
+    },
+    {
+        "color1": "#0052D4",
+        "color2": "#4364F7",
+        "color3": "#6FB1FC",
+        "css":"linear-gradient(90deg, #0052D4, #4364F7, #6FB1FC)"
+    },
+    {
+        "color1": "#5433FF",
+        "color2": "#20BDFF",
+        "color3": "#A5FECB",
+        "css":"linear-gradient(90deg, #5433FF, #20BDFF, #A5FECB)"
+    },
+    {
+        "color1": "#799F0C",
+        "color2": "",
+        "color3": "#ACBB78",
+        "css":"linear-gradient(90deg, #799F0C, #ACBB78)"
+    },
+    {
+        "color1": "#FFE259",
+        "color2": "",
+        "color3": "#FFA751",
+        "css":"linear-gradient(90deg, #FFE259, #FFA751)"
+    },
+    {
+        "color1": "#00416A",
+        "color2": "",
+        "color3": "#E4E5E6",
+        "css":"linear-gradient(90deg, #00416A, #E4E5E6)"
+    },
+    {
+        "color1": "#FFE000",
+        "color2": "",
+        "color3": "#799F0C",
+        "css":"linear-gradient(90deg, #FFE000, #799F0C)"
+    },
+    {
+        "color1": "#ACB6E5",
+        "color2": "",
+        "color3": "#86FDE8",
+        "css":"linear-gradient(90deg, #ACB6E5, #86FDE8)"
+    },
+    {
+        "color1": "#536976",
+        "color2": "",
+        "color3": "#292E49",
+        "css":"linear-gradient(90deg, #536976, #292E49)"
+    },
+    {
+        "color1": "#BBD2C5",
+        "color2": "#536976",
+        "color3": "#292E49",
+        "css":"linear-gradient(90deg, #BBD2C5, #536976, #292E49)"
+    },
+    {
+        "color1": "#B79891",
+        "color2": "",
+        "color3": "#94716B",
+        "css":"linear-gradient(90deg, #B79891, #94716B)"
+    },
+    {
+        "color1": "#9796F0",
+        "color2": "",
+        "color3": "#FBC7D4",
+        "css":"linear-gradient(90deg, #9796F0, #FBC7D4)"
+    },
+    {
+        "color1": "#BBD2C5",
+        "color2": "",
+        "color3": "#536976",
+        "css":"linear-gradient(90deg, #BBD2C5, #536976)"
+    },
+    {
+        "color1": "#076585",
+        "color2": "",
+        "color3": "#FFFFFF",
+        "css":"linear-gradient(90deg, #076585, #FFFFFF)"
+    },
+    {
+        "color1": "#00467F",
+        "color2": "",
+        "color3": "#A5CC82",
+        "css":"linear-gradient(90deg, #00467F, #A5CC82)"
+    },
+    {
+        "color1": "#1488CC",
+        "color2": "",
+        "color3": "#2B32B2",
+        "css":"linear-gradient(90deg, #1488CC, #2B32B2)"
+    },
+    {
+        "color1": "#EC008C",
+        "color2": "",
+        "color3": "#FC6767",
+        "css":"linear-gradient(90deg, #EC008C, #FC6767)"
+    },
+    {
+        "color1": "#CC2B5E",
+        "color2": "",
+        "color3": "#753A88",
+        "css":"linear-gradient(90deg, #CC2B5E, #753A88)"
+    },
+    {
+        "color1": "#2193B0",
+        "color2": "",
+        "color3": "#6DD5ED",
+        "css":"linear-gradient(90deg, #2193B0, #6DD5ED)"
+    },
+    {
+        "color1": "#E65C00",
+        "color2": "",
+        "color3": "#F9D423",
+        "css":"linear-gradient(90deg, #E65C00, #F9D423)"
+    },
+    {
+        "color1": "#2B5876",
+        "color2": "",
+        "color3": "#4E4376",
+        "css":"linear-gradient(90deg, #2B5876, #4E4376)"
+    },
+    {
+        "color1": "#314755",
+        "color2": "",
+        "color3": "#26A0DA",
+        "css":"linear-gradient(90deg, #314755, #26A0DA)"
+    },
+    {
+        "color1": "#77A1D3",
+        "color2": "#79CBCA",
+        "color3": "#E684AE",
+        "css":"linear-gradient(90deg, #77A1D3, #79CBCA, #E684AE)"
+    },
+    {
+        "color1": "#FF6E7F",
+        "color2": "",
+        "color3": "#BFE9FF",
+        "css":"linear-gradient(90deg, #FF6E7F, #BFE9FF)"
+    },
+    {
+        "color1": "#E52D27",
+        "color2": "",
+        "color3": "#B31217",
+        "css":"linear-gradient(90deg, #E52D27, #B31217)"
+    },
+    {
+        "color1": "#603813",
+        "color2": "",
+        "color3": "#B29F94",
+        "css":"linear-gradient(90deg, #603813, #B29F94)"
+    },
+    {
+        "color1": "#16A085",
+        "color2": "",
+        "color3": "#F4D03F",
+        "css":"linear-gradient(90deg, #16A085, #F4D03F)"
+    },
+    {
+        "color1": "#D31027",
+        "color2": "",
+        "color3": "#EA384D",
+        "css":"linear-gradient(90deg, #D31027, #EA384D)"
+    },
+    {
+        "color1": "#EDE574",
+        "color2": "",
+        "color3": "#E1F5C4",
+        "css":"linear-gradient(90deg, #EDE574, #E1F5C4)"
+    },
+    {
+        "color1": "#02AAB0",
+        "color2": "",
+        "color3": "#00CDAC",
+        "css":"linear-gradient(90deg, #02AAB0, #00CDAC)"
+    },
+    {
+        "color1": "#DA22FF",
+        "color2": "",
+        "color3": "#9733EE",
+        "css":"linear-gradient(90deg, #DA22FF, #9733EE)"
+    },
+    {
+        "color1": "#348F50",
+        "color2": "",
+        "color3": "#56B4D3",
+        "css":"linear-gradient(90deg, #348F50, #56B4D3)"
+    },
+    {
+        "color1": "#3CA55C",
+        "color2": "",
+        "color3": "#B5AC49",
+        "css":"linear-gradient(90deg, #3CA55C, #B5AC49)"
+    },
+    {
+        "color1": "#CC95C0",
+        "color2": "#DBD4B4",
+        "color3": "#7AA1D2",
+        "css":"linear-gradient(90deg, #CC95C0, #DBD4B4, #7AA1D2)"
+    },
+    {
+        "color1": "#003973",
+        "color2": "",
+        "color3": "#E5E5BE",
+        "css":"linear-gradient(90deg, #003973, #E5E5BE)"
+    },
+    {
+        "color1": "#E55D87",
+        "color2": "",
+        "color3": "#5FC3E4",
+        "css":"linear-gradient(90deg, #E55D87, #5FC3E4)"
+    },
+    {
+        "color1": "#403B4A",
+        "color2": "",
+        "color3": "#E7E9BB",
+        "css":"linear-gradient(90deg, #403B4A, #E7E9BB)"
+    },
+    {
+        "color1": "#F09819",
+        "color2": "",
+        "color3": "#EDDE5D",
+        "css":"linear-gradient(90deg, #F09819, #EDDE5D)"
+    },
+    {
+        "color1": "#FF512F",
+        "color2": "",
+        "color3": "#DD2476",
+        "css":"linear-gradient(90deg, #FF512F, #DD2476)"
+    },
+    {
+        "color1": "#AA076B",
+        "color2": "",
+        "color3": "#61045F",
+        "css":"linear-gradient(90deg, #AA076B, #61045F)"
+    },
+    {
+        "color1": "#1A2980",
+        "color2": "",
+        "color3": "#26D0CE",
+        "css":"linear-gradient(90deg, #1A2980, #26D0CE)"
+    },
+    {
+        "color1": "#FF512F",
+        "color2": "",
+        "color3": "#F09819",
+        "css":"linear-gradient(90deg, #FF512F, #F09819)"
+    },
+    {
+        "color1": "#1D2B64",
+        "color2": "",
+        "color3": "#F8CDDA",
+        "css":"linear-gradient(90deg, #1D2B64, #F8CDDA)"
+    },
+    {
+        "color1": "#4CB8C4",
+        "color2": "",
+        "color3": "#3CD3AD",
+        "css":"linear-gradient(90deg, #4CB8C4, #3CD3AD)"
+    },
+    {
+        "color1": "#DD5E89",
+        "color2": "",
+        "color3": "#F7BB97",
+        "css":"linear-gradient(90deg, #DD5E89, #F7BB97)"
+    },
+    {
+        "color1": "#EB3349",
+        "color2": "",
+        "color3": "#F45C43",
+        "css":"linear-gradient(90deg, #EB3349, #F45C43)"
+    },
+    {
+        "color1": "#1D976C",
+        "color2": "",
+        "color3": "#93F9B9",
+        "css":"linear-gradient(90deg, #1D976C, #93F9B9)"
+    },
+    {
+        "color1": "#FF8008",
+        "color2": "",
+        "color3": "#FFC837",
+        "css":"linear-gradient(90deg, #FF8008, #FFC837)"
+    },
+    {
+        "color1": "#16222A",
+        "color2": "",
+        "color3": "#3A6073",
+        "css":"linear-gradient(90deg, #16222A, #3A6073)"
+    },
+    {
+        "color1": "#1F1C2C",
+        "color2": "",
+        "color3": "#928DAB",
+        "css":"linear-gradient(90deg, #1F1C2C, #928DAB)"
+    },
+    {
+        "color1": "#614385",
+        "color2": "",
+        "color3": "#516395",
+        "css":"linear-gradient(90deg, #614385, #516395)"
+    },
+    {
+        "color1": "#4776E6",
+        "color2": "",
+        "color3": "#8E54E9",
+        "css":"linear-gradient(90deg, #4776E6, #8E54E9)"
+    },
+    {
+        "color1": "#FC354C",
+        "color2": "",
+        "color3": "#0ABFBC",
+        "css":"linear-gradient(90deg, #FC354C, #0ABFBC)"
+    }
+]
