@@ -239,19 +239,18 @@ class Tilemap {
 }
 
 class Player {
-    constructor(x, y, w, h, col, collMap) {
+    constructor(x, y, w, h, col) {
         this.pos = new Vector(x, y);
         this.w = w;
         this.h = h;
         this.col = col;
-        this.collMap = collMap;
         
         this.g = 0.2;
         this.friction = 0.5;
         this.speed = 3;
-        this.jumpForce = 1;
+        this.jumpForce = 5;
         this.vel = new Vector(0, 0);
-        this.old = new Vector(this.x, this.y);
+        this.old = new Vector(0, 0);
         
         this.controls = {
             left: false,
@@ -261,6 +260,8 @@ class Player {
         
         this.falling = false;
         this.grounded = false;
+        this.top = false;
+        this.bottom = false;
     }
     
     draw() {
@@ -283,7 +284,10 @@ class Player {
             this.vel.x = this.speed;
         }
         
-        if(this.controls.jump) this.vel.y = -this.jumpForce;
+        if(this.controls.jump && this.bottom) {
+            this.vel.y = -this.jumpForce;
+            this.bottom = false;
+        }
     }
     
     
@@ -297,87 +301,117 @@ class Player {
     }
     
     
-    checkX() {
-        if(this.vel.x > 0) {
+    /*checkX() {
+        if(this.pos.x - this.old.x > 0) {
             
-            const t = this.getCurrentTile();
-            let x1 = t.maxColumn * map.tile.w;
-            let y1 = t.minRow * map.tile.h;
-            let y2 = (t.minRow+1) * map.tile.h;
+        }
+        //console.log(this.pos.x, this.old.x)
+    }*/
+    
+    checkX(tw, th, data) {
+        if(this.pos.x - this.old.x > 0 && this.controls.right) {
             
-            //drawRect(x1,y1);
-            //drawRect(x1,y2);
+            const tile = this.getCurrentTile();
             
-            let value1 = map.TILES_DATA[t.minRow][t.maxColumn];
+            const topRow = tile.minRow;
+            const bottomRow = tile.maxRow;
+            const rightColumn = tile.maxColumn;
             
-            let value2 = map.TILES_DATA[t.minRow+1][t.maxColumn];
+            const x1 = rightColumn*tw;
+            const y1 = topRow*th;
+            const y2 = bottomRow*th;
             
-            if(value1 == 1) {
-                if(this.pos.x + this.w > x1) {
-                    
-                    this.pos.x = x1 - this.w -0.01;
-                    this.vel.x = 0;
-                
-                }
-            }
+            const v1 = data[topRow][rightColumn];
+            const v2 = data[bottomRow][rightColumn];
             
-            if(value2 == 1) {
-                if(this.pos.x + this.w > x1) {
-                    if(Math.floor(this.pos.y + this.h) > y2) {
-                        // console.log(this.pos.y + this.h, y2)
-                        this.vel.x = 0;
-                        this.pos.x = x1 - this.w - 0.01;
-                    }
-                }
-            }
+            //drawRect(x1,y1)
+            //drawRect(x1,y2)
+            
+            if(v1==1&&this.pos.x+this.w > x1) {
+                this.vel.x = 0;
+                this.pos.x = this.old.x = x1 - this.w - 0.01;
+            } if(v2==1 && this.pos.x+this.w > x1 && Math.floor(this.pos.y+this.h) > y2 && !this.falling) {
+                this.vel.x = 0;
+                this.pos.x = this.old.x = x1 - this.w - 0.01;
+            } 
+            
+        } if(this.pos.x - this.old.x < 0 && this.controls.left) {
+            
+            const tile = this.getCurrentTile();
+            
+            const topRow = tile.minRow;
+            const bottomRow = tile.maxRow;
+            const leftColumn = tile.minColumn;
+            
+            const x1 = leftColumn*tw;
+            const y1 = topRow*th;
+            const y2 = bottomRow*th;
+            
+            const v1 = data[topRow][leftColumn];
+            const v2 = data[bottomRow][leftColumn];
+            
+            //drawRect(x1,y1)
+            //drawRect(x1,y2)
+            
+            if(v1==1&&this.pos.x < x1 + tw) {
+                this.vel.x = 0;
+                this.pos.x = this.old.x = x1 + tw + 0.01;
+            } if(v2==1 && this.pos.x < x1  + tw && Math.floor(this.pos.y+this.h) > y2 && !this.falling) {
+                this.vel.x = 0;
+                this.pos.x = this.old.x = x1 + tw + 0.01;
+            } 
             
         }
         
     }
     
-    checkY() {
-        if(this.vel.y > 0) {
+    checkY(tw, th, data) {
+        if(this.pos.y - this.old.y > 0) {
             
-            const t = this.getCurrentTile();
-            let x1 = t.minColumn * map.tile.w;
-            let x2 = t.maxColumn * map.tile.w;
-            let y1 = t.maxRow * map.tile.h;
+            const tile = this.getCurrentTile();
             
-            let value1 = map.TILES_DATA[t.maxRow][t.minColumn];
-            let value2 = map.TILES_DATA[t.maxRow][t.maxColumn];
+            const bottomRow = tile.maxRow;
+            const leftColumn = tile.minColumn;
+            const rightColumn = tile.maxColumn;
             
-            if(value1 == 1 || value2 == 1) {
-                if(this.pos.y + this.h > y1) {
-                    this.pos.y = y1 - this.h -0.01;
-                    this.vel.y = 0;
-                
-                }
+            const x1 = leftColumn*tw;
+            const x2 = rightColumn*tw;
+            const y1 = bottomRow*th;
+            
+            const v1 = data[bottomRow][leftColumn];
+            const v2 = data[bottomRow][rightColumn];
+            
+            
+            if(v1==1 || v2==1&&this.pos.y+this.h > y1) {
+                this.vel.y = 0;
+                this.pos.y = this.old.y = y1 - this.h - 0.01;
+                this.bottom = true;
             }
+            
+            
+        } if(this.pos.y - this.old.y < 0) {
+            
+            const tile = this.getCurrentTile();
+            
+            const topRow = tile.minRow;
+            const leftColumn = tile.minColumn;
+            const rightColumn = tile.maxColumn;
+            
+            const x1 = leftColumn*tw;
+            const x2 = rightColumn*tw;
+            const y1 = topRow*th;
+            
+            const v1 = data[topRow][leftColumn];
+            const v2 = data[topRow][rightColumn];
+            
+            
+            if(v1==1 || v2==1&&this.pos.y < y1 + th) {
+                this.vel.y = 0;
+                this.pos.y = this.old.y = y1 + th + 0.01;
+            } 
             
         }
         
-        if(this.vel.y < 0) {
-            
-            const t = this.getCurrentTile();
-            let x1 = t.minColumn * map.tile.w;
-            let x2 = t.maxColumn * map.tile.w;
-            let y1 = t.minRow * map.tile.h;
-            //let y2 = t.maxRow * map.tile.h;
-            
-            let value1 = map.TILES_DATA[t.minRow][t.minColumn];
-            let value2 = map.TILES_DATA[t.minRow][t.maxColumn];
-            
-            if(value1 == 1 || value2 == 1) {
-                if(this.pos.y < y1 + map.tile.h) {
-                    
-                    this.pos.y = y1 + map.tile.h;
-                    this.vel.y = 0;
-                    
-                }
-                
-            }
-            
-        }
     }
     
 
@@ -391,12 +425,15 @@ class Player {
         this.pos.add(this.vel);
         this.vel.y += this.g;
         this.vel.x *= this.friction;
-        this.old = this.pos;
-        this.checkX();
-        this.checkY();
+        this.checkX(map.tile.w, map.tile.h, map.TILES_DATA);
+        this.checkY(map.tile.w, map.tile.h, map.TILES_DATA);
+        this.old.x = this.pos.x;
+        this.old.y = this.pos.y;
         
         
-        this.vel.y > 0 ? this.falling = true : this.falling = false;
+        this.vel.y > 0 ? this.falling = true : this.falling = false
+        
+        this.falling ? this.top = false : this.top = this.top;
         
         
         // temporary
@@ -407,7 +444,7 @@ class Player {
 
 
 function drawRect(x,y) {
-    ctx.fillStyle = "rgba(0,255,165,0.6)";
+    ctx.fillStyle = "rgba(0,255,165,0.3)";
     ctx.fillRect(x,y,32,32);
 }
 
@@ -423,14 +460,13 @@ function gameLoop() {
     
     map.update();
     player.update();
-    
     ctx.restore();
 }
 
 function main() {
     p(resources)
     map = new Tilemap({w: 32, h: 32}, resources.get("tilemap").layers[0].data, resources.get("tileset"), {column: 8, row: 8});
-    player = new Player(20, 25, 15, 15, "#09f", resources.get("tileCollisionData").collisionArray);
+    player = new Player(20, 20, 15, 15, "#09f");
     
     
     map.init();
@@ -450,11 +486,11 @@ function resize() {
 function loadAssests() {
     resources = new LoadResources();
     resources.load({
-        /*"tilemap": "https://rawcdn.githack.com/AvinashPro/AvinashPro.github.io/main/files/Platformer%20Game/map.json",
-        "tileset": "https://rawcdn.githack.com/AvinashPro/AvinashPro.github.io/main/files/Platformer%20Game/img/tileset.png"*/
-        "tilemap": "res/tilemap/map.json",
+        "tilemap": "https://rawcdn.githack.com/AvinashPro/AvinashPro.github.io/main/files/Platformer%20Game/map.json",
+        "tileset": "https://rawcdn.githack.com/AvinashPro/AvinashPro.github.io/main/files/Platformer%20Game/img/tileset.png"
+        /*"tilemap": "res/tilemap/map.json",
         "tileset": "res/img/tileset.png",
-        "tileCollisionData": "res/tilemap/tileCollision.json"
+        "tileCollisionData": "res/tilemap/tileCollision.json"*/
     }).then(() => {
         main();
     })
