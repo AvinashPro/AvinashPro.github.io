@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>Platformer Game</title>
     <style>
         * {
             margin: 0;
@@ -13,555 +13,511 @@
             -moz-box-sizing: border-box;
             box-sizing: border-box;
         }
-        body {
+        
+        html, body {
             width: 100vw;
-            background: #202830;
+            height: 100vh;
+            overflow: hidden;
         }
         canvas {
-            display: block;
             image-rendering: pixelated;
-            margin: 120px auto 0 auto;
+            image-rendering: crisp-edges;
         }
-        #controls {
-            margin: 20px 0;
-            width: 100vw;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 20px;
-        }
-        .row {
-            display: flex;
-        }
-        .btn {
-            display: grid;
-            place-items: center;
-            width: 40px;
-            height: 40px;
-            background: #08f;
-            margin-right: 10px;
-            background: #232e39;
-            text-transform: uppercase;
-            font-family: Sans-Serif;
-            color: #4f6880;
-            font-size: 10px;
+        
+        .controller-container {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+        } 
+        
+        .controller-button {
+            width: 55px;
+            height: 55px;
             user-select: none;
+            font-size: 10px;
+            border: none;
+            background: rgba(20,28,30,0.2);
+            color: rgba(20,28,30,0.5);
+        }
+        #jump-btn {
+            position: absolute;
+            right: 20px;
+        }
+        #left-btn {
+            margin-left: 10px;
         }
     </style>
 </head>
 <body>
-  <canvas id="game"></canvas>
-  <div id="controls">
-        <div class="row">
-            <div id="left" class="btn">left</div>
-            <div id="right" class="btn">right</div>
-        </div>
-        <div class="row">
-            <div></div>
-            <div id="jump" class="btn">jump</div>
-        </div>
+    <canvas id="game"></canvas>
+    <div class="controller-container">
+        <button class="controller-button" id="left-btn">LEFT</button>
+        <button class="controller-button" id="right-btn">RIGHT</button>
+        <button class="controller-button" id="jump-btn">JUMP</button>
     </div>
 <script>
-    const canvas = document.querySelector("#game");
-    let tileSize = 12;
-    canvas.width = 26 * tileSize;
-    canvas.height = 26 * tileSize;
-    const ctx = canvas.getContext("2d");
-    let animation;
+    const selector = t => document.querySelector(t);
+    const p = t => console.log(t);
+    const game = selector("#game");
+    const ctx = game.getContext("2d");
+    [game.width, game.height] = [innerWidth, innerHeight];
     
     
-    class Tilemap {
-        constructor(data, image, imageLength, imgTilesNum) {
-            this.data = data;
-            this.image = image;
-            this.columns = data[0].length;
-            this.rows = data.length;
-            this.imgTilesNum = imgTilesNum;
-            this.tileWidth = canvas.width/this.columns;
-            this.tileHeight = canvas.height/this.rows;
-            this.imageLength = imageLength;
-            this.tileSize = this.imageLength/imgTilesNum;
+    class LoadResources {
+        constructor() {
+            this.resources = new Object();
         }
-        draw() {
-            for(let r = 0; r < this.rows; r++) {
-                for(let c = 0; c < this.columns; c++) {
-                    let tile = this.data[r][c];
-                    let sx = Math.floor(tile%this.imgTilesNum) * this.tileSize;
-                    let sy = Math.floor(tile/this.imgTilesNum) * this.tileSize;
-                    
-                    // if tile value is not for sky
-                    if(tile != 50) {
-                      ctx.drawImage(this.image, sx, sy, this.tileSize, this.tileSize, c * this.tileWidth, r * this.tileHeight, this.tileWidth, this.tileHeight);
-                    }
-                    // For sky
-                    /*else {
-                      ctx.fillStyle = skyColor;
-                      ctx.fillRect(c * this.tileWidth, r * this.tileHeight, this.tileWidth, this.tileHeight);
-                    }*/
-                    
-                    
+        
+        get(key) {
+            return this.resources[key];
+        }
+    
+        load(objSrc) {
+            const loads = [];
+            const keys = [];
+            for (let key in objSrc) {
+                keys.push(key);
+                let src = objSrc[key];
+                    if(src.match(/\.mp3|\.ogg|\.wav/)) {
+                    loads.push(loadAudio(src));
+                    } else if(src.match(/\.png|\.jpg|\.jpeg/)) {
+                    loads.push(loadImage(src));
+                    } else if(src.match(/\.json/)) {
+                        loads.push(loadJSON(src));
                 }
             }
-        }
-        update() {
-          this.draw();
-        }
+            return Promise.all(loads).then(items => {
+            
+                items.forEach((item, i) => {
+                    this.resources[keys[i]] = item;
+            });
+        });
     }
-    class Player {
-      constructor(img, imgWidth, imgHeight, x, y, w, h, color) {
-        this.img = img;
+    
+}
+
+function loadAudio(src) {
+    return new Promise(resolve => {
+                    const audio = new Audio();
+                    audio.src = src;
+                    audio.oncanplay = function() {
+                        
+                        resolve(audio);
+                    }
+                });
+}
+
+function loadImage(src) {
+    return new Promise(resolve => {
+                    const image = new Image();
+                    image.src = src;
+                    image.onload = function() {
+                        
+                        resolve(image);
+                    }
+                });
+}
+
+function loadJSON(src) {
+    return new Promise(resolve => {
+        resolve(fetch(src));
+    }).then(text => {
+        return text.json();
+    });
+}
+
+
+class Vector {
+    constructor(x, y) {
         this.x = x;
         this.y = y;
+    }
+    
+    add(v1) {
+        this.x += v1.x;
+        this.y += v1.y;
+    }
+    
+    sub(v1) {
+        this.x -= v1.x;
+        this.y -= v1.y;
+    }
+    
+    mult(a) {
+        this.x *= a;
+        this.y *= a;
+    }
+    
+}
+
+class Tilemap {
+    constructor(tile, graphic, img, imgProp) {
+        
+        this.tile = tile; /* width and height of each tile */
+        this.graphic = graphic; /* Graphic Data of map for drawing */
+        //this.tilesDt = tilesData;
+        this.img = img; /* Spritesheet image of map */ 
+        this.imgProp = imgProp; /* number of rows and columns in spritesheet image */
+        
+        this.TILES_DATA = [];
+        this.collidableTiles = [1,2,3,4,5,6,7,9,10,11,12,13,14,17,18,19,20,21,22,23,25,26,27,28,29,37,38,39,40,53,61];
+        
+        /* Used for tracking index of  current column and row of graphical map data */
+        this.columnIndex = 0;
+        this.rowIndex = 0;
+        
+    }
+     
+    init() {
+        for(let row = 0; row < this.graphic.length; row++) {
+            
+            let array = [];
+            
+            for(let column = 0; column < this.graphic[0].length; column++) {
+                
+                let value = this.graphic[row][column];
+                let collide = false;
+                
+                this.collidableTiles.forEach(tVal => {
+                    if(tVal == value) {
+                        collide = true;
+                    }
+                })
+                
+                if(collide) {
+                    array.push(1);
+                } else {
+                    array.push(0);
+                }
+                
+            }
+            
+            this.TILES_DATA.push(array);
+            
+        }
+    }
+    
+    
+    draw() {
+        // loop for each rows
+        for(let y = 0; y < this.tile.h * this.graphic.length; y += this.tile.h) {
+            // loop for each columns
+            for(let x = 0; x < this.tile.w * this.graphic[0].length; x += this.tile.w) {
+                // value of current row and column
+                const value = this.graphic[this.rowIndex][this.columnIndex] -1;
+                    
+                
+                const sw = this.img.width/this.imgProp.column;
+                const sh = this.img.height/this.imgProp.row;
+                
+                const sx = Math.floor(value % this.imgProp.column) * sw;
+                const sy = Math.floor(value / this.imgProp.column) * sw;
+                
+                
+                ctx.drawImage(this.img, sx, sy, sw, sh, x, y, this.tile.w, this.tile.h);
+            
+                // increasing value for next column and row
+                    
+                this.columnIndex++;
+                if(this.columnIndex == this.graphic[0].length) {
+                    this.rowIndex++;
+                    this.columnIndex = 0;
+                } if(this.rowIndex == this.graphic.length) {
+                    this.rowIndex = 0;
+                }
+                    
+                    
+            }
+        }
+    }
+    
+        
+    update() {
+        this.draw();
+    }
+}
+
+class Player {
+    constructor(x, y, w, h, col) {
+        this.pos = new Vector(x, y);
         this.w = w;
         this.h = h;
-        this.velocity = {
-          x: 0, y: 0
+        this.col = col;
+        
+        this.g = 0.2;
+        this.friction = 0.5;
+        this.speed = 3;
+        this.jumpForce = 5;
+        this.vel = new Vector(0, 0);
+        this.old = new Vector(0, 0);
+        
+        this.controls = {
+            left: false,
+            right: false,
+            jump: false
         };
-        this.old_x = x;
-        this.old_y = y;
-        this.color = color;
-        this.jumping = false;
-        this.sx = 0;
-        this.sy = 0;
-        this.noOfSprite = {
-          x: 4,
-          y: 4
-        }
-        this.imgWidth = imgWidth;
-        this.imgHeight = imgHeight;
-        this.sw = this.imgWidth/this
-        .noOfSprite.x;
-        this.sh = this.imgHeight/this.noOfSprite.y;
-      }
-      draw() {
-        ctx.fillStyle = this.color;
-        ctx.fillRect(this.x, this.y, this.w, this.h);
         
-        //ctx.drawImage(this.img, this.sx, this.sy, this.sw, this.sh, this.x, this.y, this.w, this.h);
-      }
-      update() {
+        this.falling = false;
+        this.grounded = false;
+        this.top = false;
+        this.bottom = false;
+    }
+    
+    draw() {
+        ctx.fillStyle = this.col;
+        ctx.fillRect(this.pos.x, this.pos.y, this.w, this.h);
+    }
+    
+    wallCollision() {
+        if(this.pos.x < 0) this.pos.x = 0;
+        else if(this.pos.x + this.w > map.graphic[0].length*map.tile.w) this.pos.x = map.graphic[0].length*map.tile.w - this.w;
+        if(this.pos.y < 0) this.pos.y = 0, this.vel.y = 0;
+        else if(this.pos.y + this.h > map.graphic.length*map.tile.h) this.pos.y = map.graphic.length*map.tile.h - this.h, this.vel.y = 0;
+    }
+    
+    
+    controller() {
+        if(this.controls.left) {
+            this.vel.x = -this.speed;
+        } else if(this.controls.right) {
+            this.vel.x = this.speed;
+        }
+        
+        if(this.controls.jump && this.bottom) {
+            this.vel.y = -this.jumpForce;
+            this.bottom = false;
+        }
+    }
+    
+    
+    getCurrentTile() {
+        return {
+            minColumn: Math.floor(this.pos.x/map.tile.w),
+            maxColumn: Math.floor((this.pos.x+this.w)/map.tile.w),
+            minRow: Math.floor(this.pos.y/map.tile.h),
+            maxRow: Math.floor((this.pos.y+this.h)/map.tile.h)
+        }
+    }
+    
+    
+    /*checkX() {
+        if(this.pos.x - this.old.x > 0) {
+            
+        }
+        //console.log(this.pos.x, this.old.x)
+    }*/
+    
+    checkX(tw, th, data) {
+        if(this.pos.x - this.old.x > 0 && this.controls.right) {
+            
+            const tile = this.getCurrentTile();
+            
+            const topRow = tile.minRow;
+            const bottomRow = tile.maxRow;
+            const rightColumn = tile.maxColumn;
+            
+            const x1 = rightColumn*tw;
+            const y1 = topRow*th;
+            const y2 = bottomRow*th;
+            
+            const v1 = data[topRow][rightColumn];
+            const v2 = data[bottomRow][rightColumn];
+            
+            //drawRect(x1,y1)
+            //drawRect(x1,y2)
+            
+            if(v1==1&&this.pos.x+this.w > x1) {
+                this.vel.x = 0;
+                this.pos.x = this.old.x = x1 - this.w - 0.01;
+            } if(v2==1 && this.pos.x+this.w > x1 && Math.floor(this.pos.y+this.h) > y2 && !this.falling) {
+                this.vel.x = 0;
+                this.pos.x = this.old.x = x1 - this.w - 0.01;
+            } 
+            
+        } if(this.pos.x - this.old.x < 0 && this.controls.left) {
+            
+            const tile = this.getCurrentTile();
+            
+            const topRow = tile.minRow;
+            const bottomRow = tile.maxRow;
+            const leftColumn = tile.minColumn;
+            
+            const x1 = leftColumn*tw;
+            const y1 = topRow*th;
+            const y2 = bottomRow*th;
+            
+            const v1 = data[topRow][leftColumn];
+            const v2 = data[bottomRow][leftColumn];
+            
+            //drawRect(x1,y1)
+            //drawRect(x1,y2)
+            
+            if(v1==1&&this.pos.x < x1 + tw) {
+                this.vel.x = 0;
+                this.pos.x = this.old.x = x1 + tw + 0.01;
+            } if(v2==1 && this.pos.x < x1  + tw && Math.floor(this.pos.y+this.h) > y2 && !this.falling) {
+                this.vel.x = 0;
+                this.pos.x = this.old.x = x1 + tw + 0.01;
+            } 
+            
+        }
+        
+    }
+    
+    checkY(tw, th, data) {
+        if(this.pos.y - this.old.y > 0) {
+            
+            const tile = this.getCurrentTile();
+            
+            const bottomRow = tile.maxRow;
+            const leftColumn = tile.minColumn;
+            const rightColumn = tile.maxColumn;
+            
+            const x1 = leftColumn*tw;
+            const x2 = rightColumn*tw;
+            const y1 = bottomRow*th;
+            
+            const v1 = data[bottomRow][leftColumn];
+            const v2 = data[bottomRow][rightColumn];
+            
+            
+            if(v1==1 || v2==1&&this.pos.y+this.h > y1) {
+                this.vel.y = 0;
+                this.pos.y = this.old.y = y1 - this.h - 0.01;
+                this.bottom = true;
+            }
+            
+            
+        } if(this.pos.y - this.old.y < 0) {
+            
+            const tile = this.getCurrentTile();
+            
+            const topRow = tile.minRow;
+            const leftColumn = tile.minColumn;
+            const rightColumn = tile.maxColumn;
+            
+            const x1 = leftColumn*tw;
+            const x2 = rightColumn*tw;
+            const y1 = topRow*th;
+            
+            const v1 = data[topRow][leftColumn];
+            const v2 = data[topRow][rightColumn];
+            
+            
+            if(v1==1 || v2==1&&this.pos.y < y1 + th) {
+                this.vel.y = 0;
+                this.pos.y = this.old.y = y1 + th + 0.01;
+            } 
+            
+        }
+        
+    }
+    
+
+    
+    update() {
         this.draw();
-        camera.x = this.x - (canvas.width/2) * (1/camera.zoom);
-        camera.y = this.y - (canvas.height/2) * (1/camera.zoom);
-      }
-    }
-    
-    
-    
-    // Images Array for loading the images
-    let images = [
-      "img/tileset2.png", // Tile set
-      "img/player.png", // Player spritesheet
-      "img/bg.jpg" // Background
-    ];
-    
-    // function to load images
-    function loadImages() {
-      images.forEach((src, index) => {
-        const img = new Image();
-        img.src = src;
-        images[index] = img;
-      })
-    }
-    loadImages();
-    
-    
-    // Tilemap data array for drawing
-    let tilemapData = [
-    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
-    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
-    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
-    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
-    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
-    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
-    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
-    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
-    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
-    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
-    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
-    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
-    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
-    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
-    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
-    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
-    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
-    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
-    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
-    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
-    [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
-    [50,50,50,46,46,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],
-    [72,50,72,50,50,50,72,50,50,50,50,50,50,50,50,72,50,50,50,50,72,72,50,50,50,72],
-    [00,00,00,00,00,00,00,00,59,05,05,05,59,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [03,03,03,03,03,03,03,03,59,19,19,19,59,03,03,03,03,03,03,03,03,03,03,03,03,03],
-    [03,03,03,03,03,03,03,03,59,59,59,59,59,03,03,03,03,03,03,03,03,03,03,03,03,03]
-    ];
-    let collisionMap = [
-    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [00,00,00,05,05,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00],
-    [05,05,05,05,05,05,05,05,05,00,00,00,05,05,05,05,05,05,05,05,05,05,05,05,05,05],
-    [05,05,05,05,05,05,05,05,05,00,00,00,05,05,05,05,05,05,05,05,05,05,05,05,05,05],
-    [05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05,05]
-    ];
-    
-    // Creating Tilemap
-    const skyColor = "#d2f3f8";
-    const tilemapImg = images[0];
-    const tilemap = new Tilemap(tilemapData, tilemapImg, 1792, 14);
-    console.log(tilemap);
-    
-    // Creating Player 
-    let playerImg = images[1];
-    let player = new Player(playerImg, 256, 256, 10, canvas.height/2 + 60, 8, 8, "#09f");
-    
-    // Controller and other variables
-    let controller = {
-      left: false,
-      right: false,
-      up: false
-    };
-    let isUpPressed;
-    
-    // camera 
-    let camera = {
-      x: 0,
-      y: 0,
-      w: canvas.width,
-      h: canvas.height,
-      zoom: 2
-    };
-    
-    
-    let fisrtbgDx = 0;
-    let secondbgDx = canvas.width;
-    function drawBackground() {
-      ctx.drawImage(images[2], 0, 0, 1024, 1024, fisrtbgDx, 0, canvas.width, canvas.height);
-        ctx.drawImage(images[2], 0, 0, 1024, 1024, secondbgDx, 0, canvas.width, canvas.height);
-          
-        fisrtbgDx -= 0.3;
-        secondbgDx -= 0.3;
-          
-        if(fisrtbgDx <= -canvas.width) {
-          fisrtbgDx = canvas.width;
-        }
-        if(secondbgDx <= -canvas.width) {
-          secondbgDx = canvas.width;
-        }
-    }
-    
-    
-    function animate() {
-        animation = requestAnimationFrame(animate);
-        ctx.fillStyle = "#202830";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        this.wallCollision();
+        this.controller();
         
-        drawBackground();
-        ctx.save();
-        ctx.scale(camera.zoom, camera.zoom);
-        ctx.translate(Math.floor(-camera.x), Math.floor(-camera.y));
-        tilemap.update();
-        player.update();
-        ctx.restore();
+        // adding velocity, gravity and friction
+        this.pos.add(this.vel);
+        this.vel.y += this.g;
+        this.vel.x *= this.friction;
+        this.checkX(map.tile.w, map.tile.h, map.TILES_DATA);
+        this.checkY(map.tile.w, map.tile.h, map.TILES_DATA);
+        this.old.x = this.pos.x;
+        this.old.y = this.pos.y;
         
         
+        this.vel.y > 0 ? this.falling = true : this.falling = false
         
-        //Move player if controls are active
-        if(controller.left) {
-          player.velocity.x -= 0.16;
-        }
-        if(controller.right) {
-          player.velocity.x += 0.16;
-        }
-        if(controller.up) {
-          player.velocity.y = -5;
-          player.jumping = true;
-        }
+        this.falling ? this.top = false : this.top = this.top;
         
-        // Add gravity
-        player.velocity.y += 0.2;
         
-        // update old x and 
-        player.old_x = player.x;
-        player.old_y = player.y;
-        
-        // add velocity to x and y
-        player.x += player.velocity.x;
-        player.y += player.velocity.y;
-        
-        // check for wall collision 
-        if(player.x < 0) {
-          player.velocity.x = 0;
-          player.old_x = player.x = 0;
-        }
-        else if (player.x + player.w > canvas.width) {
-          player.velocity.x = 0;
-          player.old_x = player.x = canvas.width - player.w - 0.01;
-        }
-        
-        if(player.y < 0) {
-          player.velocity.y = 0;
-          player.old_y = player.y = 0;
-        }
-        else if (player.y + player.h > canvas.height) {
-          player.velocity.y = 0;
-          player.old_y = player.y = canvas.height - player.h;
-        }
-        
-        checkForCollision();
-        
-        // add friction
-        player.velocity.x *= 0.9;
-        player.velocity.y *= 0.9;
-        
-        // if you keep holding jump control
-        if(player.jumping) {
-          controller.up = false;
-        }
-        if(isUpPressed && !player.jumping) {
-          player.jumping = true;
-          controller.up = true;
-        }
-        
+        // temporary
+        // if(this.pos.y + this.h > 32*6) this.pos.y = 32*6 - this.h, this.vel.y = 0;
         
     }
-    animate()
+}
+
+
+function drawRect(x,y) {
+    ctx.fillStyle = "rgba(0,255,165,0.3)";
+    ctx.fillRect(x,y,32,32);
+}
+
+
+function gameLoop() {
+    requestAnimationFrame(gameLoop);
+    ctx.fillStyle = "#b7e1ff";
+    ctx.fillRect(0, 0, game.width, game.height);
     
     
+    ctx.save();
+    ctx.translate(Math.floor(game.width/2 - player.pos.x), Math.floor(game.height/2 - player.pos.y));
+    
+    map.update();
+    player.update();
+    ctx.restore();
+}
+
+function main() {
+    p(resources)
+    map = new Tilemap({w: 32, h: 32}, resources.get("tilemap").layers[0].data, resources.get("tileset"), {column: 8, row: 8});
+    player = new Player(20, 20, 15, 15, "#09f");
     
     
-    // function for tile collision and response
-    let collision = {
-      // left of tile
-      1: function(object, row, column) {
-        this.leftCollision(object, column);
-      },
-      
-      // right of tile
-      2:function(object, row, column) {
-        this.rightCollision(object, column);
-
-      },
-      
-      // top of tile
-      3:function(object, row, column) {
-        this.topCollision(object, row);
-      },
-      
-      // bottom of tile
-      4:function(object, row, column) {
-        this.bottomCollision(object, row);
-      },
-      
-      // All side of tile
-      5:function(object, row, column) {
-        if(this.topCollision(object, row)) { return; }
-        if(this.leftCollision(object, column)) { return; }
-        if(this.rightCollision(object, column)) { return; }
-        this.bottomCollision(object, row);
-      },
-      
-      // Top and right side of tile
-      6:function(object, row, column) {
-        if(this.topCollision(object, row)) { return; }
-        this.rightCollision(object, column);
-      },
-      
-      
-      topCollision(object, row) {
-        if(object.y - object.old_y > 0) {
-          let top = row * tilemap.tileHeight;
-          
-          if(object.y + object.h > top && object.old_y + object.h <= top) {
-            object.jumping = false;
-            object.velocity.y = 0;
-            object.old_y = object.y = top - object.h - 0.01;
-            
-            return true;
-          }
-          
-        }
-        return false;
-      },
-      
-      bottomCollision(object, row) {
-        if (object.y - object.old_y < 0) {
-
-          var bottom = (row + 1) * tilemap.tileHeight;
-
-          if (object.y < bottom && object.old_y >= bottom) {
-
-            object.velocity.y = 0;
-            object.old_y = object.y = bottom;
-
-          }
-
-        }
-
-      },
-      
-      rightCollision(object, column) {
-        if (object.x - object.old_x < 0) {
-
-          var right = (column + 1) * tilemap.tileWidth;
-
-          if (object.x < right && object.old_x >= right) {
-
-            object.velocity.x = 0;
-            object.old_x = object.x = right;
-            
-            return true;
-
-          }
-
-        }
-        return false;
-      },
-      
-      leftCollision(object, column) {
-        if(object.x - object.old_x > 0) {
-          let left = column * tilemap.tileWidth;
-          
-          if(object.x + object.w > left && object.old_x + object.w <= left) {
-            object.velocity.x = 0;
-            object.x = object.old_x = left - object.w - 0.001;
-            
-            return true;
-          }
-        }
-        
-        return false;
-      }
-    };
+    map.init();
+    p(map)
     
-    
-    function checkForCollision() {
-      // if player is moving left
-      if(player.x - player.old_x < 0) {
-        let column = Math.floor(player.x / tilemap.tileWidth);
-        let row = Math.floor((player.y + player.h) / tilemap.tileHeight);
-        let valueAtIndex = collisionMap[row][column];
-        
-        if (valueAtIndex != 0) {
-          collision[valueAtIndex](player, row, column);
-        }
+    gameLoop();
+    ctx.imageSmoothingEnabled = false;
+}
 
-        var topRow = Math.floor(player.y / tilemap.tileWidth);
-        valueAtIndex = collisionMap[topRow][column];
 
-        if (valueAtIndex != 0) {
-          collision[valueAtIndex](player, topRow, column);
-        }
-      }
-      
-      // if player is moving right
-      else if (player.x - player.old_x > 0) {
-        let column = Math.floor((player.x + player.w) / tilemap.tileWidth);
-        let row = Math.floor((player.y + player.h) / tilemap.tileWidth);
-        let valueAtIndex = collisionMap[row][column];
+function resize() {
+    game.width = innerWidth;
+    game.height = innerHeight;
+}
 
-        if (valueAtIndex != 0) {
-          collision[valueAtIndex](player, row, column);
-        }
 
-        var topRow = Math.floor(player.y / tilemap.tileWidth);
-        valueAtIndex = collisionMap[topRow][column];
-
-        if (valueAtIndex != 0) {
-          collision[valueAtIndex](player, topRow, column);
-        }
-      }
-      
-      // if player is moving down
-      if (player.y - player.old_y < 0) {
-        let column = Math.floor(player.x / tilemap.tileWidth);
-        let row = Math.floor(player.y / tilemap.tileWidth);
-        let valueAtIndex = collisionMap[row][column];
-
-        if (valueAtIndex != 0) {
-          collision[valueAtIndex](player, row, column);
-        }
-
-        let rightColumn = Math.floor((player.x + player.w) / tilemap.tileWidth);
-        valueAtIndex = collisionMap[row][rightColumn];
-
-        if (valueAtIndex != 0) {
-          collision[valueAtIndex](player, row, rightColumn);
-        }
-      }
-      
-      // Bottom of tile
-      else if (player.y - player.old_y > 0) {
-
-        let column = Math.floor(player.x / tilemap.tileWidth);
-        let row = Math.floor((player.y + player.h) / tilemap.tileWidth);
-        let valueAtIndex = collisionMap[row][column];
-
-        if (valueAtIndex != 0) {
-          collision[valueAtIndex](player, row, column);
-        }
-
-        let rightColumn = Math.floor((player.x + player.w) / tilemap.tileWidth);
-        valueAtIndex = collisionMap[row][rightColumn];
-
-        if (valueAtIndex != 0) {
-          collision[valueAtIndex](player, row, rightColumn);
-        }
-
-      } 
-    }
-    
-    
-    
-    
-    document.querySelector("#left").addEventListener("touchstart", () => {
-      controller.left = true;
-    })
-    document.querySelector("#left").addEventListener("touchend", () => {
-      controller.left = false;
+function loadAssests() {
+    resources = new LoadResources();
+    resources.load({
+        "tilemap": "https://rawcdn.githack.com/AvinashPro/AvinashPro.github.io/main/files/Platformer%20Game/map.json",
+        "tileset": "https://rawcdn.githack.com/AvinashPro/AvinashPro.github.io/main/files/Platformer%20Game/img/tileset.png"
+        /*"tilemap": "res/tilemap/map.json",
+        "tileset": "res/img/tileset.png",
+        "tileCollisionData": "res/tilemap/tileCollision.json"*/
+    }).then(() => {
+        main();
     })
     
-    document.querySelector("#right").addEventListener("touchstart", () => {
-      controller.right = true;
-    })
-    document.querySelector("#right").addEventListener("touchend", () => {
-      controller.right = false;
-    })
-    
-    document.querySelector("#jump").addEventListener("touchstart", () => {
-      isUpPressed = true;
-      
-      let leftColumn = Math.floor(player.x / tilemap.tileWidth);
-      let topRow = Math.floor(player.y / tilemap.tileHeight);
-      let valueAtIndex = collisionMap[topRow][leftColumn];
+}
 
-        if (valueAtIndex != 0) {
-          controller.up = true;
-        }
-      
-    })
-    document.querySelector("#jump").addEventListener("touchend", () => {
-      isUpPressed = false;
-      controller.up = false;
-    })
+
+function addEvent(elm, type, func) {
+    elm.addEventListener(type, func);
+}
+
+leftBtn = selector("#left-btn");
+rightBtn = selector("#right-btn");
+jumpBtn = selector("#jump-btn");
+
+
+addEvent(leftBtn, "touchstart", ()=>{ player.controls.left = true; });
+addEvent(leftBtn, "touchend", ()=>{ player.controls.left = false; });
+addEvent(rightBtn, "touchstart", ()=>{ player.controls.right = true; });
+addEvent(rightBtn, "touchend", ()=>{ player.controls.right = false; });
+addEvent(jumpBtn, "touchstart", ()=>{ player.controls.jump = true; });
+addEvent(jumpBtn, "touchend", ()=>{ player.controls.jump = false; });
+
+
+onload = loadAssests;
+onresize = resize;
+
 </script>
 </body>
 </html>
