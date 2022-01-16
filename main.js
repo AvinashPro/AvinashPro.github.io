@@ -17,6 +17,10 @@ const data = [
         page: true
     },
     {
+        repo: "2D Collision resolution using Vector Math",
+        page: true
+    },
+    {
         repo: "Color Palette",
         page: true
     },
