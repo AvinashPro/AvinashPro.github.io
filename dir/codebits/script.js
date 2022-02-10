@@ -26,7 +26,7 @@ data.forEach(dt => {
         </h3>
         <div class="btn-container">
             <div class="button primary">
-                <a href="files/${dt.folderName}/index.html" class="btn primary">View</a>
+                <a href="../../files/${dt.folderName}/index.html" class="btn primary">View</a>
             </div>
             <div class="button secondary">
                 
