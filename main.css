@@ -28,7 +28,13 @@ body {
     background: linear-gradient(30deg, #f6dcff, #c8fff6);
     
 }
-
+#wlm {
+    display: block;
+    margin: auto;
+    width: 90%;
+    height: 250px;
+    margin-top: 5px;
+}
 #nav {
     position: sticky;
     top: 0;
