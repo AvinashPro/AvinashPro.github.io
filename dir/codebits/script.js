@@ -2,12 +2,52 @@ const data = [
     {
         sNo: 1,
         title: "Platformer Game",
-        folderName: "2D Platformer Game"
+        folderName: "Platformer Game"
     },
     {
         sNo: 2,
         title: "Typing Speedo",
         folderName: "Typing Speedo"
+    },
+    {
+        sNo: 3,
+        title: "Color Palette",
+        folderName: "Color Palette"
+    },
+    {
+        sNo: 4,
+        title: "Circles collision resolution",
+        folderName: "2D Collision resolution using Vector Math"
+    },
+    {
+        sNo: 5,
+        title: "Pixel Art{Matrice}",
+        folderName: "Matrix code generator"
+    },
+    {
+        sNo: 6,
+        title: "Parallax background",
+        folderName: "Parallax Background"
+    },
+    {
+        sNo: 7,
+        title: "Tiles collision resolution",
+        folderName: "2D JS Platformer Collision and Response"
+    },
+    {
+        sNo: 8,
+        title: "T-rex runner game",
+        folderName: "T-rex Runner Game"
+    },
+    {
+        sNo: 9,
+        title: "Snake game",
+        folderName: "Simple Snake Game"
+    },
+    {
+        sNo: 10,
+        title: "To-do list creator",
+        folderName: "Simple todo list creator"
     }
 ]
 
