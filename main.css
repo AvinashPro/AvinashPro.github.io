@@ -300,7 +300,6 @@ body {
     display: block;
     margin: 10px 0 0 0;
     color: #495385;
-    pointer-events: none;
 }
 #about {
     position: relative;
@@ -313,6 +312,7 @@ body {
     width: 100%;
     height: 200px;
     margin: 0;
+    pointer-events: none;
     
 }
 
