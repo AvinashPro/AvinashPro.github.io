@@ -12,12 +12,13 @@
     padding: 0;
 }
 
+body {
+    background: linear-gradient(40deg, #f9e9ff, #d6f8ff);
+}
+
 .container {
     position: relative;
     min-height: 100vh;
-    
-    background: linear-gradient(40deg, #f9e9ff, #d6f8ff);
-    background: ;
 }
 
 .main-heading {
