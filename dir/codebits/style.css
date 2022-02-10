@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+:root {
+    --primaryFont: "Rubik", sans-serif; 
+    --primaryFontColor: #495379;
+    
+    --t: 1px solid indigo;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: relative;
+    min-height: 100vh;
+    
+    background: linear-gradient(40deg, #f9e9ff, #d6f8ff);
+    background: ;
+}
+
+.main-heading {
+    position: relative;
+    width: 100vw;
+    font-family: var(--primaryFont);
+}
+
+#svg {
+    position: relative;
+    width: 100vw;
+    height: 70px;
+}
+
+
+.text {
+    position:absolute;
+    top: 17px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.code {
+    background: ;
+    margin: 20px 0 40px 0;
+}
+
+
+.heading {
+    color: var(--primaryFontColor);
+    margin: 0 0 10px 10px;
+    font-family: var(--primaryFont);
+}
+
+.btn-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.button {
+    position: relative;
+    width: 75px;
+    height: 30px;
+    margin-left: 15px;
+}
+
+.btn {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 75px;
+    height: 30px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    font-family: var(--primaryFont);
+    transition: 0.2s;
+}
+
+.button:before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: calc((100% - (100% - 1px)) / 2);
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);
+    border-radius: 20px;
+}
+
+.button.primary:before {
+    background: #00b1dd;
+}
+.button.secondary:before {
+    background: #e3b800;
+}
+
+.btn.primary {
+    background: #0cf;
+}
+.btn.secondary {
+    background: #ffce00;
+}
+
+.btn:hover {
+    transform: translateY(4px);
+}
+
+
+
+
+.heading-title {
+    font-size: 15px;
+}
