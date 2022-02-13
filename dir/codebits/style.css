@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+:root {
+    --primaryFont: "Rubik", sans-serif; 
+    --primaryFontColor: #495379;
+    
+    --t: 1px solid indigo;
+    
+    --primaryColor: #007dff;
+    --secondaryColor: #ebeffa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--primaryFont);
+}
+
+.container {
+    position: relative;
+    min-height: 100vh;
+    width: 80vw;
+    background: #fff;
+    margin: 35px auto;
+    box-shadow: 0 0 10px rgba(0,161,255,0.1);
+    border-radius: 25px;
+    overflow: hidden;
+    
+}
+
+
+body {
+    background: #d1dfff;
+    background: rgb(0,125,255,0.2);
+}
+
+#heading {
+    position: relative;
+    text-align: center;
+    line-height: 55px;
+    background: var(--primaryColor);
+    background: linear-gradient(0, var(--primaryColor), #0096ff);
+    color: #fff;
+}
+
+#codes-container {
+    padding: 20px;
+}
+.code {
+    margin: 10px 0 25px 0;
+    border-bottom: 1px solid rgba(32,40,48,0.1);
+}
+
+.code:last-child {
+    border-bottom: none;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 10px 0 15px 0;
+}
+
+.btn {
+    position: relative;
+    width: 90px;
+    height: 30px;
+    margin: 0 5px;
+    transition: 0.5s;
+    border: ;
+}
+
+.btn a {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    background: var(--primaryColor);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    background:;
+    cursor: none;
+}
+
+
+
+.btn:before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: rgb(0,125,255,0.3);
+    transform: scale();
+    transition: 0.35s;
+}
+
+.btn.secondary:before {
+    background: rgb(113,127,175,0.3);
+}
+
+.btn:hover:before {
+    width: 105%;
+    height: 120%;
+    top: -10%;
+    left: -2.5%;
+}
+.btn.secondary:hover:before {
+    width: 106%;
+    height: 120%;
+    top: -10%;
+    left: -3%;
+}
+
+.btn.primary {
+    width: 130px;
+}
+
+.btn.secondary a {
+    background: var(--secondaryColor);
+    color: #717FAF;
+}
+
+.sz-20 {
+    font-size: 20px!important;
+}
+.sz-15 {
+    font-size: 15px!important;
+}
+
+.code-title {
+    font-weight: 700;
+    color: #4f5e90;
+}
