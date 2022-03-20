@@ -67,7 +67,7 @@ data.forEach(dt => {
         </p>
             
         <div class="btn-container">
-            <div class="btn primary"><a href="../../files/${dt.folderName}/index.html">VIEW</a></div>
+            <div class="btn primary"><a href="../../files/${dt.folderName}/">VIEW</a></div>
             <div class="btn secondary"><a href="https://github.com/AvinashPro/AvinashPro.github.io/tree/main/files/${dt.folderName}">CODE</a></div>
         </div>
         
