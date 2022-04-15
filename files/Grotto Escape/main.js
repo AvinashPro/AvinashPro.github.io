@@ -252,7 +252,7 @@ function ld_resources() {
             url: "assets/sound/homeBgMusic.mp3", type: "audio"
         },
         "bgMusic": {
-            url: "assets/sound/bg.mp3", type: "audio"
+            url: "assets/sound/backgroundMusic.mp3", type: "audio"
         }
 
 
