@@ -1,0 +1,234 @@
+/* @import url("assets/fonts/PressStart2P-Regular.ttf"); */
+@font-face {
+    font-family: "ps2p";
+    src: url("assets/fonts/PressStart2P-Regular.ttf");
+}
+:root {
+    --primaryFont: "ps2p", sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+canvas {
+    image-rendering: pixelated;
+    z-index: 9;
+}
+.text {
+    position: fixed;
+    color: #fff;
+    top: 10px;
+    left: 10px;
+    user-select: none;
+    display: none;
+    font-family: var(--primaryFont);
+}
+
+#gameOverScreen {
+    display: none;
+    place-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #202646;
+    pointer-events: none;
+    background-size: cover;
+    font-family: var(--primaryFont);
+}
+
+#gameOverScreen.wonScreen {
+    background-image: url("assets/img/winBg.jpg");
+}
+#gameOverScreen.gameOverScreen {
+    background-image: url("assets/img/background.png");
+}
+
+#gameOverScreen > div {
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+#gameOverScreen #got {
+    color: #08f;
+}
+
+
+/* #restart::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(175, 128, 0);
+    top: 10px;
+    left: 0;
+} */
+
+
+
+.controller-container {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+}
+
+.controller-button {
+    width: 55px;
+    height: 55px;
+    user-select: none;
+    font-size: 10px;
+    border: none;
+    background: rgba(20,28,30,0.2);
+    color: rgba(123,172,255,0.8);
+    border-radius: 6px;
+    font-family: var(--primaryFont);
+}
+#jump-btn {
+    position: absolute;
+    right: 20px;
+}
+#left-btn {
+    margin-left: 10px;
+}
+
+#loadingScreen {
+    position: relative;
+    font-family: "ps2p", "Sans-Serif";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background: #202830;
+    z-index: 1000;
+}
+
+#loader {
+    position: relative;
+    width: 60vw;
+    height: 30px;
+    padding: 5px;
+    border: 2px solid #08f;
+}
+
+#loadingBar {
+    width: 0;
+    height: 100%;
+    background: #08f;
+    transition: 0.1s;
+}
+
+#loadingText {
+    color: #08f;
+    margin-bottom: 10px;
+    font-size: 5vw;
+}
+
+#loadingPercent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    font-size: 3vw;
+    color: #accaff;
+}
+#start {
+    margin-top: 50px;
+    color: #f04;
+    animation: blink 1s linear infinite;
+    display: none;
+    font-size: 5vw;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    
+    50% {
+        opacity: 100%;
+    }
+    
+    100% {
+        opacity: 0;
+    }
+}
+
+#homeScreen {
+    position: absolute;
+    top: calc((100vh - 300px) / 2);
+    left: 0;
+    width: 100vw;
+    min-height: 300px;
+    display: grid;
+    background: rgba(32,40,48,0.2);
+    place-items: center;
+    z-index: 10;
+    font-family: var(--primaryFont);
+}
+
+.btn {
+    position: relative;
+    border: none;
+    color: #fff;
+    background: #f04;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    transition: .3s;
+    cursor: pointer;
+    font-family: var(--primaryFont);
+}
+
+.btn-container {
+    position: relative;
+    width: 120px;
+    height: 40px;
+    margin: auto;
+}
+.btn-container:before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background: #cb0036;
+}
+
+.btn:hover {
+    transform: translateY(4px);
+    background: #e0003c;
+}
+
+
+
+.title {
+    font-size: 24px;
+    color: #008bff;
+    font-weight: 800;
+}
+.mt-10 {
+    margin-top: 10px;
+}
+.mt-5 {
+    margin-top: 5px;
+}
+.mt-50 {
+    margin-top: 50px;
+}
