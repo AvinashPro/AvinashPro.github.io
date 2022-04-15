@@ -1,8 +1,8 @@
 const data = [
     {
         sNo: 1,
-        title: "Platformer Game",
-        folderName: "Platformer Game"
+        title: "Grotto Escape Game",
+        folderName: "Grotto Escape"
     },
     {
         sNo: 2,
@@ -48,6 +48,11 @@ const data = [
         sNo: 10,
         title: "To-do list creator",
         folderName: "Simple todo list creator"
+    },
+    {
+        sNo: 11,
+        title: "Platformer Game",
+        folderName: "Platformer Game"
     }
 ]
 
