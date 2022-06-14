@@ -53,6 +53,11 @@ const data = [
         sNo: 11,
         title: "Platformer Game",
         folderName: "Platformer Game"
+    },
+    {
+        sNo: 12,
+        title: "2D Shooter Game",
+        folderName: "Shooter Game"
     }
 ]
 
