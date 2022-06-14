@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+* {
+    margin: 0;
+}
+html, body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+canvas {
+    image-rendering: pixelated;
+}
+
+#dev {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    color: #fff;
+    display: none;
+}
+
+#score {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    color: #fff;
+    font-weight: 700;
+    font-style: italic;
+    font-family: "Rubik", cursive, sans-serif;
+    font-size: 20px;
+    user-select: none;
+    transform: translate(-50%, 0);
+}
