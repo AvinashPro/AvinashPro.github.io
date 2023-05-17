@@ -233,5 +233,5 @@ canvas {
     margin-top: 50px;
 }
 #fpsCont {
-    display: none;
+    display: none!important;
 }
