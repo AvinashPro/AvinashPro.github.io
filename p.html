@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas Basics</title>
+    <link rel="stylesheet" href="https://raw.githack.com/PrismJS/prism-themes/master/themes/prism-duotone-dark.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Rubik", Sans-Serif;
+        }
+        *::selection {
+            background: #09f;
+            color: #f3f6fb;
+        }
+        
+        #loader {
+            display: grid;
+            place-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #f3f6fb;
+            z-index: 100000000;
+        }
+        #loader-circle {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(180deg, #005eff, #b0cdff);
+            animation: rotate 0.5s linear infinite;
+        }
+        #loader-circle:after {
+            content: "";
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            background: #f3f6fb;
+        }
+        #loader-circle:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 101%;
+            height: 101%;
+            border-radius: 50%;
+            background: linear-gradient(90deg, transparent 50%, #f3f6fb 50%);
+        }
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        
+        nav {
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 40px;
+            background: #09f;
+            padding: 0 10px;
+            color: #fff;
+        }
+        nav img {
+            width: 25px;
+            height: 25px;
+            margin: 0 5px;
+        }
+        
+        .container {
+            padding: 15px;
+            background: #f3f6fb;
+            background: #f1f5f8;
+            background: #202830;
+        }
+        .heading {
+            text-align: center;
+            color: #2e405d;
+            color: #f04;
+        }
+        
+        .tab {
+            text-indent: 20px;
+        }
+        .primary {
+            color: #5d8fe4;
+            color: #00ecff;
+        
+        }
+        .secondary {
+            color: #3a485b;
+            color: #00beff;
+        }
+        img {
+            display: block;
+            width: 250px;
+            height: 380px;
+            margin: auto;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+        .center {
+            text-align: center;
+        }
+        .small {
+            font-size: 10px;
+        }
+        .mt-5 {
+            margin-top: 5px;
+        }
+        .mt-10 {
+            margin-top: 10px;
+        }
+        .mt-20 {
+            margin-top: 20px;
+        }
+        .code {
+            width: 100%;
+            max-height: 350px;
+            padding: 10px;
+            background: #202830;
+            color: #eaedef;
+            font-family: Sans-Serif;
+            border-radius: 4px;
+            margin-top: 5px;
+            overflow: scroll;
+            margin-bottom: 20px;
+            outline: none;
+            caret-color: #09f;
+        }
+        
+        canvas {
+            display: block;
+            border: 1px solid #ddd;
+            margin-top: 5px;
+            margin: auto;
+        }
+        .btn {
+            display: block;
+            border-radius: 4px;
+            padding: 8px;
+            background: #08f;
+            outline: none;
+            border: none;
+            color: #fff;
+            margin: auto;
+            margin-top: 4px;
+            user-select: none;
+            transition: 0.5s;
+        }
+        .btn:hover {
+            background: #0071d4;
+        }
+        .mdh {
+            height: 200px;
+        }
+        #code {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="loader">
+        <div id="loader-circle"></div>
+    </div>
+    <nav>
+        <img src="favicon.png"/>
+        <p>Canvas Course</p>
+    </nav>
+    
+    <div class="container">
+        <h2 class="heading">What is canvas?</h2>
+        <p class="primary">So first of all we will discuss about what is canvas and why we use canvas?</p> <br>
+        <p class="primary">Canvas element is the html5 element. We can draw 2d graphics in it. We can draw graphics in canvas only using javascript.</p> <br>
+        <p class="primary">Uses of canvas :</p>
+        <p class="tab secondary">&mdash; It is used to make games like mario, tetris, runner games, puzzle games, trex games and many other games too</p>
+        <p class="tab secondary">&mdash; It is used to make animations</p>
+        <p class="tab secondary">&mdash; It is used to make drawing</p>
+        <p class="tab secondary">&mdash; It is used to make tools and simple app like paint app, matrix code generator etc.</p>
+        <img src="res/images/Grotto.jpg">
+        <p class="secondary small center">Grotto Escape Game</p>
+        
+        <img src="res/images/Game.jp%20Game.jpg">
+        <p class="secondary small center">Pumpkin Head Runner Game created by Luis calderon in canvas</p>
+        
+        <h2 class="heading mt-20">How to setup canvas element?</h2>
+        <p class="primary">First create canvas tag in body</p>
+        <pre><code class="language-markup">&lt;canvas&gt;&lt;/canvas&gt;</code></pre>
+        
+        <p class="primary">Select the canvas element in javascript</p>
+<pre><code class="language-javascript">const canvas = document.querySelector("canvas");</code></pre>
+
+        <p class="primary">The context is an object which contains all the functions and properties which is used to draw graphics in canvas. getContext() function is used to select context</p>
+        <pre><code class="language-javascript">const context = canvas.getContext("2d");</code></pre>
+        
+        <p class="primary">Set the width and height of canvas</p>
+        <pre><code class="language-javascript">canvas.width = 300;
+canvas.height = 300;</code></pre>
+        <p class="secondary">Note: Use window.innerWidth/innerWidth and window.innerHeight/innerHeight to set 100% viewport width and height</p>
+        <pre><code class="language-javascript">canvas.width = innerWidth;
+canvas.height = innerHeight;</code></pre>
+        
+        <h3 class="heading">What is context.beginPath()</h3>
+         <p class="primary mt-5">beginPath() is used to create new shape path or to reset current path. By calling this function and drawing new shape or path will not get affected by previous properties.</p>
+         <pre><code class="language-javascript">context.beginPath();</code></pre>
+        
+        <h3 class="heading">How to draw shapes?</h3>
+        <h4 class="primary mt-10 center">Rectangle</h4>
+        <p class="primary mt-10">fillStyle and fillRect() are used to draw rectangle :-</p>
+        <p class="tab secondary">&mdash; fillStyle property is used to fill the shape with the given color and strokeStyle property is used to give color to the stroke of the shape</p>
+        <p class="tab secondary">&mdash; fillRect() function takes four arguments and that is :-</p>
+        <pre><code class="language-javascript">context.fillRect(x_position, y_position, width, height);</code></pre>
+        <p class="secondary">Example :-</p>
+        <pre><code class="language-javascript">// fill rectangle
+context.fillStyle = "red";
+context.fillRect(10, 15, 30, 60);
+</code></pre>
+        
+        <p class="small secondary">Note: strokeStyle and strokeRect() are used to draw stroke rectangle</p>
+        <p class="secondary mt-5">Example :-</p>
+        <pre><code class="language-javascript">// stroke rectangle
+context.strokeStyle = "#ff0044";
+context.strokeRect(50, 20, 60, 20);
+</code></pre>
+        <p class="secondary small">Note: Take a look at live example at bottom to understand better</p>
+
+        
+        
+        <h4 class="primary center mt-10">Cirlce</h4>
+        <p class="primary mt-10">fillStyle/strokeStyle property, arc() and fill()/stroke() are used to draw circle</p>
+        <p class="tab secondary">&mdash; fillStyle property is used to fill the shape with the given color and strokeStyle property is used to give color to the stroke of the shape</p>
+        <p class="tab secondary">&mdash; arc() is used to draw a circular arc. It takes six arguments :-</p>
+        <pre><code class="language-javascript">context.arc(x, y, radius, startAngle[in radians], endAngle[in radians], [false for clockwise or true for counterclockwise]);</code></pre>
+        <p class="tab secondary">&mdash; fill() is used to fill the circle and stroke() is used to draw stroke circle</p>
+        <img src="res/images/Radian.jpg" class="mdh">
+        <p class="secondary center">Note: &pi; = 180°. So, 2&pi; = 360°</p>
+        
+        <h4 class="heading mt-10">How to convert angle to radians</h4>
+        <p class="primary">We know that &pi; = 180°. So, &pi;/180 = 1° in radians and (&pi;/180) * degree(like 40, 138) = degree in radians</p>
+        <pre><code class="language-javascript">function convertToRadians(degree) {
+    return (-Math.PI/180) * degree;
+}</code></pre>
+        
+        
+        <p class="secondary center">Let's take a look at example</p>
+        <p class="center secondary small">Note: You can change the code</p>
+        <pre><code class="language-javascript" id="code" contenteditable="true">// fill rectangle
+context.beginPath();
+context.fillStyle = "dodgerblue";
+context.fillRect(10, 15, 30, 60);
+
+
+// stroke rectangle
+context.beginPath();
+context.strokeStyle = "#ff0044";
+context.strokeRect(120, 20, 60, 20);
+
+
+// fill circle
+context.beginPath();
+context.fillStyle = "#00ffa5";
+context.arc(60, 125, 25, 0, Math.PI * 2, false);
+context.fill();
+
+
+// stroke circle
+context.beginPath();
+context.strokeStyle = "#0010ff";
+context.arc(80, 205, 25, 0, Math.PI * 2, false);
+context.stroke();
+
+
+// function to convert angle to radians
+function convertToRadians(degree) {
+    return (-Math.PI/180) * degree;
+}
+
+// lets create a circular stroke arc between 0° to 235°
+context.beginPath();
+context.strokeStyle = "#8d00ff";
+context.arc(150, 130, 30, convertToRadians(235), 0, false);
+context.stroke();</code></pre>
+        <canvas></canvas>
+        <button id="output" class="btn">Output</button>
+    </div>
+    
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    const $ = s => document.querySelector(s);
+    addEventListener("load", () => {
+        $("#loader").style.display = "none";
+    })
+    
+    const canvas = document.querySelector("canvas");
+    const context = canvas.getContext("2d");
+    canvas.width = 300;
+    canvas.height = 300;
+    
+    
+    function showOutput() {
+        let code = document.querySelector("#code");
+        
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        
+        try {
+            eval(code.textContent);
+        } catch {}
+    }
+    showOutput();
+    
+    const outputBtn = document.querySelector("#output");
+    outputBtn.addEventListener("click", showOutput);
+    
+</script>
+</body>
+</html>
