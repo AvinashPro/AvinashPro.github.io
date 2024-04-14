@@ -5,57 +5,62 @@ const data = [
         folderName: "Grotto Escape"
     },
     {
-        sNo: 2,
+        sNo:2,
+        title: "My Anime List",
+        folderName: "My Anime List"
+    },
+    {
+        sNo: 3,
         title: "Typing Speedo",
         folderName: "Typing Speedo"
     },
     {
-        sNo: 3,
+        sNo: 4,
         title: "Color Palette",
         folderName: "Color Palette"
     },
     {
-        sNo: 4,
+        sNo: 5,
         title: "Circles collision resolution",
         folderName: "2D Collision resolution using Vector Math"
     },
     {
-        sNo: 5,
+        sNo: 6,
         title: "Pixel Art{Matrice}",
         folderName: "Matrix code generator"
     },
     {
-        sNo: 6,
+        sNo: 7,
         title: "Parallax background",
         folderName: "Parallax Background"
     },
     {
-        sNo: 7,
+        sNo: 8,
         title: "Tiles collision resolution",
         folderName: "2D JS Platformer Collision and Response"
     },
     {
-        sNo: 8,
+        sNo: 9,
         title: "T-rex runner game",
         folderName: "T-rex Runner Game"
     },
     {
-        sNo: 9,
+        sNo: 10,
         title: "Snake game",
         folderName: "Simple Snake Game"
     },
     {
-        sNo: 10,
+        sNo: 11,
         title: "To-do list creator",
         folderName: "Simple todo list creator"
     },
     {
-        sNo: 11,
+        sNo: 12,
         title: "Platformer Game",
         folderName: "Platformer Game"
     },
     {
-        sNo: 12,
+        sNo: 13,
         title: "2D Shooter Game",
         folderName: "Shooter Game"
     }
