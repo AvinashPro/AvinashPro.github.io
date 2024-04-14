@@ -83,3 +83,9 @@ nav {
   opacity: 90%;
   background: #111e34;
 }
+.dark {
+  background: #12233d;
+}
+.mt5 {
+  margin-top: 5px;
+}
