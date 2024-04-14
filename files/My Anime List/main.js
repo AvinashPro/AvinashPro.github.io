@@ -1,3 +1,5 @@
+let movies = 2;
+
 document.getElementById("ecchi").addEventListener("click", () => {
   document.getElementById("ecchi").classList.add("active");
   document.getElementById("main").classList.remove("active");
@@ -38,6 +40,26 @@ function updateList() {
 
   })
 
+  let mep = eep = tep = 0;
+  data.main.forEach(elm => {
+    mep += elm[4];
+  })
+  data.ecchi.forEach(elm => {
+    eep += elm[4];
+  })
+
+  tep = mep + eep;
+  if (!main) html += `
+    <div class="anime dark">
+      <div>
+        <h3 class="title">${data.main.length+data.ecchi.length - movies} Animes Watched</h3>
+        <p>Main: ${data.main.length - movies} anime (${mep}EP)</p>
+        <p class="mt5">Ecchi: ${data.ecchi.length} anime (${eep}EP)</p>
+        <p class="mt5">Runtime: ${tep}EP (${Math.floor(tep/3)} hours)</p>
+      </div>
+    </div>
+   `;
+  
   if (d) document.getElementById("mainList").innerHTML = html;
   else document.getElementById("ecchiList").innerHTML = html;
 }
