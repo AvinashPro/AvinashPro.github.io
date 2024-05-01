@@ -47,7 +47,8 @@ let data = {
     [41, "Insomniacs After School", 2023, "April 2024", 13, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZdy49oCmU2DIpEpOv5MlBCTZQyE_NqxME5Q&usqp=CAU"],
     [42, "The Daily Life of Immortal King", 2020, "April 2024", 51, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2CPweVbDEx2CLv6FlBZyKHDeYUrhbHVBkY7tEX2K-m7_CtJEH855bt6Ab&s=10"],
     [43, "Your Lie in April", 2014, "April 2024", 23, "https://m.media-amazon.com/images/M/MV5BYThlNWY5ZDgtYTIxNC00ZjdiLWJmNGUtMDFjMDlmZTAzOWFiXkEyXkFqcGdeQXVyNTM4NzAzNjc@._V1_FMjpg_UX1000_.jpg"],
-    [44, "My Dress-Up Darling", 2022, "April 2024", 12, "https://m.media-amazon.com/images/I/91z5aNQoudL._AC_UF1000,1000_QL80_DpWeblab_.jpg"]
+    [44, "My Dress-Up Darling", 2022, "April 2024", 12, "https://m.media-amazon.com/images/I/91z5aNQoudL._AC_UF1000,1000_QL80_DpWeblab_.jpg"],
+    [45, "Charlotte", 2015, "May 2024", 14, "https://m.media-amazon.com/images/M/MV5BNDYwNjdjYjktOWMyYS00NmNlLTgwYWItYzNjZGNmNjFjNDk2L2ltYWdlXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg"]
 
   ],
   
