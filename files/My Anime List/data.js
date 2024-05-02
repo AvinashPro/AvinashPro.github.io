@@ -48,7 +48,9 @@ let data = {
     [42, "The Daily Life of Immortal King", 2020, "April 2024", 51, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2CPweVbDEx2CLv6FlBZyKHDeYUrhbHVBkY7tEX2K-m7_CtJEH855bt6Ab&s=10"],
     [43, "Your Lie in April", 2014, "April 2024", 23, "https://m.media-amazon.com/images/M/MV5BYThlNWY5ZDgtYTIxNC00ZjdiLWJmNGUtMDFjMDlmZTAzOWFiXkEyXkFqcGdeQXVyNTM4NzAzNjc@._V1_FMjpg_UX1000_.jpg"],
     [44, "My Dress-Up Darling", 2022, "April 2024", 12, "https://m.media-amazon.com/images/I/91z5aNQoudL._AC_UF1000,1000_QL80_DpWeblab_.jpg"],
-    [45, "Charlotte", 2015, "May 2024", 14, "https://m.media-amazon.com/images/M/MV5BNDYwNjdjYjktOWMyYS00NmNlLTgwYWItYzNjZGNmNjFjNDk2L2ltYWdlXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg"]
+    [45, "Charlotte", 2015, "May 2024", 14, "https://m.media-amazon.com/images/M/MV5BNDYwNjdjYjktOWMyYS00NmNlLTgwYWItYzNjZGNmNjFjNDk2L2ltYWdlXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg"],
+    ["M3", "A Silent Voice", 2016, "02 May 2024", 6, "https://imgsrv.crunchyroll.com/cdn-cgi/image/format=auto,fit=contain,width=480,height=720,quality=85/catalog/crunchyroll/c78169bec692d5b9b9f3776df14d8428.jpe"],
+    ["M4", "I Want to Eat Your Pancreas", 2018, "02 May 2024", 6, "https://miro.medium.com/v2/resize:fit:1400/0*-39YDA5ghsLXTO7X"]
 
   ],
   
@@ -70,3 +72,6 @@ let data = {
 
   ]
 }
+
+
+let movies = 4;
