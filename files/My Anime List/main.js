@@ -1,5 +1,3 @@
-let movies = 2;
-
 document.getElementById("ecchi").addEventListener("click", () => {
   document.getElementById("ecchi").classList.add("active");
   document.getElementById("main").classList.remove("active");
