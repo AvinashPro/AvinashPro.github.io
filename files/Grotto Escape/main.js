@@ -915,7 +915,7 @@ class Player extends Mover {
 
         this.vel.y += this.g;
         this.vel.x *= 1 - this.friction;
-        this.pos = this.pos.add(this.vel);
+        this.pos = this.pos.add(this.vel.mult(dt));
 
         if (this.vel.y > this.g) this.falling = true;
         else this.falling = false;
