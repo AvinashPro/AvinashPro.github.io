@@ -26,7 +26,7 @@ let data = {
     [21, "Classroom of the Elite", 2017, "October 2023", 38, "https://m.media-amazon.com/images/M/MV5BMDM0MmVlOGItNDRjYi00MmE3LWExMjktMDc0YTYxYjAzYTE4XkEyXkFqcGdeQXVyNjc3NTI5MDY@._V1_FMjpg_UX1000_.jpg"],
     [22, "The Quintessential Quintuplets", 2019, "October 2023", 33, "https://m.media-amazon.com/images/M/MV5BYzU4YTdmYmYtNjVhYy00Njk1LWJmYjEtZmQ3MWNkZTMzYzNiXkEyXkFqcGdeQXVyNDAzNDkxNTU@._V1_.jpg"],
     [23, "Masamune-kun's Revenge", 2017, "October 2023", 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrRe_oW7_Kz_vq8P8qKNookiuTLq4oZLXH2Q&usqp=CAU"],
-    [24, "The Dangers in my heart", 2023, "October 2023", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVHaT8m0Z-o-M_Zjn5tvJ56VMF1kOgbjr093u9CVnpsxMTMgueV9wKEkF&s=10"],
+    [24, "The Dangers in my heart", 2023, "October 2023", 26, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVHaT8m0Z-o-M_Zjn5tvJ56VMF1kOgbjr093u9CVnpsxMTMgueV9wKEkF&s=10"],
     [25, "Lookism", 2022, "October 2023", 8, "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p23088641_b_v7_ac.jpg"],
     [26, "Heavenly Delusion", 2023, "November 2023", 13, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmpj-ARYrMKM-PG68kSSEt4QyEOGXFfQ2vtw&usqp=CAU"],
     [27, "Shikimori's not just a cutie", 2022, "November 2023", 12, "https://m.media-amazon.com/images/M/MV5BYjhkY2EyYjEtYjhlNS00ZmRiLWFmNjktNjJjNTJmYWQ2ZjMyXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg"],
@@ -50,7 +50,8 @@ let data = {
     [44, "My Dress-Up Darling", 2022, "April 2024", 12, "https://m.media-amazon.com/images/I/91z5aNQoudL._AC_UF1000,1000_QL80_DpWeblab_.jpg"],
     [45, "Charlotte", 2015, "May 2024", 14, "https://m.media-amazon.com/images/M/MV5BNDYwNjdjYjktOWMyYS00NmNlLTgwYWItYzNjZGNmNjFjNDk2L2ltYWdlXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg"],
     ["M3", "A Silent Voice", 2016, "02 May 2024", 6, "https://imgsrv.crunchyroll.com/cdn-cgi/image/format=auto,fit=contain,width=480,height=720,quality=85/catalog/crunchyroll/c78169bec692d5b9b9f3776df14d8428.jpe"],
-    ["M4", "I Want to Eat Your Pancreas", 2018, "02 May 2024", 6, "https://miro.medium.com/v2/resize:fit:1400/0*-39YDA5ghsLXTO7X"]
+    ["M4", "I Want to Eat Your Pancreas", 2018, "02 May 2024", 6, "https://miro.medium.com/v2/resize:fit:1400/0*-39YDA5ghsLXTO7X"],
+    [46, "Angel Beats!", 2010, "May 2024", 15, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROxx7O_Mr5oUz21_n-Ap6eW1MchcqZX5WG_liwv6WiTpkH8qjZq8R-zouF&s=10"]
 
   ],
   
