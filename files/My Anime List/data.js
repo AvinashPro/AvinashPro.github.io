@@ -51,7 +51,8 @@ let data = {
     [45, "Charlotte", 2015, "May 2024", 14, "https://m.media-amazon.com/images/M/MV5BNDYwNjdjYjktOWMyYS00NmNlLTgwYWItYzNjZGNmNjFjNDk2L2ltYWdlXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg"],
     ["M3", "A Silent Voice", 2016, "02 May 2024", 6, "https://imgsrv.crunchyroll.com/cdn-cgi/image/format=auto,fit=contain,width=480,height=720,quality=85/catalog/crunchyroll/c78169bec692d5b9b9f3776df14d8428.jpe"],
     ["M4", "I Want to Eat Your Pancreas", 2018, "02 May 2024", 6, "https://miro.medium.com/v2/resize:fit:1400/0*-39YDA5ghsLXTO7X"],
-    [46, "Angel Beats!", 2010, "May 2024", 15, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROxx7O_Mr5oUz21_n-Ap6eW1MchcqZX5WG_liwv6WiTpkH8qjZq8R-zouF&s=10"]
+    [46, "Angel Beats!", 2010, "May 2024", 15, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROxx7O_Mr5oUz21_n-Ap6eW1MchcqZX5WG_liwv6WiTpkH8qjZq8R-zouF&s=10"],
+    [47, "Oreshura", 2013, "May 2024", 13, "https://m.media-amazon.com/images/M/MV5BODI3YzcxYzctODcwYS00MGI1LThhOGYtNjEzYTZmODJhMjMzXkEyXkFqcGdeQXVyNjc0ODMyMDc@._V1_.jpg"]
 
   ],
   
