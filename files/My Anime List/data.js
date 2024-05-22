@@ -55,7 +55,7 @@ let data = {
     [47, "Oreshura", 2013, "May 2024", 13, "https://m.media-amazon.com/images/M/MV5BODI3YzcxYzctODcwYS00MGI1LThhOGYtNjEzYTZmODJhMjMzXkEyXkFqcGdeQXVyNjc0ODMyMDc@._V1_.jpg"],
     [48, "Akashic Records of Bastard Magic Instructor", 2017, "May 2024", 12, "https://m.media-amazon.com/images/M/MV5BNGM3YWMxMzQtNmFiMS00NDczLWJkMjctODJjZWIwMmIwYzNiXkEyXkFqcGdeQXVyMjI5MjU5OTI@._V1_.jpg"],
     [49, "Anohana: The Flower We Saw That Day", 2011, "May 2024", 11, "https://m.media-amazon.com/images/M/MV5BNTc1NzEwOTU0MV5BMl5BanBnXkFtZTgwNTMxMzY5MDE@._V1_.jpg"],
-    [50, "Mushoku Tensei", 2021, "May 2024", 49, "https://m.media-amazon.com/images/M/MV5BNTc1NzEwOTU0MV5BMl5BanBnXkFtZTgwNTMxMzY5MDE@._V1_.jpg"]
+    [50, "Mushoku Tensei", 2021, "May 2024", 49, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDtVH-r28ww8YHNFExF7nu_vyiQ7W8QGhpf-qKH26wWCyajN4wkkWYngk&s=10"]
 
   ],
   
