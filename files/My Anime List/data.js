@@ -56,7 +56,9 @@ let data = {
     [48, "Akashic Records of Bastard Magic Instructor", 2017, "May 2024", 12, "https://m.media-amazon.com/images/M/MV5BNGM3YWMxMzQtNmFiMS00NDczLWJkMjctODJjZWIwMmIwYzNiXkEyXkFqcGdeQXVyMjI5MjU5OTI@._V1_.jpg"],
     [49, "Anohana: The Flower We Saw That Day", 2011, "May 2024", 11, "https://m.media-amazon.com/images/M/MV5BNTc1NzEwOTU0MV5BMl5BanBnXkFtZTgwNTMxMzY5MDE@._V1_.jpg"],
     [50, "Mushoku Tensei", 2021, "May 2024", 49, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDtVH-r28ww8YHNFExF7nu_vyiQ7W8QGhpf-qKH26wWCyajN4wkkWYngk&s=10"],
-    [51, "An Archdemon's Dilemma: How to Love Your Elf Bride", 2024, "May 2024", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDZH-gndJ82o828-52Jrha3gwOLZ56jdsDIyDCFWL9aZkisOwMrj4WuLrT&s=10"]
+    [51, "An Archdemon's Dilemma: How to Love Your Elf Bride", 2024, "May 2024", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDZH-gndJ82o828-52Jrha3gwOLZ56jdsDIyDCFWL9aZkisOwMrj4WuLrT&s=10"],
+    [52, "Blue Spring Ride", 2014, "May 2024", 14, "https://m.media-amazon.com/images/M/MV5BYzBkOGIyMTMtZjViZC00NGY1LWFhMzItZGI2MmEwODIyYjVjXkEyXkFqcGdeQXVyNjc3MjQzNTI@._V1_FMjpg_UX1000_.jpg"],
+    [53, "Chillin' in Another World With Level 2 Super Cheat Powers", 2024, "May 2024", 12, "https://m.media-amazon.com/images/M/MV5BZjlkOTQ5NTYtZDZiNC00ZTg2LTlhOTYtZjE2ODdlNDhkMjRjXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg"]
 
   ],
   
