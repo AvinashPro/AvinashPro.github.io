@@ -59,7 +59,8 @@ let data = {
     [51, "An Archdemon's Dilemma: How to Love Your Elf Bride", 2024, "May 2024", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDZH-gndJ82o828-52Jrha3gwOLZ56jdsDIyDCFWL9aZkisOwMrj4WuLrT&s=10"],
     [52, "Blue Spring Ride", 2014, "May 2024", 14, "https://m.media-amazon.com/images/M/MV5BYzBkOGIyMTMtZjViZC00NGY1LWFhMzItZGI2MmEwODIyYjVjXkEyXkFqcGdeQXVyNjc3MjQzNTI@._V1_FMjpg_UX1000_.jpg"],
     [53, "Chillin' in Another World With Level 2 Super Cheat Powers", 2024, "May 2024", 12, "https://m.media-amazon.com/images/M/MV5BZjlkOTQ5NTYtZDZiNC00ZTg2LTlhOTYtZjE2ODdlNDhkMjRjXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg"],
-    [54, "Re:Zero - Starting Life in Another World", 2016,"June 2024", 57, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5Bf55-UOTZcTWU3NT6BLINZsEXTMCF8HNaA&usqp=CAU"]
+    [54, "Re:Zero - Starting Life in Another World", 2016,"June 2024", 57, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5Bf55-UOTZcTWU3NT6BLINZsEXTMCF8HNaA&usqp=CAU"],
+    [55, "Golden Time", 2013, "June 2024", 24, "https://m.media-amazon.com/images/M/MV5BZTI0MDA5MWUtMWMyYS00NWM3LWE5ZmYtYTUxZmMxMGE5Y2IwXkEyXkFqcGdeQXVyNTIxNDgzOTg@._V1_.jpg"]
 
   ],
   
