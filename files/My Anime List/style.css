@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto Condensed", "Rubik", Sans-Serif;
+  font-family: "Roboto Condensed", Sans-Serif;
+  font-weight: 300;
+  font-style: normal;
+  font-optical-sizing: auto;
 }
 body {
   background: #0A1930;
