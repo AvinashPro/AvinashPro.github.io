@@ -77,7 +77,8 @@ let data = {
     [9, "Okusama Ga Seitokaichou!", 2015, "October 2023", 8, "https://cdn.myanimelist.net/images/anime/12/75012.jpg"],
     [10, "Chained Soldier", 2024, "February 2024", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD9MqWnLJeudjBj1TD6ff-J_pSf3skX3G06wlospCnBmxNIhvK9kbb-7xZ&s=10"],
     [11, "The Comic Artist & his assistants", 2014, "February 2024", 9, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7bjd3BPAp7U7yBBf7U9lKKL4baGjmslcVh1G8zJbfRqWTsH-s"],
-    [12, "Tales of Wedding Rings", 2024, "March 2024", 12, "https://m.media-amazon.com/images/M/MV5BMDM0OGUwN2QtZWFiOS00NWMyLWI0ZDgtMjJlNDUxYTY2YjJhXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg"]
+    [12, "Tales of Wedding Rings", 2024, "March 2024", 12, "https://m.media-amazon.com/images/M/MV5BMDM0OGUwN2QtZWFiOS00NWMyLWI0ZDgtMjJlNDUxYTY2YjJhXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg"],
+    [13, "Elfen Lied", 2004, "June 2024", 14, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOlVI_2Lll-0qQaWZNdhRGV6ZuFljGQar6XYNhRV0IKtvuWWan3ZXpQu1v&s=10"]
 
 
   ]
