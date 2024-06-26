@@ -5,22 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>MyAnimeList</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
 </head>
 <body>
-  
-  <nav id="nav"><p>MyAnimeList</p></nav>
-  <div class="container">
-    <div class="btnContainer">
-      <div class="btn active" id="main">MAIN</div>
-      <div class="btn" id="ecchi">ECCHI</div>
+
+  <nav id="nav">
+    <div id="logo">
+      <img src="res/logo.png" alt="logo" />
+      <a href="#" id="title">
+        <span>MyAnime</span><span>List</span>
+      </a>
     </div>
-    
-    <div class="list" id="mainList"></div>
-    <div class="list "id="ecchiList"></div>
-    
-  </div>
-  
+    <div id="hamburger">
+      <div id="menu-line"></div>
+    </div>
+    <div id="closeNav"></div>
+    <ul id="nav-links">
+      <li>
+        <div class="a" id="light">
+          <div>
+            <i class="fas fa-sun icon"></i>
+            <p>
+              Light Mode
+            </p>
+          </div>
+          <div>
+            <button class="checkBtn"></button>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="a" id="superDark">
+          <div>
+            <i class="fas fa-moon icon"></i>
+            <p>
+              Super Dark Mode
+            </p>
+          </div>
+          <div>
+            <button class="checkBtn"></button>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="a hide" id="ecchi">
+          <div>
+            <i class="fas fa-cat icon"></i>
+            <p>
+              Ecchi
+            </p>
+          </div>
+          <div>
+            <button class="checkBtn"></button>
+          </div>
+        </div>
+        <div class="a" id="pCont">
+          <i class="fas fa-lock icon"></i>
+          <input type="text" name="password" id="password" placeholder="Enter Password..." />
+        </div>
+      </li>
+      <li>
+        <div class="a">
+          <div>
+            <i class="fad fa-search icon"></i>
+          </div>
+          <div>
+            <input type="text" name="search" id="search" value="" placeholder="Search Anime" />
+          </div>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="img-section hide" id="img-section"></div>
+  <img src="res/illustration.png" alt="Illustration" id="ill">
+  <div id="details"></div>
+  <div class="anime" id="anime"></div>
+
+
   <script src="data.js"></script>
   <script src="main.js"></script>
 </body>
