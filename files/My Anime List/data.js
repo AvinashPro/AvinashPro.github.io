@@ -84,5 +84,3 @@ let data = {
   ]
 }
 
-
-let movies = 4;
