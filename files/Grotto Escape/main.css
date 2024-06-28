@@ -19,6 +19,7 @@ html, body {
 canvas {
     image-rendering: pixelated;
     z-index: 9;
+    touch-action: none;
 }
 .text {
     position: fixed;
