@@ -74,6 +74,9 @@
           </div>
         </div>
       </li>
+      <li>
+        <button id="saveBtn"><i class="fad fa-file-pdf"></i> Save PDF</button>
+      </li>
     </ul>
   </nav>
 
@@ -82,7 +85,11 @@
   <div id="details"></div>
   <div class="anime" id="anime"></div>
 
-
+  <script>
+    document.getElementById("saveBtn").addEventListener("click", () => {
+          window.print();
+    })
+  </script>
   <script src="data.js"></script>
   <script src="main.js"></script>
 </body>
