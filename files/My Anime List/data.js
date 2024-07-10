@@ -63,7 +63,8 @@ let data = {
     [55, "Golden Time", 2013, "June 2024", 24, "https://m.media-amazon.com/images/M/MV5BZTI0MDA5MWUtMWMyYS00NWM3LWE5ZmYtYTUxZmMxMGE5Y2IwXkEyXkFqcGdeQXVyNTIxNDgzOTg@._V1_.jpg"],
     [56, "Summer Time Rendering", 2022, "June 2024", 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQVC38-5y6J9YcCSjcRfz__YabhFK40kfRP5qSvvra62_bRDT7hH4hflN6&s=10"],
     [57, "Btooom!", 2012, "July 2024", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ_KmhIgAFcJqtU0DciatZPZ88Y8VkUPBoiNc683R65ZRR_8-Yp4pwM6F2&s=10"],
-    [58, "Alya Sometimes Hides Her Feelings in Russian", 2024, "July 2024", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz-grXSjIjFX6I6sHLua_ZMhDUdX8cX70N5F5U72jVqSO4-C789gQwiTz0&s=10"]
+    [58, "Alya Sometimes Hides Her Feelings in Russian", 2024, "July 2024", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz-grXSjIjFX6I6sHLua_ZMhDUdX8cX70N5F5U72jVqSO4-C789gQwiTz0&s=10"],
+    ["M4", "Suzume no Tojimari", 2022, "10 July 2024", 6, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTijOtmvDkiqYIJ5w3v2DZHhj-B-lxvthmRs8RTT4AcKKqXqCPPvw4JddU0&s=10"]
 
   ],
   
