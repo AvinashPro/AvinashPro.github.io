@@ -134,6 +134,7 @@ function search() {
     document.getElementById("search").value = "";
 
     draw(data.main);
+    details(false);
   }
 }
 document.getElementById("search").addEventListener("input", search);
@@ -166,6 +167,7 @@ function PasswordVerifier() {
       localStorage.setItem("password-require", false);
       document.getElementById("pCont").classList.add("hide");
       document.getElementById("ecchi").classList.remove("hide");
+      details(true);
     }
   })
 }
@@ -229,7 +231,7 @@ function details(ec) {
 
     <div id="para">
     <p style="font-size:16px; font-weight: bold;">Anime Runtime</p>
-    <p><span class="t12">Main<sub>${mainC}</sub></span>: <span class="bold">${mainE} EP</span> or about <span class="bold">${Math.floor(mainE/3)} hours</span></p>
+    <p><span class="t12 bold">Main<sub>${mainC}</sub></span>: <span class="bold">${mainE} EP</span> or about <span class="bold">${Math.floor(mainE/3)} hours</span></p>
     <p><span class="t12 bold">${movieC} Movies</span> watched of about <span class="bold">${Math.floor(movieE/3)} hours</span></p>
     <p><span class="t12">Gross</span>: <span class="bold">${totalE} Episodes</span> or about <span class="bold">${Math.floor(totalE/3)} hours</span></p>
     </div>`;
@@ -244,21 +246,28 @@ function updateAndAddEventImg() {
     if (images.hasOwnProperty(key)) {
       let img = images[key];
       img.addEventListener("dblclick", () => {
-        showImage(img.src, img.name);
+        showImage(img.src, img.name, img.getBoundingClientRect().x, img.getBoundingClientRect().y - 45);
+        onresize = resize;
+      })
+      img.addEventListener("mousedown", () => {
+        showImage(img.src, img.name, img.getBoundingClientRect().x, img.getBoundingClientRect().y - 45);
+        onresize = resize;
       })
     }
   }
 }
 
 
-function showImage(url, caption) {
+function showImage(url, caption, x, y) {
   let imgSec = document.getElementById("img-section");
+  let orientation;
+  innerWidth > innerHeight ? orientation = "landscape" : orientation = "potrait";
   imgSec.classList.remove("hide");
   imgSec.classList.add("fadeIn");
   imgSec.innerHTML = `<div id="bg">
   <div>
-  <img src="${url}" alt="Anime Image"/>
-  <i class="fad fa-times" id="close"></i>
+  <img src="${url}" alt="Anime Image" class="${orientation}Img" id="imgSecImg" style="left: ${x}px; top: ${y}px;"/>
+  <i class="fas fa-arrow-left" id="close"></i>
   <div class="caption">
   <a href="https://www.google.com/search?q=${caption}&oq=${caption}" target="_blank">${caption}</a>
   </div>
@@ -268,4 +277,12 @@ function showImage(url, caption) {
     imgSec.classList.remove("fadeIn");
     imgSec.classList.add("hide");
   })
+}
+
+function resize() {
+  let orientation;
+  innerWidth > innerHeight ? orientation = "landscape" : orientation = "potrait";
+  document.getElementById("imgSecImg").classList.remove("potraitImg", "landscapeImg");
+  document.getElementById("imgSecImg").classList.add(`${orientation}Img`);
+  
 }
