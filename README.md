@@ -1,5 +1,7 @@
-### Hi, I'm Avinash
+### Hello, I'm Avinash
 
-This repository is based on web and game development. You can find all my projects with source code and resources in this repository. I really like games so much. Not only do I love playing games but developing them excites me too! As a result, I created this repo. Feedbacks are always welcome😉.
+This repository is based on Front-end Web and Javascript Game Development.
 
-Reach me at: [Github](https://github.com/avinashpro) [Sololearn](https://www.sololearn.com/Profile/21806406/?ref=app) [Telegram](https://t.me/spicoder)
+July 2020 - February 2022 (Active in programming)
+
+Contact Me: [Reddit](https://www.reddit.com/u/Spicoder/s/1Qg0WG63H4)
