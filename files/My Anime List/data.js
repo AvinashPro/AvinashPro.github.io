@@ -68,7 +68,8 @@ let data = {
     ["M6", "The Tunnel to Summer, the Exit of Goodbyes", 2022, "12 July 2024", 4, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRswosiyhFXZfnoUY2mdufcK3YsuFx_UwYWBOnk1AYD2AmKl1rVzwrvp1iD&s=10"],
     ["M7", "Hello World", 2019, "12 July 2024", 5, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSFkfz0Ii8plf5DynUrlyx_vpT5FKKQBPZDw&usqp=CAU"],
     [59, "Mamahaha no Tsurego ga Motokano datta", 2022, "July 2024", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsnz2VzVtoRqY1UX23GVXBdBqfcenhmbEly9aS29q74Yg3UcmTGcE9YYI&s=10"],
-    [60, "DARLING in the FRANXX", 2018, "July 2024", 24, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsty1igug9wke5ys_3igF9JMkosV-yKmGjkEfiH4ohgKS0Dlrdmf6yWgdL&s=10"]
+    [60, "DARLING in the FRANXX", 2018, "July 2024", 24, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsty1igug9wke5ys_3igF9JMkosV-yKmGjkEfiH4ohgKS0Dlrdmf6yWgdL&s=10"],
+    [61, "Chainsaw Man", 2022, "July 2024", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6BXc8DFi93_d10o_8de1hoewyrtiuMTn48N83yQbjHNisVnlesmYaz40r&s=10"]
 
   ],
   
