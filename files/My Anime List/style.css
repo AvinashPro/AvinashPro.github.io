@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital@0;1&display=swap');
 @import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
 :root {
   --primaryFont: "Barlow Condensed", Sans-Serif;
@@ -516,9 +517,17 @@ html {
   width: 0;
   height: 0;
   z-index: 100;
+  display: none;
 }
 .fadeIn {
+  display: block;
   animation: fadeIn 0.35s;
+  animation-fill-mode: forwards;
+}
+.fadeOut {
+  display: block;
+  animation: fadeOut 0.2s;
+  animation-fill-mode: forwards;
 }
 @keyframes fadeIn {
   0% {
@@ -526,6 +535,15 @@ html {
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
   }
 }
 .img-section img {
@@ -711,30 +729,138 @@ body.light {
   #nav, #ill {
     display: none;
   }
+  #addAnime {
+    display: none;
+  }
   @page {
     margin: -1px;
   }
 }
 
-#saveBtn {
-  position: relative;
-  font-family:;
-  width: 140px;
-  height: 40px;
+#addAnime {
   margin: auto;
+  width: 80vw;
+  max-width: 300px;
+  color: #dde8ff;
+  margin-bottom: 40px;
+}
+.flex {
+  display: flex;
+}
+.space-between {
+  justify-content: space-between;
+}
+#addAnime h3 {
+  color: #fff;
+  font-family: "Montserrat";
+}
+#addAnime #addAnimeBtn {
+  background: #09f;
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  border: none;
+  outline: none;
+  transition: 0.5s;
+}
+#addAnime #addAnimeBtn:hover {
+  background: rgb(0,99,165);
+}
+
+#addAnimeCont {
+  position: fixed;
+  top: 45px;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  color: #fff;
+  z-index: 100;
+  background: rgba(0,13,38,.7);
+  backdrop-filter: blur(20px);
+  display: none;
+}
+#addAnimeCont > div {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+ /*background: rgba(0, 13, 38, 0.8);
+  backdrop-filter: blur(10px);*/
+}
+
+
+.field {
+    position: relative;
+    width: 80vw;
+    max-width: 300px;
+    display: block;
+    margin: 15px auto 25px auto;
+}
+.field input {
+    width: 100%;
+    height: 25px;
+    margin: auto;
+    background: none;
+    border: none;
+    border-bottom: 1.5px solid #365068;
+    padding: 5px;
+    outline: none;
+    caret-color: #0084ff;
+    transition: 0.5s;
+    color: #fff;
+}
+.field label {
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    color: #365068;
+    transition: .5s;
+    user-select: none;
+    pointer-events: none;
+}
+.field input:focus ~ label,
+.field input:valid ~ label
+{
+    color: #0084ff;
+    font-size: 12px;
+    top: -12px;
+}
+.field input:focus {
+    border-bottom-color: #0084ff;
+}
+.field input:valid,
+.field textarea:valid
+{
+    border-bottom-color: #0084ff;
+}
+
+.btn {
+  position: relative;
+  width: 60px;
+  height: 30px;
   transition: 0.5s;
   background: #007dff;
   color: #fff;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 3px;
   font-size: 13px;
   font-weight: 700;
-  font-family: "Montserrat";
+  font-family: "Rubik";
   border: none;
-  cursor: none;
+  user-select: none;
+}
+label.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2px;
 }
 
-#saveBtn:before {
+.btn:before {
   content: "";
   position: absolute;
   display: block;
@@ -743,13 +869,134 @@ body.light {
   width: 100%;
   height: 100%;
   border-radius: 8px;
-  background: rgb(0,125,255,0.3);
+  background: rgba(0,125,255,0.3);
+  z-index: -1;
   transform: scale();
   transition: 0.35s;
 }
-#saveBtn:hover:before {
-  width: 105%;
+.btn:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  background: rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: 0.5s;
+}
+.btn:hover:after {
+  opacity: 1;
+}
+.btn:hover:before {
+  width: 110%;
   height: 120%;
   top: -10%;
-  left: -2.5%;
+  left: -5%;
+}
+.btn.magenta {
+  background: #f04;
+}
+.btn.lime {
+  background: rgb(173,255,0);
+  color: #202830;
+}
+.btn.lime:hover:before {
+  background: rgb(121,179,0);
+}
+.btn.white {
+  background: #fff;
+  color: #202830;
+}
+.btn.white:hover:before {
+  background: #8d8d8d;
+}
+
+.btn.magenta:hover:before {
+  background: rgba(255,0,68,0.3);
+}
+
+.checkbox label {
+  color: rgb(119,164,196);
+  margin: 0 5px 0 20px;
+  font-size: 18px;
+}
+.checkbox input[type="checkbox"] {
+    position: relative;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #09f;
+    outline: none;
+    border-radius: 3px;
+}
+.checkbox input[type="checkbox"]:before {
+    content: "\f00c";
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 300;
+    position: absolute;
+    display: grid;
+    place-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background: #09f;
+    opacity: 0;
+    transition: .5s;
+    border-radius: 2px;
+}
+.checkbox input[type="checkbox"]:checked:before {
+    opacity: 1;
+}
+
+#optionCont {
+  display: none;
+  position: fixed;
+  top: 45px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background: rgba(0, 13, 38, 0.7);
+  backdrop-filter: blur(20px);
+}
+
+#optionCont div {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#optionCont button {
+  width: 130px;
+  height: 40px;
+  margin: 10px 0;
+}
+.btn.green {
+  background: rgb(0,216,106);
+}
+.btn.green:hover:before {
+  background: rgb(0,129,63);
+}
+#optionCont #confirm {
+  position: absolute;
+  top: calc((100vh - 45px - 210px) / 2);
+  left: calc((100vw - 300px) / 2);
+  width: 300px;
+  height: 210px;
+  background: rgba(0, 13, 38, 0.6);
+  backdrop-filter: blur(20px);
+  color: #fff;
+  border-radius: 8px;
+  display: none;
+}
+#optionCont #confirm button {
+  margin: 5px 5px;
 }
