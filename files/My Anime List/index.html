@@ -1,94 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>MyAnimeList</title>
-  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MyAnimeList</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
 </head>
+
 <body>
 
-  <nav id="nav">
-    <div id="logo">
-      <img src="res/logo.png" alt="logo" />
-      <a href="#" id="title">
-        <span>MyAnime</span><span>List</span>
-      </a>
-    </div>
-    <div id="hamburger">
-      <div id="menu-line"></div>
-    </div>
-    <div id="closeNav"></div>
-    <ul id="nav-links">
-      <li>
-        <div class="a" id="light">
-          <div>
-            <i class="fas fa-sun icon"></i>
-            <p>
-              Light Mode
-            </p>
-          </div>
-          <div>
-            <button class="checkBtn"></button>
-          </div>
+    <nav id="nav">
+        <div id="logo">
+            <img src="res/logo.png" alt="logo" />
+            <a href="README.md" id="title">
+                <span>MyAnime</span><span>List</span>
+            </a>
         </div>
-      </li>
-      <li>
-        <div class="a" id="superDark">
-          <div>
-            <i class="fas fa-moon icon"></i>
-            <p>
-              Super Dark Mode
-            </p>
-          </div>
-          <div>
-            <button class="checkBtn"></button>
-          </div>
+        <div id="hamburger">
+            <div id="menu-line"></div>
         </div>
-      </li>
-      <li>
-        <div class="a hide" id="ecchi">
-          <div>
-            <i class="fas fa-cat icon"></i>
-            <p>
-              Ecchi
-            </p>
-          </div>
-          <div>
-            <button class="checkBtn"></button>
-          </div>
-        </div>
-        <div class="a" id="pCont">
-          <i class="fas fa-lock icon"></i>
-          <input type="password" name="password" id="password" placeholder="Enter Password..." />
-        </div>
-      </li>
-      <li>
-        <div class="a">
-          <div>
-            <i class="fad fa-search icon"></i>
-          </div>
-            <input type="text" name="search" id="search" value="" placeholder="Search Anime" />
-        </div>
-      </li>
-      <li>
+        <div id="closeNav"></div>
+        <ul id="nav-links">
+            <li>
+                <div class="a" id="light">
+                    <div>
+                        <i class="fas fa-sun icon"></i>
+                        <p>
+                            Light Mode
+                        </p>
+                    </div>
+                    <div>
+                        <button class="checkBtn"></button>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="a" id="superDark">
+                    <div>
+                        <i class="fas fa-moon icon"></i>
+                        <p>
+                            Super Dark Mode
+                        </p>
+                    </div>
+                    <div>
+                        <button class="checkBtn"></button>
+                    </div>
+                </div>
+            </li>
+            <li id="personalModeCont">
+                <div class="a" id="personalMode">
+                    <div>
+                        <i class="fas fa-book icon"></i>
+                        <p>
+                            Personal Mode
+                        </p>
+                    </div>
+                    <div>
+                        <button class="checkBtn"></button>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="a hide" id="ecchi">
+                    <div>
+                        <i class="fas fa-cat icon"></i>
+                        <p>
+                            Ecchi
+                        </p>
+                    </div>
+                    <div>
+                        <button class="checkBtn"></button>
+                    </div>
+                </div>
+                <div class="a" id="pCont">
+                    <i class="fas fa-lock icon"></i>
+                    <input type="password" name="password" id="password" placeholder="Enter Password..." />
+                </div>
+            </li>
+            <li>
+                <div class="a">
+                    <div>
+                        <i class="fad fa-search icon"></i>
+                    </div>
+                    <input type="text" name="search" id="search" value="" placeholder="Search Anime" />
+                </div>
+            </li>
+            <!-- <li>
         <button id="saveBtn"><i class="fad fa-file-pdf"></i> Save PDF</button>
-      </li>
-    </ul>
-  </nav>
+      </li> -->
+            <li>
+                <div style="display:flex; align-items: center; justify-content: center; width: 100%;">
+                    <label for="import" id="importLabel" class="btn white" style="margin: 0 2px;"><i class="fas fa-file-upload"></i> Import</label>
+                    <button id="export" class="btn lime" style="margin: 0 2px;"><i class="fas fa-file-download"></i> Export</button>
+                    <button class="btn magenta" id="saveBtn" style="margin: 0 2px;"><i class="fas fa-file-pdf"></i> PDF</button>
+                    <input type="file" accept="application/json" class="btn" id="import" style="display: none;" />
+                </div>
+            </li>
+        </ul>
+    </nav>
 
-  <div class="img-section hide" id="img-section"></div>
-  <img src="res/illustration.png" alt="Illustration" id="ill">
-  <div id="details"></div>
-  <div class="anime" id="anime"></div>
 
-  <script>
-    document.getElementById("saveBtn").addEventListener("click", () => {
-          window.print();
-    })
-  </script>
-  <script src="data.js"></script>
-  <script src="main.js"></script>
+    <div id="optionCont">
+        <div>
+            <button class="btn" id="optionEdit"><i class="fas fa-marker"></i> Edit</button>
+            <button class="btn magenta" id="optionDelete"><i class="fas fa-trash"></i> Delete</button>
+            <button class="btn lime" id="optionCancel"><i class="fas fa-xmark"></i>&#x2715 Cancel</button>
+
+            <div id="confirm">
+                <h3 style="margin-bottom: 15px;">Are you Sure? This can't be undone!<h3>
+                        <button class="btn green" style="width: 80px;" id="confirmYes">Yes</button>
+                        <button class="btn magenta" id="confirmNo">No, Go back</button>
+            </div>
+
+        </div>
+    </div>
+    <div id="addAnimeCont">
+        <div>
+            <div>
+                <div class="field">
+                    <input type="text" id="fIdx" required="" />
+                    <label for="fIdx">Index</label>
+                </div>
+                <div class="field">
+                    <input type="text" id="fName" required="" />
+                    <label for="fName">Name</label>
+                </div>
+                <div class="field">
+                    <input type="text" id="fEp" required="" />
+                    <label for="fEp">Episodes</label>
+                </div>
+                <div class="field">
+                    <input type="text" id="fCover" required="" />
+                    <label for="fCover">Cover URL</label>
+                </div>
+                <div class="field">
+                    <input type="text" id="fAir" required="" />
+                    <label for="fAir">Aired</label>
+                </div>
+                <div class="field">
+                    <input type="text" id="fWatched" required="" />
+                    <label for="fWatched">Watched</label>
+                </div>
+
+                <div class="checkbox">
+                    <label for="addAnimeMain">Main</label>
+                    <input type="checkbox" id="addAnimeMain" checked="true" />
+                </div>
+
+                <div class="flex space-between">
+                    <div></div>
+                    <div>
+                        <button class="btn" id="addAnimeSaveBtn">Save</button>
+                        <button class="btn magenta" id="addAnimeCancelBtn">Cancel</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="img-section" id="img-section"></div>
+    <img src="res/illustration.png" alt="Illustration" id="ill">
+    <div id="details"></div>
+
+    <div id="addAnime">
+        <div class="flex space-between">
+            <h3>Add new Anime<h3>
+                    <button id="addAnimeBtn" class="btn"><i class="fas fa-plus"></i></button>
+        </div>
+
+
+    </div>
+
+
+
+    <div class="anime" id="anime"></div>
+
+    <script>
+        document.getElementById("saveBtn").addEventListener("click", () => {
+            window.print();
+        })
+    </script>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>
