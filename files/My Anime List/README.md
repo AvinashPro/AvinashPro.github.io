@@ -41,7 +41,7 @@ You can reset it, of course. Just type **\clear** in search bar. It'll delete pa
 ### Some Tips
 To enlarge an image of an anime card just click on the image. After that, clicking on caption will redirect you to google page of that anime.
 
-To view main and ecchi anime **simultaneously**, turn on ecchi checkbox then type any gibberish in the search bar like "wdj". Then turn off the ecchi checkbox. Now delete the gibberish that you wrote in the search bar letter by letter. TADA! Now you should be able to view both list simultaneously. (What a convenient bug(or feature? lol)!)
+To view main and ecchi anime **simultaneously**, turn on ecchi checkbox then type any gibberish in the search bar like "wdj". Now delete the gibberish that you wrote in the search bar letter by letter. TADA! Now you should be able to view both list simultaneously. (What a convenient bug(or feature? lol)!)
 
 I'd recommend you to not to rely on this crappy piece of code. You can edit JSON file in any text editor and import the JSON file thereafter.
 
