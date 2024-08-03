@@ -18,11 +18,11 @@ Click on _add_ button next to the "Add new anime" text. Note: All fields are man
 
 ##### Episodes: Here goes episodes count.
 
-##### Cover URL: Here goes the link of the image you want as a cover in the anime card. Use any image you like from google or from any other online source. Image should be in potrait dimension.
+##### Cover URL: Here goes the link of the image you want as a cover in the anime card. Use any image you like from google or from any other online source. Image should be in portrait dimension.
 
 ##### Aired: Here goes Aired date. You can set it to like "2019" or "2013-2020" or "September 2020 to October 2023". You can also add string and your short notes or status in it. It accepts any string value.
 
-##### Watched: This field requires Month name and year, however, year is optional. Possible month names are _January, February, March, April, May, June, July, August, September, October, November and December_ (case sensitive). For instance _"May 202M"_, _"13 August 200M"_, _"14 February 2013 - 14 November 2013"_ and so on.
+##### Watched: This field requires Month name and year, however, year is optional. Possible month names are _January, February, March, April, May, June, July, August, September, October, November and December_ (case sensitive). For instance _"May 2021"_, _"13 August 2010"_, _"14 February 2013 - 14 November 2013"_ and so on.
 
 ##### Main: It is checked by default. Uncheck it to save the anime in the _ecchi_ list.
 
