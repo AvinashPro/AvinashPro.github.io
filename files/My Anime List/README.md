@@ -36,7 +36,7 @@ Double click on anime card then click on _Delete_ button. This cannot be undone.
 
 ### Password
 It is _Purple_ (case sensitive). I've added it so that you can hide your ecchi anime list from your non-programmar friends. Once you've entered the password it will be saved on your browser's local storage so that you won't need to enter the password every single time you visit. 
-You can reset it, of course. Just type **\clear** in search bar. It'll delete password from your browser's local storage and you'd need to enter the password the next time you visit.
+You can reset it, of course. Just type **\pass** in search bar. It'll delete password from your browser's local storage and you'd need to enter the password the next time you visit.
 
 ### Some Tips
 To enlarge an image of an anime card just click on the image. After that, clicking on caption will redirect you to google page of that anime.
@@ -45,5 +45,15 @@ To view main and ecchi anime **simultaneously**, turn on ecchi checkbox then typ
 
 I'd recommend you to not to rely on this crappy piece of code. You can edit JSON file in any text editor and import the JSON file thereafter.
 
+### _new-password_\pass 
+To change the current password, type the new password followed by _\pass_ in the anime search bar.
+
+### \default\pass 
+To set the password to default password, type _\default\pass_ in the anime search bar.
+
+### \reset [WARNING]
+Use _\reset_ command in the anime search bar to **DELETE** all the data from browser. It will permanently delete your data from your browser; Always make a backup of the data to prevent the lose of data.
+
 ### \blue 
 If you want to go back to my list. Enter _\blue_ command in search bar.
+
