@@ -347,6 +347,7 @@ function search() {
     window.location.reload();
   } else if (txt == `\\blue`) {
     localStorage.removeItem("personalMode");
+    localStorage.removeItem("password-require");
     document.getElementById("search").value = "";
     window.location.reload();
   }
