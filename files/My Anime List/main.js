@@ -321,12 +321,30 @@ function search() {
 
   draw(toDraw);
 
-  if (txt == `\\clear`) {
-    localStorage.removeItem("password-require");
-    document.getElementById("search").value = "";
+  if (txt.includes("\\pass")) {
+    if(txt.length == 5) {
+      localStorage.removeItem("password-require");
+      document.getElementById("search").value = "";
+      
+      document.getElementById("pCont").classList.remove("hide");
+      document.getElementById("ecchi").classList.add("hide");
+      document.getElementById("password").value = "";
 
-    draw(data.main);
-    details(false);
+      draw(data.main);
+      details(false);
+    } else { 
+      if(txt.includes("\\default")) {
+        localStorage.setItem("password", "Uzwuqj");
+        document.getElementById("search").value = "";
+      } else {
+        localStorage.setItem("password", encrypt(document.getElementById("search").value.replace("\\pass", "")));
+        document.getElementById("search").value = "";
+      }
+    }
+  } else if(txt == "\\reset") {
+    localStorage.clear();
+    document.getElementById("search").value = "";
+    window.location.reload();
   } else if (txt == `\\blue`) {
     localStorage.removeItem("personalMode");
     document.getElementById("search").value = "";
@@ -335,10 +353,9 @@ function search() {
 }
 document.getElementById("search").addEventListener("input", search);
 
-
-
-function PasswordVerifier() {
-  let code = "Fnxmnyjwz";
+if(personalMode && localStorage.getItem("password") == undefined) {
+  localStorage.setItem("password", "Uzwuqj");
+}
   function letter(s) {
     return s.replace(/([a-zA-Z])[^a-zA-Z]*$/, function(a) {
       let c = a.charCodeAt(0);
@@ -350,14 +367,26 @@ function PasswordVerifier() {
     });
   }
 
-  if (personalMode) code = "Uzwuqj";
+function encrypt(str) {
+  let k = "";
+  str.split("").forEach(l => {
+    k += letter(l);
+  })
+  return k;
+}
+
+function PasswordVerifier() {
+  let code = "Fnxmnyjwz";
+
+  if (personalMode) {
+    code = localStorage.getItem("password");
+  }
 
   function verify(txt) {
     let t = "";
     txt.split("").forEach(char => {
       t += letter(char);
     })
-    console.log(t)
     return t == code;
   }
   let pCont = document.getElementById("pCont");
@@ -490,6 +519,9 @@ function resize() {
 
 function Export() {
   let a = document.createElement("a");
+  if(personalMode) {
+    data.code = localStorage.getItem("password");
+  }
   let dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data));
   let t = new Date(),
   d = t.getDate().toString(),
