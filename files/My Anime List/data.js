@@ -1,18 +1,18 @@
 let data = {
   
   main: [
-    [1, "Dr.STONE", 2019, "May 2021", 59, "https://m.media-amazon.com/images/M/MV5BYmU2MzEyMjAtOTQ5Yy00NGMxLTg0NmItMTQ0ZTM5OGY0NjUzXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg"],
+    [1, "Dr.STONE", 2019, "May 2021", 59, "https://picfiles.alphacoders.com/597/597667.jpeg"],
     [2, "Demon Slayer", 2019, "June 2022", 55, "https://m.media-amazon.com/images/M/MV5BYTIxNjk3YjItYmYzMC00ZTdmLTk0NGUtZmNlZTA0NWFkZDMwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg"],
     [3, "Death Note", 2006, "July 2022", 37, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMaCry5fwYr3VpBHurOBjBdlnH-Ek3r3B1kfp1I7TUpF_K2eZiPcl9y-s&s=10"],
     [4, "The Promised Neverland", 2019, "July 2022", 23, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHAa0D-1FDsFvRq9qxqhkAUwxsEx4VjmNstI2XN_8HYuo1_nKeFJSoX-Ea&s=10"],
     [5, "Attack on Titan", 2013, "August 2022", 102, "https://m.media-amazon.com/images/M/MV5BNDFjYTIxMjctYTQ2ZC00OGQ4LWE3OGYtNDdiMzNiNDZlMDAwXkEyXkFqcGdeQXVyNzI3NjY3NjQ@._V1_FMjpg_UX1000_.jpg"],
     [6, "Jujutsu Kaisen", 2020, "September 2022", 47, "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/09/jujutsu-kaisen.jpg"],
     [7, "Steins;Gate", 2011, "December 2022", 51, "https://m.media-amazon.com/images/M/MV5BMjUxMzE4ZDctODNjMS00MzIwLThjNDktODkwYjc5YWU0MDc0XkEyXkFqcGdeQXVyNjc3OTE4Nzk@._V1_FMjpg_UX1000_.jpg"],
-    ["M1", "Your Name", 2016, "04 March 2023", 5, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyN9olYk3kbQIGZki8vjX6OfJqv1rqit8t3Q&usqp=CAU"],
+    ["M1", "Your Name", 2016, "04 March 2023", 5, "https://w0.peakpx.com/wallpaper/380/636/HD-wallpaper-your-name-anime-mitsuha-taki-your-name.jpg"],
     [8, "One Punch Man", 2015, "March 2023", 36, "https://m.media-amazon.com/images/M/MV5BZjJlNzE5YzEtYzQwYS00NTBjLTk5YzAtYzUwOWQyM2E3OGI2XkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_.jpg"],
     [9, "A Bridge to the Starry Skies", 2011, "April 2023", 13, "https://m.media-amazon.com/images/M/MV5BY2ZkZjIxMjMtY2UxMC00YzRiLTlkNmMtMTYwNTdiMGFhYjVhXkEyXkFqcGdeQXVyMTA3OTEyODI1._V1_FMjpg_UX1000_.jpg"],
     [10, "Rent a Girlfriend", 2020, "May 2023", 36, "https://upload.wikimedia.org/wikipedia/en/1/12/Rent-A-Girlfriend_volume_1_cover.jpg"],
-    ["M2", "Weathering With You", 2019, "14 June 2023", 6, "https://upload.wikimedia.org/wikipedia/en/6/66/Weathering_with_You_Poster.jpg"],
+    ["M2", "Weathering With You", 2019, "14 June 2023", 6, "https://w0.peakpx.com/wallpaper/316/99/HD-wallpaper-weathering-with-you-weathering-with-you-scenery.jpg"],
     [11, "Love Flops", 2022, "June 2023", 12, "https://static.animecorner.me/2022/09/love-flops-kv.jpg"],
     [12, "A Couple of Cuckoos", 2022, "July 2023", 24, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkY8Su3foiMLIHs9VK8I27bIZ16w-CJdY1Dkga_OKo4hzqDfzaNEVT32k&s=10"],
     [13, "Dororo", 2019, "August 2023", 24, "https://m.media-amazon.com/images/M/MV5BMTMwNmQyM2EtMDQ2My00Y2FhLWJlYTYtMDMwYWU4MzAwYmI3XkEyXkFqcGdeQXVyMTQ3MjMyMTYz._V1_FMjpg_UX1000_.jpg"],
@@ -70,7 +70,9 @@ let data = {
     [59, "Mamahaha no Tsurego ga Motokano datta", 2022, "July 2024", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsnz2VzVtoRqY1UX23GVXBdBqfcenhmbEly9aS29q74Yg3UcmTGcE9YYI&s=10"],
     [60, "DARLING in the FRANXX", 2018, "July 2024", 24, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsty1igug9wke5ys_3igF9JMkosV-yKmGjkEfiH4ohgKS0Dlrdmf6yWgdL&s=10"],
     [61, "Chainsaw Man", 2022, "July 2024", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6BXc8DFi93_d10o_8de1hoewyrtiuMTn48N83yQbjHNisVnlesmYaz40r&s=10"],
-    [62, "Hell's Paradise", 2023, "August 2024", 13, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlgqihjI1qMa2HCdV1sq-A2SzDcptOUOQSMHF3Vx6yB0LhWVorrgmjTIjE&s=10"]
+    [62, "Hell's Paradise", 2023, "August 2024", 13, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlgqihjI1qMa2HCdV1sq-A2SzDcptOUOQSMHF3Vx6yB0LhWVorrgmjTIjE&s=10"],
+    [63, "Is It Wrong to Try to Pick Up Girls in a Dungeon?", 2015, "August 2024", 75, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwJIxppfcRO1Ks1amcgB4W8TIXAq9KM7LY6VRSb4YkfuKd5HkVAh46xqJj&s=10"],
+    [64, "KonoSuba: God's Blessing on This Wonderful World!", 2016, "August 2024", 50, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq4Qtx0VXqCeG6rcwXfcpYqERkTimNUkxJwCfd29Tzz73-EEC_IZ5HMgLX&s=10"]
 
   ],
   
