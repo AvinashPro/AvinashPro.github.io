@@ -1,8 +1,8 @@
 let data = {
   
   main: [
-    [1, "Dr.STONE", 2019, "May 2021", 59, "https://picfiles.alphacoders.com/597/597667.jpeg"],
-    [2, "Demon Slayer", 2019, "June 2022", 55, "https://m.media-amazon.com/images/M/MV5BYTIxNjk3YjItYmYzMC00ZTdmLTk0NGUtZmNlZTA0NWFkZDMwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg"],
+    [1, "Dr.STONE", 2019, "May 2021", 60, "https://picfiles.alphacoders.com/597/597667.jpeg"],
+    [2, "Demon Slayer", 2019, "June 2022", 63, "https://m.media-amazon.com/images/M/MV5BYTIxNjk3YjItYmYzMC00ZTdmLTk0NGUtZmNlZTA0NWFkZDMwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg"],
     [3, "Death Note", 2006, "July 2022", 37, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMaCry5fwYr3VpBHurOBjBdlnH-Ek3r3B1kfp1I7TUpF_K2eZiPcl9y-s&s=10"],
     [4, "The Promised Neverland", 2019, "July 2022", 23, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHAa0D-1FDsFvRq9qxqhkAUwxsEx4VjmNstI2XN_8HYuo1_nKeFJSoX-Ea&s=10"],
     [5, "Attack on Titan", 2013, "August 2022", 102, "https://m.media-amazon.com/images/M/MV5BNDFjYTIxMjctYTQ2ZC00OGQ4LWE3OGYtNDdiMzNiNDZlMDAwXkEyXkFqcGdeQXVyNzI3NjY3NjQ@._V1_FMjpg_UX1000_.jpg"],
@@ -34,7 +34,7 @@ let data = {
     [29, "Girlfriend, Girlfriend", 2021, "November 2023", 12, "https://cdn.myanimelist.net/images/anime/1713/117119.jpg"],
     [30, "Oregairu", 2013, "November 2023", 41, "https://i0.wp.com/img1.ak.crunchyroll.com/i/spire2/320673efcacdbdb0d6222156f8d797ce1476015938_full.jpg"],
     [31, "Plastic Memories", 2015, "February 2024", 13, "https://m.media-amazon.com/images/M/MV5BZjBkYzY5OWEtMjE2MC00MWY3LTk0YTMtODQ4YjRlYTVlNjIxXkEyXkFqcGdeQXVyNTIxNDgzOTg@._V1_FMjpg_UX1000_.jpg"],
-    [32, "Don't Toy with me, Miss Nagatoro", 2021, "February 2024", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCssk5JH09bkCWaHDYjSpyS0R0p9EcIb-Ubg&usqp=CAU"],
+    [32, "Don't Toy with me, Miss Nagatoro", 2021, "February 2024", 24, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCssk5JH09bkCWaHDYjSpyS0R0p9EcIb-Ubg&usqp=CAU"],
     [33, "The Day I became a God", 2020, "February 2024", 12, "https://imgsrv.crunchyroll.com/cdn-cgi/image/format=auto,fit=contain,width=480,height=720,quality=85/catalog/crunchyroll/0bce41b36c2835bb3ab8f5ee1fac00fa.jpe"],
     [34, "Rascal Does Not Dream of Bunny Girl Senpai", 2018, "February 2024", 21, "https://m.media-amazon.com/images/I/81vuj1JYidL._AC_UF1000,1000_QL80_.jpg"],
     
@@ -71,8 +71,16 @@ let data = {
     [60, "DARLING in the FRANXX", 2018, "July 2024", 24, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsty1igug9wke5ys_3igF9JMkosV-yKmGjkEfiH4ohgKS0Dlrdmf6yWgdL&s=10"],
     [61, "Chainsaw Man", 2022, "July 2024", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6BXc8DFi93_d10o_8de1hoewyrtiuMTn48N83yQbjHNisVnlesmYaz40r&s=10"],
     [62, "Hell's Paradise", 2023, "August 2024", 13, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlgqihjI1qMa2HCdV1sq-A2SzDcptOUOQSMHF3Vx6yB0LhWVorrgmjTIjE&s=10"],
-    [63, "Is It Wrong to Try to Pick Up Girls in a Dungeon?", 2015, "August 2024", 75, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwJIxppfcRO1Ks1amcgB4W8TIXAq9KM7LY6VRSb4YkfuKd5HkVAh46xqJj&s=10"],
-    [64, "KonoSuba: God's Blessing on This Wonderful World!", 2016, "August 2024", 50, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq4Qtx0VXqCeG6rcwXfcpYqERkTimNUkxJwCfd29Tzz73-EEC_IZ5HMgLX&s=10"]
+    [63, "Is It Wrong to Try to Pick Up Girls in a Dungeon?", 2015, "August 2024", 78, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwJIxppfcRO1Ks1amcgB4W8TIXAq9KM7LY6VRSb4YkfuKd5HkVAh46xqJj&s=10"],
+    [64, "KonoSuba: God's Blessing on This Wonderful World!", 2016, "August 2024", 49, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq4Qtx0VXqCeG6rcwXfcpYqERkTimNUkxJwCfd29Tzz73-EEC_IZ5HMgLX&s=10"],
+    [65, "The Rising of the Shield Hero", 2019, "August 2024", 50, "https://m.media-amazon.com/images/I/71T5jYD0A3L._AC_UF1000,1000_QL80_.jpg"],
+    [66, "WorldEnd: What do you do at the end of the world?", 2017, "September 2024", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSISs81x8rQR65MTQ97dwnFxUIZnc_z4kryaqldNwsRJsBvJXrnMqw1lib0&s=10"],
+    ["M8", "To Me, the One Who Loved You", 2022, "14 September 2024", 5, "https://m.media-amazon.com/images/M/MV5BNmM3ZWRhMmUtOWVkZC00YzA4LTk0ZmUtYjhjOTA4NTFkMGQ1XkEyXkFqcGc@._V1_.jpg"],
+    ["M9", "To Every You, I've Loved Before", 2022, "14 September 2024", 5, "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=480,height=720/catalog/crunchyroll/29b0baaa47f45c6626a7dc6724c44513.jpe"],
+    [67, "You and Me", 2011, "September 2024", 26, "https://images.justwatch.com/poster/302895530/s332/you-and-me"],
+    ["M10", "Josee, the Tiger and the Fish", 2020, "19 September 2024", 5, "https://m.media-amazon.com/images/M/MV5BN2IwMDQ4ZTEtMzMxNy00NDY3LWEzYzItZjA5MTFkOWRiOThmXkEyXkFqcGc@._V1_.jpg"],
+    [68, "Our Last Crusade or the Rise of a New World", 2020, "September 2024", 24, "https://m.media-amazon.com/images/M/MV5BOWY4OTRmM2EtOGE0Ny00MThjLTlkMWItOGMzMjcwMDc4MzlhXkEyXkFqcGc@._V1_.jpg"],
+    [69, "That Time I Got Reincarnated as a Slime", 2018, "October 2024", 98, "https://m.media-amazon.com/images/M/MV5BOTczMjM3MDUtYmZjMC00YzZhLWE4ODQtNjg5YWU4NTJjNzY2XkEyXkFqcGc@._V1_.jpg"]
 
   ],
   
