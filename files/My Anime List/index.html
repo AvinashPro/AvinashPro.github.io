@@ -5,18 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="mobile-wep-app-capable" content="yes">
-    <meta name="apple-mobile-wep-app-capable" content="yes">
-    <link rel="manifest" href="manifest.json">
+    
     <title>MyAnimeList</title>
+    <link rel="shortcut icon" href="res/icon-512.png" />
+    <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/material-palenight.min.css"/>
+    
+    
 </head>
 
 <body>
 
     <nav id="nav">
         <div id="logo">
-            <img src="res/logo.png" alt="logo" />
+            <img src="res/icon-512.png" alt="logo" />
             <a href="https://github.com/AvinashPro/AvinashPro.github.io/tree/main/files/My%20Anime%20List" id="title">
                 <span>MyAnime</span><span>List</span>
             </a>
@@ -26,168 +31,547 @@
         </div>
         <div id="closeNav"></div>
         <ul id="nav-links">
-            <li>
-                <div class="a" id="light">
-                    <div>
-                        <i class="fas fa-sun icon"></i>
-                        <p>
-                            Light Mode
-                        </p>
-                    </div>
-                    <div>
-                        <button class="checkBtn"></button>
-                    </div>
-                </div>
+          <li id="profile">
+            <div style="display: flex; align-items: center; gap: 5px;position:relative;">
+            <img src="res/icon-512.png" alt="pfp" id="pfp">
+            
+            <label for="nav_pfp_input"><i class="fa-regular fa-edit fadeOut" id="changeNavPfp"></i></label>
+            <input type="file" name="nav_pfp_input" id="nav_pfp_input" style="display:none;" accept="img/*">
+        
+            <div id="profileName"></div>
+            </div>
+            <div style="width:15px;height:15px;position:relative;">
+              <i class="fa-regular fa-edit fadeOut" id="profileEdit"></i>
+              <i class="fa-regular fa-floppy-disk fadeOut" id="profileSave"></i>
+            </div>
+          </li>
+            <li id="theme-dropdown" class="dropdown-container">
+              <div class="a dropdown-element">
+                <div>
+                  <i class="fas fa-paintbrush icon"></i>
+                  <p>Appearance</p>
+                  </div>
+                  <div>
+                    <span id="theme-dropdown-text" class="dropdown-text">Dark</span>
+                    <i class="fas fa-angle-down icon"></i>
+                  </div>
+              </div>
             </li>
-            <li>
-                <div class="a" id="superDark">
-                    <div>
-                        <i class="fas fa-moon icon"></i>
-                        <p>
-                            Super Dark Mode
-                        </p>
-                    </div>
-                    <div>
-                        <button class="checkBtn"></button>
-                    </div>
-                </div>
+            
+            <li id="layout-dropdown" class="dropdown-container">
+              <div class="a dropdown-element">
+                <div>
+                  <i class="fas fa-folder-tree icon"></i>
+                  <p>Layout</p>
+                  </div>
+                  <div>
+                    <span id="layout-dropdown-text" class="dropdown-text">Normal</span>
+                    <i class="fas fa-angle-down icon"></i>
+                  </div>
+              </div>
             </li>
+            
+         
+            
             <li id="personalModeCont">
                 <div class="a" id="personalMode">
                     <div>
-                        <i class="fas fa-book icon"></i>
+                        <i class="fa-solid fa-user-ninja icon"></i>
                         <p>
                             Personal Mode
                         </p>
                     </div>
                     <div>
-                        <button class="checkBtn"></button>
+                        <button class="checkBtn" id="personalModeBtn"></button>
                     </div>
                 </div>
             </li>
-            <li>
-                <div class="a hide" id="ecchi">
-                    <div>
-                        <i class="fas fa-cat icon"></i>
-                        <p>
-                            Ecchi
-                        </p>
-                    </div>
-                    <div>
-                        <button class="checkBtn"></button>
-                    </div>
-                </div>
+            <li id="eCont">
+             
                 <div class="a" id="pCont">
-                    <i class="fas fa-lock icon"></i>
+                    <i class="fas fa-puzzle-piece icon"></i>
                     <input type="password" name="password" id="password" placeholder="Enter Password..." />
                 </div>
             </li>
-            <li>
-                <div class="a">
-                    <div>
-                        <i class="fad fa-search icon"></i>
-                    </div>
-                    <input type="text" name="search" id="search" value="" placeholder="Search Anime" />
-                </div>
-            </li>
-            <!-- <li>
-        <button id="saveBtn"><i class="fad fa-file-pdf"></i> Save PDF</button>
-      </li> -->
-            <li>
-                <div style="display:flex; align-items: center; justify-content: center; width: 100%;">
-                    <label for="import" id="importLabel" class="btn white" style="margin: 0 2px;"><i class="fas fa-file-upload"></i> Import</label>
-                    <button id="export" class="btn lime" style="margin: 0 2px;"><i class="fas fa-file-download"></i> Export</button>
-                    <button class="btn magenta" id="saveBtn" style="margin: 0 2px;"><i class="fas fa-file-pdf"></i> PDF</button>
-                    <input type="file" accept="application/json" class="btn" id="import" style="display: none;" />
-                </div>
-            </li>
+            
+            
+      
+          <div id="nav-tools">
+            <button class="button" id="signOutBtn"><i class="fas fa-arrow-right-from-bracket"></i></button>
+            <button class="button" id="eye-comfort-filter-btn"><i class="fas fa-eye"></i></button>
+          </div>
         </ul>
     </nav>
+  <div id="message-container">
+    <div id="message-container-parent"></div>
+  </div>
 
+<div id="eye-comfort-filter"></div>
+<svg width="0" height="0" style="margin:0;padding:0;" id="anaglyph">
+  <filter id="rgb-split">
+    <feOffset in="SourceGraphic" dx="0.3" dy="0" result="layer-one" />
+    <feComponentTransfer in="layer-one" result="red">
+        <feFuncR type="identity" />
+        <feFuncG type="discrete" tableValues="0" />
+        <feFuncB type="discrete" tableValues="0" />
+    </feComponentTransfer>
 
-    <div id="optionCont">
-        <div>
-            <button class="btn" id="optionEdit"><i class="fas fa-marker"></i> Edit</button>
-            <button class="btn magenta" id="optionDelete"><i class="fas fa-trash"></i> Delete</button>
-            <button class="btn lime" id="optionCancel"><i class="fas fa-xmark"></i>&#x2715 Cancel</button>
+    <feOffset in="SourceGraphic" dx="-0.3" dy="0" result="layer-two" />
+    <feComponentTransfer in="layer-two" result="cyan">
+        <feFuncR type="discrete" tableValues="0" />
+        <feFuncG type="identity" />
+        <feFuncB type="identity" />
+    </feComponentTransfer>
 
-            <div id="confirm">
-                <h3 style="margin-bottom: 15px;">Are you Sure? This can't be undone!<h3>
-                        <button class="btn green" style="width: 80px;" id="confirmYes">Yes</button>
-                        <button class="btn magenta" id="confirmNo">No, Go back</button>
-            </div>
-
-        </div>
-    </div>
-    <div id="addAnimeCont">
-        <div>
-            <div>
-                <div class="field">
-                    <input type="text" id="fIdx" required="" />
-                    <label for="fIdx">Index</label>
-                </div>
-                <div class="field">
-                    <input type="text" id="fName" required="" />
-                    <label for="fName">Name</label>
-                </div>
-                <div class="field">
-                    <input type="text" id="fEp" required="" />
-                    <label for="fEp">Episodes</label>
-                </div>
-                <div class="field">
-                    <input type="text" id="fCover" required="" />
-                    <label for="fCover">Cover URL</label>
-                </div>
-                <div class="field">
-                    <input type="text" id="fAir" required="" />
-                    <label for="fAir">Aired</label>
-                </div>
-                <div class="field">
-                    <input type="text" id="fWatched" required="" />
-                    <label for="fWatched">Watched</label>
-                </div>
-
-                <div class="checkbox">
-                    <label for="addAnimeMain">Main</label>
-                    <input type="checkbox" id="addAnimeMain" checked="true" />
-                </div>
-
-                <div class="flex space-between">
-                    <div></div>
-                    <div>
-                        <button class="btn" id="addAnimeSaveBtn">Save</button>
-                        <button class="btn magenta" id="addAnimeCancelBtn">Cancel</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
+    <feBlend in="red" in2="cyan" mode="screen" result="color-split" />
+  </filter>
+</svg>
+<div class="main-container" id="main-container">
+    
+  
 
     <div class="img-section" id="img-section"></div>
-    <img src="res/illustration.png" alt="Illustration" id="ill">
+    
+    <div id="ill-cont">
+      <h2 id="illTxt">Welcome, <span id="wlUserNameElm">Goshujin-sama</span>!</h2>
+      <img src="res/moon-1.svg" alt="Illustration" id="ill">
+      <img src="res/shadow-2.svg" style="position:absolute;top:50px;left:80px;width:250px;height:250px;pointer-events:none;" alt="" class="illshadow">
+      <img src="res/shadow-2.svg" style="position:absolute;top:50px;left:-20px;width:250px;height:250px;pointer-events:none;" alt="" class="illshadow">
+    </div>
+    
     <div id="details"></div>
-
-    <div id="addAnime">
-        <div class="flex space-between">
-            <h3>Add new Anime<h3>
-                    <button id="addAnimeBtn" class="btn"><i class="fas fa-plus"></i></button>
+    
+    
+    <div class="container">
+      <div class="textField">
+        <div>
+        <input type="text" placeholder="Search Anime" id="searchBar" />
+        <i class="fas fa-magnifying-glass"></i>
+        <!--<img src="res/icon.png" alt="search-icon">-->
         </div>
+      </div>
+      
+      <div id="filterSortDiv">
+        <span><span id="itemCounter">60</span> item<span id="itemCounterText">s</span> in total</span>
+        <div id="filter-dropdown" class="dropdown-container">
+          
+          <div class="dropdown-element">
+            <i class="fas fa-filter"></i>
+            <span id="demo">Filter</span>
+          
+          <div>
+            <i class="fas fa-angle-down icon"></i>
+          </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="button-container" id="btnOpt">
+        <!--<button class="button"><i class="fas fa-plus"></i> Add Anime</button>-->
+        <div class="dropdown-container" id="option-dropdown" style="margin-right: 10px;">
+          <button class="button round-btn dark-blue dropdown-element">
+          <i class="fas fa-ellipsis-vertical"></i>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+    
+        
 
 
+    
+    <div id="addAnimeCont" style="display:none;">
+      <img src="res/shadow-1.svg" class="shadow" style="top:0; left:0;">
+      <img src="res/shadow-2.svg" style="left:30%; top:20%;" class="shadow">
+      <img src="res/shadow-3.svg" style="right:0; bottom:0; position:absolute;" class="shadow">
+      <div class="page-container">
+      <div class="page" id="addAnimePage">
+        <div class="form">
+          <div>
+            <p>Add Anime</p>
+            <div class="form-field">
+              
+              <div>
+                <input type="text" id="addAnime_name" name="addAnime_name" required="">
+                <label for="addAnime_name">Name</label>
+              </div>
+              <div>
+                <input type="text" id="addAnime_air" name="addAnime_air" required="">
+                <label for="addAnime_air">Aired Date</label>
+              </div>
+              <div>
+                <input type="text" id="addAnime_watched" name="addAnime_watched" required="">
+                <label for="addAnime_watched">Watched Date</label>
+              </div>
+              <div>
+                <input type="number" id="addAnime_ep" name="addAnime_ep" required="">
+                <label for="addAnime_ep">Episodes</label>
+              </div>
+              <div>
+                <input type="text" id="addAnime_cover" name="addAnime_cover" required="">
+                <label for="addAnime_cover">Cover URL</label>
+              </div>
+              
+              <div>
+                <input type="number" id="addAnime_score" name="addAnime_score" required="" max="10" min="1" step="0.01">
+                <label for="addAnime_score">Score</label>
+              </div>
+              <div class="dropdown-container" id="addAnime_genre">
+                <div class="dropdown-element">
+                  <div>
+                  <div style="display:flex;gap:4px;">Genre: <div id="addAnime_genreTxt">none</div></div>
+                  </div>
+                  <div>
+                    <i class="fas fa-angle-down icon"></i>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="dropdown-container" id="addAnime_preference">
+                <div class="dropdown-element">
+                  <div>
+                  <div style="display:flex;gap:4px;">Preference: <div id="addAnime_preferenceTxt">none</div></div>
+                  </div>
+                  <div>
+                    <i class="fas fa-angle-down icon"></i>
+                  </div>
+                </div>
+                
+              </div>
+              
+              
+            </div>
+            
+            <div class="button-container">
+              <button class="button" id="addAnimeContCancelBtn">Cancel</button>
+              <button class="button" id="addAnimeSaveBtn">Save</button>
+            </div>
+            
+            
+          </div>
+        </div>
+      </div>
+      </div>
     </div>
 
-
+    <div id="no-result" class="element-hide" style="display:none;">
+      <img src="res/img3.svg" alt="Nothing found image">
+      <p>Nothing Found!</p>
+    </div>
 
     <div class="anime" id="anime"></div>
+    
+    <div id="confirmPrompt">
+      <div>
+       <!--<img src="res/illus.svg" alt="Illustration">-->
+        <div id="prompt-msg">
+          <p style="text-align:center;color:rgb(106,141,245);">Are you sure? <span style="color:rgb(243,41,152);">Delete</span> <span style="color:#def3ff;" id="sideDeleteAnimeName">Doraemon</span></p>
+        </div>
+        <div style="display:flex;gap:5px;margin-left:40px;margin-bottom:20px;">
+          <button class="button" id="prompt-cancel">No, go back</button>
+          <button class="button" id="prompt-proceed">Yes</button>
+        </div>
+      </div>
+    </div>
+    
+    <div id="rearrangeAnimePage">
+      <div>
+        
+        <div id="rearrangeAnimePageTopBtns">
+          <button id="rMain" class="rActive">Main</button>
+          <button id="rEcchi">Ecchi</button>
+        </div>
+        
+        <!--<div class="floatingbar"></div>-->
+        <div class="bar"></div>
+        
+        <div id="rearrangeList"></div>
+        
+        <div>
+          <button id="rearrangeCancel" class="button">Cancel</button>
+          <button id="rearrangeSaveBtn" class="button">Save</button>
+        </div>
+        
+      </div>
+    </div>
+    
+    <div id="JSONPage">
+      <div>
+        <button id="JSONCancelBtn" class="cancelBtn"></button>
+        <p>Edit JSON</p>
+        <div id="editorCont">
+          <textarea id="editor"></textarea>
+        </div>
+        
+        <div style="display:flex;justify-content:space-between;margin:auto;width:90%;">
+          <div>
+          <button class="button" id="JSONDownloadBtn"><i class="fa-solid fa-download"></i> Download</button>
+          <input type="file" name="JSONImportInp" id="JSONImportInp" />
+          <button class="button" id="JSONImportBtn"><label for="JSONImportInp"><i class="fa-solid fa-file-import"></i> Import</label></button>
+          </div>
+          <div>
+            <button class="button" id="JSONSaveBtn"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="animeDetailsCont">
+      <div id="animeDetailsPage">
+        <div id="expander">
+          <div></div>
+        </div>
+        
+        <button class="cancelBtn" id="animeDetailsPageCancelBtn"></button>
+        
+        <div id="detTopPart">
+          <img src="res/kawaii.jpg" alt="Anime Cover Image" id="detTopBg">
+          <img src="res/kawaii.jpg" alt="Anime Cover Image" id="detMainCover">
+          
+          <div>
+            <div>
+              <h2>Dr.STONE</h2>
+            </div>
+            <div id="detMisc"></div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+</div>
 
+<div id="welcomeCont">
+  <img src="res/shadow-1.svg" class="shadow" style="top:0; left:0;">
+  <img src="res/shadow-2.svg" style="left:30%; top:20%;" class="shadow">
+  <img src="res/shadow-3.svg" style="right:0; bottom:0; position:absolute;" class="shadow">
+  
+  <div class="page-container">  
+  
+  <div id="signUpPage" class="page">
+    <div class="form" id="acc-form">
+      <div>
+      
+        <div style="position:relative;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3oFC4hRTq73495Yi1xjoaLAVgmAq8pyOayHgKjib3-pX5lJKy93cQRy4&s=10" id="user_pfp">
+        <label for="pfp_input"><i class="fa-regular fa-edit" id="changePfp"></i></label>
+        <input type="file" name="pfp_input" id="pfp_input" style="display:none;" accept="img/*">
+        </div>
+        
+        <p>Welcome to MyAnimeList</p>
+        <div class="form-field">
+          <div>
+            <input type="text" name="userNameInput" id="userNameInput" required=""/>
+            <label for="userNameInput">Username</label>
+          </div>
+          <div>
+            <input type="email" name="email" id="email-up" required=""/>
+            <label for="email">Email address</label>
+          </div>
+          <div>
+            <input type="password" name="password" id="signPass-up" required=""/>
+            <label for="password">Password</label>
+          </div>
+        </div>
+        <button class="button" id="signUpBtn">Sign up</button>
+        <div style="font-size:10px;margin:25px 0 0 20px;color:rgb(110,130,152);">Have an account already? <span id="goBackSignInBtn">Sign in</span></div>
+      </div>
+    </div>
+    </div>
+    
+  <div id="signInPage" class="page">
+    <!--<img src="res/shadow-1.svg" class="shadow" style="top:0; left:0;">-->
+    <div class="form" id="signInForm">
+      <div>
+      
+        <div style="position:relative;">
+        <img src="res/icon-512.png">
+        </div>
+        
+        <p>Sign in to MyAnimeList</p>
+        <div class="form-field">
+          <div>
+            <input type="email" name="email" id="email-in" required=""/>
+            <label for="email">Email address</label>
+          </div>
+          <div>
+            <input type="password" name="password" id="signPass-in" required=""/>
+            <label for="password">Password</label>
+          </div>
+            <div style="font-size:10px;margin-left:20px;" id="forgotBtn">Forgot password?</div>
+        </div>
+        <button class="button" id="signInBtn">Sign in <i class="fa-solid fa-ellipsis fa-beat-fade" style="display:none;"></i></button>
+        <div style="font-size:10px;margin:25px 0 0 20px;color:rgb(110,130,152);">New to MyAnimeList? <span id="goBackSignUpBtn">Create account</span></div>
+        <div style="font-size:10px;margin:5px 0 0 20px;color:rgb(110,130,152);">or use <span id="guestBtn">Guest mode</span></div>
+      </div>
+    </div>
+    
+  </div>
+  
+  <div id="forgotPage" class="page">
+    <div class="form" id="forgotForm">
+    <div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsC4WRNP6E63bNTAT1UVShzwcWj_pJXraCtAC-BsS4hIXRs871v0TuwhB9&s=10"/>
+      <p>Reset password</p>
+      <div class="form-field">
+        <div>
+          <input type="email" id="forgotEmail" name="forgotEmail" required="">
+          <label for="forgotEmail">Email address</label>
+        </div>
+      </div>
+      <div style="display:flex;">
+      <button class="button" id="forgotGoBackBtn">Go back</button>
+      <button class="button" id="passwordResetBtn">Send code</button>
+      </div>
+      <p style="font-size:10px; text-align: left; margin:10px 20px; color: rgb(110,130,152); display:none;" id="forgotMsg">Email has been sent for passsword reset. Check your email for further instructions!</p>
+    </div>
+  </div>
+  </div>
+  
+  <div id="guestPage" class="page">
+    <div class="form" id="guestForm">
+    <div>
+      
+      <div id="guestGoBackBtn"><i class="fa-solid fa-arrow-left"></i></div>
+      
+      <img src="res/pfp.jpg" alt="some image">
+      <p style="color:rgb(221,224,236);">Use a Guest Account</p>
+      
+      <div class="form-field">
+      <p class="guestSecTitle">New Guest Account</p>
+        <div>
+          <input type="text" id="guestName" name="guestName" required="">
+          <label for="guestName">Your name</label>
+        </div>
+      </div>
+      <button class="button" id="guestEnterBtn">Proceed</button>
+      
+      <div class="hr"></div>
+      
+      <p class="guestSecTitle">Existing One</p>
+      <div id="guestList"></div>
+      
+      
+    </div>
+  </div>
+  </div>
+  
+  
+  <div id="loader">
+      <div></div>
+  </div>
+  
+  </div>
+  
+  
+</div>
+
+  <!--<div id="message-container"></div>-->
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/selection/active-line.min.js"></script>
+    
+
+    <script src="data.js"></script>
+    <script src="database.js" type="module"></script>
+    <script src="main.js"></script>
+    
     <script>
+      
         document.getElementById("saveBtn").addEventListener("click", () => {
             window.print();
         })
-    </script>
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-</body>
+        
+        let config = {
+          mode: "javascript",
+          theme: "material-palenight",
+          lineNumbers: true,
+          styleActiveLine: { nonEmpty: true }
+        }
+        var editor = CodeMirror.fromTextArea(document.getElementById("editor"), config);
+        editor.setSize("100%", "100%");
+        editor.refresh();
+        
+        function format(data, ecchi) {
+          let m = e = "";
+          if(data.main != undefined) {
+            data.main.forEach(dat => {
+              m += JSON.stringify(dat) + ",\n";
+            })
+          }
+          if(data.ecchi != undefined) {
+            data.ecchi.forEach(dat => {
+              e += JSON.stringify(dat) + ",\n";
+            })
+          }
+          m = m.slice(0, -2);
+          e = e.slice(0, -2);
+          
+          
+          let txt1 = `{\n\n"main": [\n${m}\n],\n\n\n"ecchi": [\n${e}\n]\n\n}`;
+          let txt2 = `{\n\n"main": [\n${m}\n]\n\n}`;
+          if(ecchi) return txt1;
+          return txt2;
+          //return `{\n\n"main": [\n${m}\n],\n\n\n"ecchi": [\n${e}\n]\n\n}`;
+          
+        }
+        
+        function indentEditor() {
+          editor.eachLine(line => {
+            editor.indentLine(editor.getLineNumber(line), "smart");
+          })
+        }
+        
+        document.getElementById("viewJSONBtn").addEventListener("click", () => {
+          
+          
+          
+          
+          
+            //let com = `//  0-Index,  4-Episodes, 7-Score\n//  1-Name,   5-Cover,    8-Favourite\n//  2-Aired,  6-Genre,    9-Masterpiece\n//  3-Watched\n\n`;
+            editor.setValue(format(settings.data, settings.ecchi));
+            
+          
+          indentEditor();
+        }) 
+        
+        
+      document.getElementById("JSONDownloadBtn").addEventListener("click", () => {
+        let a = document.createElement("a");
+        let dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(JSON.parse(editor.getValue())));
+  /*let t = new Date(),
+  d = t.getDate().toString(),
+  m = (t.getMonth() + 1).toString(),
+  y = t.getFullYear().toString();
+  d.length < 2 ? d = "0"+d: d = d;
+  m.length < 2 ? m = "0"+m: m = m;*/
+        a.setAttribute("href", dataStr);
+        a.setAttribute("download", `Anime[${settings.user.name}].json`);
+        a.click();
 
+      })
+      
+      let importInp = document.getElementById("JSONImportInp");
+      importInp.addEventListener("change", () => {
+        let d = importInp.files[0].text().then(t => { 
+          //console.log(t)
+          editor.setValue(format(JSON.parse(t)));
+          indentEditor();
+        })
+      })
+      
+      
+    </script>
+    
+<script>
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js', { scope: '/' });
+}
+</script>
+    
+    
+</body>
 </html>
