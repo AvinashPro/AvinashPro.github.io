@@ -1,0 +1,21 @@
+{
+    "lang": "en-us",
+    "name": "MyAnimeList",
+    "short_name": "MyAnimeList",
+    "description": "A basic web app for creating and managing anime list.",
+    "start_url": "/files/My%20Anime%20List/",
+    "background_color": "#000a1b",
+    "theme_color": "#000a1b",
+    "orientation": "any",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "/icon-512.png",
+            "sizes": "512x512"
+        },
+        {
+          "src": "/icon-128.png",
+          "sizes": "128x128"
+        }
+    ]
+}
