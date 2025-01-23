@@ -2308,6 +2308,8 @@ function searchAnime() {
     searchBar.value = val = "";
     document.getElementById("eye-comfort-filter").style.background = `rgb(255,184,90,${alpha / 100 * 0.7})`;
     addMessage("Eye Comfort Mode", `Opacity set to ${alpha}%`, "res/eye.png");
+  } else if(val === `/download`) {
+    PWAInstallPrompt();
   }
   
   mainData.forEach(anime => {
@@ -2654,3 +2656,21 @@ animeDetailsPage.addEventListener("click", e => {
     e.cancelBubble = true;
   if(e.stopPropagation) e.stopPropagation();
 })
+
+
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  deferredPrompt = e;
+});
+
+async function PWAInstallPrompt() {
+  if (deferredPrompt !== null) {
+    
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === 'accepted') {
+      deferredPrompt = null;
+    }
+    
+  }
+}
