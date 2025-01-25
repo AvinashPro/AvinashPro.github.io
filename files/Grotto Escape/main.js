@@ -393,7 +393,7 @@ class Tilemap {
         for (let y = 0; y < this.tile.h * this.data.length; y += this.tile.h) {
             for (let x = 0; x < this.tile.w * this.data[0].length; x += this.tile.w) {
                 let value = this.data[this.rowIndex][this.columnIndex] - 1;
-                let offSet = 0.5;
+                let offSet = 0;
 
                 let sw = this.img.width / this.imgProperty.column;
                 let sh = this.img.height / this.imgProperty.row;
