@@ -23,7 +23,7 @@ let data = {
     [11, "Love Flops", 2022, "June 2023", 12, "https://static.animecorner.me/2022/09/love-flops-kv.jpg", ["Harem", "Romance", "Drama", "Emotional"], 10, true, true],
     [12, "A Couple of Cuckoos", 2022, "July 2023", 24, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkY8Su3foiMLIHs9VK8I27bIZ16w-CJdY1Dkga_OKo4hzqDfzaNEVT32k&s=10", ["Rom-com"], 7.8],
     [13, "Dororo", 2019, "August 2023", 24, "https://m.media-amazon.com/images/M/MV5BMTMwNmQyM2EtMDQ2My00Y2FhLWJlYTYtMDMwYWU4MzAwYmI3XkEyXkFqcGdeQXVyMTQ3MjMyMTYz._V1_FMjpg_UX1000_.jpg", ["Action", "Supernatural"], 8.8],
-    [14, "The Girl I like forgot her glasses", 2023, "September 2023", 13, "https://m.media-amazon.com/images/M/MV5BMjkwZWUxNzctYjBlOC00OWFiLWIwNjAtODgxMWYzMTIzNzM4XkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg", ["Rom-com", "School"], 9.8, true],
+    [14, "The Girl I like forgot her glasses", 2023, "September 2023", 13, "https://m.media-amazon.com/images/M/MV5BMjkwZWUxNzctYjBlOC00OWFiLWIwNjAtODgxMWYzMTIzNzM4XkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg", ["Rom-com", "School"], 9.5, true],
     [15, "The Angel next door spoils me rotten", 2023, "September 2023", 12, "https://m.media-amazon.com/images/M/MV5BMDAxM2Q1OTUtMjcwZS00MmE5LWE1ZDUtMmNkY2Y2ZGM4NTM1XkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg", ["Rom-com"], 8.1],
     [16, "Baki", 2018, "September 2023", 78, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2mMuvVeQOSw3iaO11ZreP3z-I2T9MoXYt3yB-mL7Oxb6crH7vdmMG&s=10", ["Martial arts"], 7.4],
     [17, "Tonikawa", 2020, "September 2023", 30, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ5aByolrwKaYqfQ1bKpoDaEUlXaaY6_5qhkdESNJwz57y9ab2ixusJl0&s=10", ["Rom-com", "Supernatural", "Comedy"], 8.9],
@@ -35,15 +35,15 @@ let data = {
     [23, "Masamune-kun's Revenge", 2017, "October 2023", 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrRe_oW7_Kz_vq8P8qKNookiuTLq4oZLXH2Q&usqp=CAU", ["Drama", "Romance", "School"], 10, true, true],
     [24, "The Dangers in my heart", 2023, "October 2023", 26, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVHaT8m0Z-o-M_Zjn5tvJ56VMF1kOgbjr093u9CVnpsxMTMgueV9wKEkF&s=10", ["Rom-com", "School"], 8.4],
     [25, "Lookism", 2022, "October 2023", 8, "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p23088641_b_v7_ac.jpg", ["Drama", "School", "Action"], 8.2],
-    [26, "Heavenly Delusion", 2023, "November 2023", 13, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmpj-ARYrMKM-PG68kSSEt4QyEOGXFfQ2vtw&usqp=CAU", ["Post apocalyptic", "Supernatural", "Drama"], 9.3, true],
+    [26, "Heavenly Delusion", 2023, "November 2023", 13, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmpj-ARYrMKM-PG68kSSEt4QyEOGXFfQ2vtw&usqp=CAU", ["Post apocalyptic", "Supernatural", "Drama"], 9.8, true],
     [27, "Shikimori's not just a cutie", 2022, "November 2023", 12, "https://m.media-amazon.com/images/M/MV5BYjhkY2EyYjEtYjhlNS00ZmRiLWFmNjktNjJjNTJmYWQ2ZjMyXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg", ["Rom-com", "School"], 7.5],
     [28, "The dreaming boy is a realist", 2023, "November 2023", 12, "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRye0mjfz92Zwh3CE786KqL1aDs-MNhN4FVokONaIQbtkd7dQuz", ["Rom-com", "School"], 7.4],
-    [29, "Girlfriend, Girlfriend", 2021, "November 2023", 12, "https://cdn.myanimelist.net/images/anime/1713/117119.jpg", ["Harem", "Rom-com", "School"], 6.5],
+    [29, "Girlfriend, Girlfriend", 2021, "November 2023", 24, "https://cdn.myanimelist.net/images/anime/1713/117119.jpg", ["Harem", "Rom-com", "School"], 6.5],
     [30, "Oregairu", 2013, "November 2023", 41, "https://i0.wp.com/img1.ak.crunchyroll.com/i/spire2/320673efcacdbdb0d6222156f8d797ce1476015938_full.jpg", ["Drama", "Romance"], 9.5, true],
     [31, "Plastic Memories", 2015, "February 2024", 13, "https://m.media-amazon.com/images/M/MV5BZjBkYzY5OWEtMjE2MC00MWY3LTk0YTMtODQ4YjRlYTVlNjIxXkEyXkFqcGdeQXVyNTIxNDgzOTg@._V1_FMjpg_UX1000_.jpg", ["Drama", "Romance", "Emotional"], 10, true, true],
     [32, "Don't Toy with me, Miss Nagatoro", 2021, "February 2024", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCssk5JH09bkCWaHDYjSpyS0R0p9EcIb-Ubg&usqp=CAU", ["Rom-com", "School"], 7],
     [33, "The Day I became a God", 2020, "February 2024", 12, "https://imgsrv.crunchyroll.com/cdn-cgi/image/format=auto,fit=contain,width=480,height=720,quality=85/catalog/crunchyroll/0bce41b36c2835bb3ab8f5ee1fac00fa.jpe", ["Drama", "Supernatural", "Romance", "Emotional"], 10, true, true],
-    [34, "Rascal Does Not Dream of Bunny Girl Senpai", 2018, "February 2024", 21, "https://m.media-amazon.com/images/I/81vuj1JYidL._AC_UF1000,1000_QL80_.jpg", ["Psychological", "Supernatural", "School", "Drama", "Rom-com"], 8.7],
+    [34, "Rascal Does Not Dream of Bunny Girl Senpai", 2018, "February 2024", 24, "https://m.media-amazon.com/images/I/81vuj1JYidL._AC_UF1000,1000_QL80_.jpg", ["Psychological", "Supernatural", "School", "Drama", "Rom-com"], 8.7],
     
     [35, "My love story with Yamada-kun at Lvl999", 2023, "March 2024", 13, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL61UfnV6EVuqgye2BG9k7B4T9DaZhQPEQww&usqp=CAU", ["Rom-com"], 5.1],
     [36, "Erased", 2016, "March 2024", 12, "https://m.media-amazon.com/images/M/MV5BYzJmZjZkMjQtZjJmZC00M2JkLTg5MzktN2FkOTllNTc5MmMzXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg", ["Thriller", "Time travel", "Mystery"], 8],
@@ -66,7 +66,7 @@ let data = {
     [51, "An Archdemon's Dilemma: How to Love Your Elf Bride", 2024, "May 2024", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDZH-gndJ82o828-52Jrha3gwOLZ56jdsDIyDCFWL9aZkisOwMrj4WuLrT&s=10", ["Magic", "Rom-com"], 7.2],
     [52, "Blue Spring Ride", 2014, "May 2024", 14, "https://m.media-amazon.com/images/M/MV5BYzBkOGIyMTMtZjViZC00NGY1LWFhMzItZGI2MmEwODIyYjVjXkEyXkFqcGdeQXVyNjc3MjQzNTI@._V1_FMjpg_UX1000_.jpg", ["Romance", "Slice of life"], 7],
     [53, "Chillin' in Another World With Level 2 Super Cheat Powers", 2024, "May 2024", 12, "https://m.media-amazon.com/images/M/MV5BZjlkOTQ5NTYtZDZiNC00ZTg2LTlhOTYtZjE2ODdlNDhkMjRjXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg", ["Isekai", "Rom-com"], 6.2],
-    [54, "Re:Zero - Starting Life in Another World", 2016,"June 2024", 57, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5Bf55-UOTZcTWU3NT6BLINZsEXTMCF8HNaA&usqp=CAU", ["Isekai", "Romance", "Drama", "Time travel", "Psychological"], 9.8, true],
+    [54, "Re:Zero - Starting Life in Another World", 2016,"June 2024", 73, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5Bf55-UOTZcTWU3NT6BLINZsEXTMCF8HNaA&usqp=CAU", ["Isekai", "Romance", "Drama", "Time travel", "Psychological"], 9.8, true],
     [55, "Golden Time", 2013, "June 2024", 24, "https://m.media-amazon.com/images/M/MV5BZTI0MDA5MWUtMWMyYS00NWM3LWE5ZmYtYTUxZmMxMGE5Y2IwXkEyXkFqcGdeQXVyNTIxNDgzOTg@._V1_.jpg", ["School", "Rom-com"], 7.3],
     [56, "Summer Time Rendering", 2022, "June 2024", 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQVC38-5y6J9YcCSjcRfz__YabhFK40kfRP5qSvvra62_bRDT7hH4hflN6&s=10", ["Mystery", "Supernatural", "Time travel"], 8],
     [57, "Btooom!", 2012, "July 2024", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ_KmhIgAFcJqtU0DciatZPZ88Y8VkUPBoiNc683R65ZRR_8-Yp4pwM6F2&s=10", ["Gore", "Action"], 6],
@@ -94,7 +94,8 @@ let data = {
     ["M11", "5 Centimeters per Second", 2007, "19 December 2024", 3, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD40Nfs7gSlUxsMp_LGs3aGyxGhhFIj6IrbVVr83V2arW24S2OXDcIKtI&s=10", ["Drama"], 5],
     [72, "Dandadan", 2024, "December 2024", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGtT0RQdo3kTAL9yTUrLj0EYPzByLzUuaV0g&usqp=CAU", ["Action", "Comedy", "School", "Supernatural"], 7.4],
     [73, "Spirit Chronicles", 2021, "December 2024", 24, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTisQihdbRHUsgEojHfKTADPZ87GsRbswb4byK0NOw0n28pMEGyN4emvKQ&s=10", ["Isekai", "Action", "Adventure", "Harem", "Fantasy", "Magic"], 8.9],
-    [74, "Clannad", 2007, "January 2025", 48, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyj-DuJ09gcE9cF7KcMp_8r9HRyEa5XNGM3FJcBN681-PxvKSbX2fY1s0&s=10", ["Drama", "School", "Romance", "Emotional", "Comedy"], 9.6, true]
+    [74, "Clannad", 2007, "January 2025", 48, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyj-DuJ09gcE9cF7KcMp_8r9HRyEa5XNGM3FJcBN681-PxvKSbX2fY1s0&s=10", ["Drama", "School", "Romance", "Emotional", "Comedy"], 9.8, true],
+    ["M12", "A Whisker Away", 2020, "03 February 2025", 5, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3X3bFYPoKbBI0DU6izdaTF3ToR9puC6seK6Y627a2VNPHM6IhnAdlzNOY&s=10", ["Drama", "Romance", "School", "Supernatural"], 8.4]
 
   ],
   
