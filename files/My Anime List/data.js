@@ -96,7 +96,8 @@ let data = {
     [73, "Spirit Chronicles", 2021, "December 2024", 24, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTisQihdbRHUsgEojHfKTADPZ87GsRbswb4byK0NOw0n28pMEGyN4emvKQ&s=10", ["Isekai", "Action", "Adventure", "Harem", "Fantasy", "Magic"], 8.9],
     [74, "Clannad", 2007, "January 2025", 48, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyj-DuJ09gcE9cF7KcMp_8r9HRyEa5XNGM3FJcBN681-PxvKSbX2fY1s0&s=10", ["Drama", "School", "Romance", "Emotional", "Comedy"], 9.8, true],
     ["M12", "A Whisker Away", 2020, "03 February 2025", 5, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3X3bFYPoKbBI0DU6izdaTF3ToR9puC6seK6Y627a2VNPHM6IhnAdlzNOY&s=10", ["Drama", "Romance", "School", "Supernatural"], 8.2],
-    ["M13", "Summer Ghost", 2021, "07 February 2025", 2, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR47TK_RwMaRJgmMQ0Zgfm8XXPtABxtB2ijh-Nvux65IWhoGnUFNQa0_Dw&s=10", ["Drama", "Supernatural"], 7.3]
+    ["M13", "Summer Ghost", 2021, "07 February 2025", 2, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR47TK_RwMaRJgmMQ0Zgfm8XXPtABxtB2ijh-Nvux65IWhoGnUFNQa0_Dw&s=10", ["Drama", "Supernatural"], 7.3],
+    ["M14", "Maquia: When the Promised Flower Blooms", 2018, "16 February 2024", 6, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1bGBDI06DeVRypyuvdLVfSgt2YMCDrcs7xYjR07SYhak_xeLnxjPN91Bw&s=10", ["Drama", "Fantasy", "Emotional"], 7.7]
 
   ],
   
