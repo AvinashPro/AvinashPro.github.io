@@ -103,7 +103,7 @@ let data = {
     ["M15", "Sing a Bit of Harmony", 2021, "04 March 2025", 5, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa2RBEG-ZDQskkGZUhYMdieiUmor3wvM-XFJi4ifXoGTEnXnv_T_Xhr2wT&s=10", ["Drama", "School", "Music"], 6.2],
     [77, "Violet Evergarden", 2018, "March 2025", 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR8QtbSGULYUM47S4oXix-zYKd6y5fPEYyg6MydQSJ1JkVNw1e0Ea_kWeP&s=10", ["Drama", "Romance", "Emotional"], 8.1],
     [78, "Orb: On the Movements of the Earth", 2024, "March 2025", 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2xKEOzo7Sy_i1YnpMWouMLpAJ-6ErLqTYSufdVcYBiIJtKweGhpmRyesJ&s=10", ["Sci-Fi", "Drama"], 8.8],
-    [79, "Code Geass", 2006, "March 2025", 56, "https://static.wikia.nocookie.net/animangademocracy/images/3/3d/Codegeass.jpg/revision/latest?cb=20200922135809", ["Action", "Drama"], 8.9]
+    [79, "Code Geass", 2006, "March 2025", 56, "https://static.wikia.nocookie.net/animangademocracy/images/3/3d/Codegeass.jpg", ["Action", "Drama"], 8.9]
 
   ],
   
