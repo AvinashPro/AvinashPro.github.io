@@ -29,7 +29,7 @@ let data = {
     [17, "Tonikawa", 2020, "September 2023", 30, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ5aByolrwKaYqfQ1bKpoDaEUlXaaY6_5qhkdESNJwz57y9ab2ixusJl0&s=10", ["Rom-com", "Supernatural", "Comedy"], 8.9],
     [18, "Eromanga Sensei", 2017, "September 2023", 14, "https://m.media-amazon.com/images/M/MV5BN2UwMWIyNDEtZGExOS00N2QwLWI4ZWUtMjk1NWRlMGVkZTE0XkEyXkFqcGdeQXVyNTI1MDU0MzM@._V1_FMjpg_UX1000_.jpg", ["Rom-com"], 6.4],
     [19, "Kubo won't let me be invisible", 2023, "October 2023", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVopmstJi5Vj3w7G_s7_rgk__rnL6AT7CmGS7c4RrnoZVBpnX8Z_LlAGtQ&s=10", ["Rom-com", "School"], 7.4],
-    [20, "Liar Liar", 2023, "October 2023",12, "https://www.nautiljon.com/images/anime/00/20/liar_liar_10202.webp", ["Psychological", "School"], 8.4],
+    [20, "Liar Liar", 2023, "October 2023",12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFE0E5aRA3MqeVmcL5nFS7bGvGbjjwIlWmMaWegL0Jpe9k3dF6lH548cdZ&s=10", ["Psychological", "School"], 8.4],
     [21, "Classroom of the Elite", 2017, "October 2023", 38, "https://m.media-amazon.com/images/M/MV5BMDM0MmVlOGItNDRjYi00MmE3LWExMjktMDc0YTYxYjAzYTE4XkEyXkFqcGdeQXVyNjc3NTI5MDY@._V1_FMjpg_UX1000_.jpg", ["Psychological", "School", "Drama"], 8.3],
     [22, "The Quintessential Quintuplets", 2019, "October 2023", 33, "https://m.media-amazon.com/images/M/MV5BYzU4YTdmYmYtNjVhYy00Njk1LWJmYjEtZmQ3MWNkZTMzYzNiXkEyXkFqcGdeQXVyNDAzNDkxNTU@._V1_.jpg", ["Harem", "School", "Rom-com"], 7.8],
     [23, "Masamune-kun's Revenge", 2017, "October 2023", 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrRe_oW7_Kz_vq8P8qKNookiuTLq4oZLXH2Q&usqp=CAU", ["Drama", "Romance", "School"], 10, true, true],
@@ -103,7 +103,9 @@ let data = {
     ["M15", "Sing a Bit of Harmony", 2021, "04 March 2025", 5, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa2RBEG-ZDQskkGZUhYMdieiUmor3wvM-XFJi4ifXoGTEnXnv_T_Xhr2wT&s=10", ["Drama", "School", "Music"], 6.2],
     [77, "Violet Evergarden", 2018, "March 2025", 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR8QtbSGULYUM47S4oXix-zYKd6y5fPEYyg6MydQSJ1JkVNw1e0Ea_kWeP&s=10", ["Drama", "Romance", "Emotional"], 8.1],
     [78, "Orb: On the Movements of the Earth", 2024, "March 2025", 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2xKEOzo7Sy_i1YnpMWouMLpAJ-6ErLqTYSufdVcYBiIJtKweGhpmRyesJ&s=10", ["Sci-Fi", "Drama"], 8.8],
-    [79, "Code Geass", 2006, "March 2025", 56, "https://static.wikia.nocookie.net/animangademocracy/images/3/3d/Codegeass.jpg", ["Action", "Drama"], 8.9]
+    [79, "Code Geass", 2006, "March 2025", 56, "https://static.wikia.nocookie.net/animangademocracy/images/3/3d/Codegeass.jpg", ["Action", "Drama"], 8.9],
+    [80, "Grand Blue", 2018, "April 2025", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxhOFYRDhxUUrULFQHWyk2i9e1E_33iWaW4r8zOhRbPGLKq8OOVcmhNjRf&s=10", ["Comedy"], 8.7],
+    [81, "Monster", 2004, "April 2025", 74, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuiZVxy312vTGSlB-A4CbAr-bUTIIIZBWsxNWFDMVl3Xc6iroqBoDf5WM&s=10", ["Psychological", "Mystery", "Drama"], 8.8]
 
   ],
   
