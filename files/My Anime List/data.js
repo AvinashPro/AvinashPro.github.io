@@ -105,7 +105,8 @@ let data = {
     [78, "Orb: On the Movements of the Earth", 2024, "March 2025", 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2xKEOzo7Sy_i1YnpMWouMLpAJ-6ErLqTYSufdVcYBiIJtKweGhpmRyesJ&s=10", ["Sci-Fi", "Drama"], 8.8],
     [79, "Code Geass", 2006, "March 2025", 56, "https://static.wikia.nocookie.net/animangademocracy/images/3/3d/Codegeass.jpg", ["Action", "Drama"], 8.9],
     [80, "Grand Blue", 2018, "April 2025", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxhOFYRDhxUUrULFQHWyk2i9e1E_33iWaW4r8zOhRbPGLKq8OOVcmhNjRf&s=10", ["Comedy"], 8.7],
-    [81, "Monster", 2004, "April 2025", 74, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuiZVxy312vTGSlB-A4CbAr-bUTIIIZBWsxNWFDMVl3Xc6iroqBoDf5WM&s=10", ["Psychological", "Mystery", "Drama"], 8.8]
+    [81, "Monster", 2004, "April 2025", 74, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuiZVxy312vTGSlB-A4CbAr-bUTIIIZBWsxNWFDMVl3Xc6iroqBoDf5WM&s=10", ["Psychological", "Mystery", "Drama"], 8.8],
+    [82, "Solo Leveling", 2024, "May 2025", 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAkkDEHJpd8pvKrRh_sCWVUQU_y6K3hpOy8zstx8jW9hT84WSVV5Ewhh4&s=10", ["Action", "Adventure", "Fantasy"], 8.7]
 
   ],
   
