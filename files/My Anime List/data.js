@@ -108,7 +108,7 @@ let data = {
     [81, "Monster", 2004, "April 2025", 74, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuiZVxy312vTGSlB-A4CbAr-bUTIIIZBWsxNWFDMVl3Xc6iroqBoDf5WM&s=10", ["Psychological", "Mystery", "Drama"], 8.8],
     [82, "Solo Leveling", 2024, "May 2025", 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAkkDEHJpd8pvKrRh_sCWVUQU_y6K3hpOy8zstx8jW9hT84WSVV5Ewhh4&s=10", ["Action", "Adventure", "Fantasy"], 8.7],
 
-    [83, "Dark Gathering", 2023, "July 2025", 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl6uVtk_f5M9Jn9Mcvkc0bM8SH1lzEEQJyCmFidMSb3sgtlq6OL5nzi98&s=10", ["Horror", "Supernatural", "Gore", 9.2]
+    [83, "Dark Gathering", 2023, "July 2025", 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl6uVtk_f5M9Jn9Mcvkc0bM8SH1lzEEQJyCmFidMSb3sgtlq6OL5nzi98&s=10", ["Horror", "Supernatural", "Gore"], 8.8]
 
   ],
   
