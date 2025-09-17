@@ -111,7 +111,8 @@ let data = {
     [83, "Dark Gathering", 2023, "July 2025", 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl6uVtk_f5M9Jn9Mcvkc0bM8SH1lzEEQJyCmFidMSb3sgtlq6OL5nzi98&s=10", ["Horror", "Supernatural", "Gore"], 8.8],
 
     ["M16", "Goodbye, Don Glees!", 2022, "01 September 2025", 4, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh4iVxhf7IkMoAxoNnM9V0myz_nE8UiYI7odewKyGFjLj68AmTYI--ues&s=10", ["Adventure", "Drama"], 8.5],
-    ["M17", "The Anthem of the Heart", 2015, "01 September 2025", 6, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd_kwcIuRaIhTLzE_zMrSDGgf_ZL7Lwyew9WVLiWF7YuNYidibPxHlulFe&s=10", ["Drama", "School", "Romance"], 7.4]
+    ["M17", "The Anthem of the Heart", 2015, "01 September 2025", 6, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd_kwcIuRaIhTLzE_zMrSDGgf_ZL7Lwyew9WVLiWF7YuNYidibPxHlulFe&s=10", ["Drama", "School", "Romance"], 7.4],
+    ["M18", "Words Bubble Up Like Soda Pop", 2021, "04 September 2025", 4, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD2OwVIYTOPee3AuPmKTYFZXVbWQeAay24oneR4KPzdA&s=10", ["Drama"], 6]
 
   ],
   
