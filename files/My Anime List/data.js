@@ -112,7 +112,8 @@ let data = {
 
     ["M16", "Goodbye, Don Glees!", 2022, "01 September 2025", 4, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh4iVxhf7IkMoAxoNnM9V0myz_nE8UiYI7odewKyGFjLj68AmTYI--ues&s=10", ["Adventure", "Drama"], 8.5],
     ["M17", "The Anthem of the Heart", 2015, "01 September 2025", 6, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd_kwcIuRaIhTLzE_zMrSDGgf_ZL7Lwyew9WVLiWF7YuNYidibPxHlulFe&s=10", ["Drama", "School", "Romance"], 7.4],
-    ["M18", "Words Bubble Up Like Soda Pop", 2021, "04 September 2025", 4, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD2OwVIYTOPee3AuPmKTYFZXVbWQeAay24oneR4KPzdA&s=10", ["Drama"], 6]
+    ["M18", "Words Bubble Up Like Soda Pop", 2021, "04 September 2025", 4, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD2OwVIYTOPee3AuPmKTYFZXVbWQeAay24oneR4KPzdA&s=10", ["Drama"], 6],
+    [84, "Uncle from Another World", 2022, "September 2025", 13, "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p22500600_b_v10_aa.jpg", ["Isekai", "Comedy"], 8.3]
 
   ],
   
