@@ -16,8 +16,8 @@ let data = {
     [6, "Jujutsu Kaisen", 2020, "September 2022", 47, "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/09/jujutsu-kaisen.jpg", ["Action", "Supernatural"], 8.8],
     [7, "Steins;Gate", 2011, "December 2022", 51, "https://m.media-amazon.com/images/M/MV5BMjUxMzE4ZDctODNjMS00MzIwLThjNDktODkwYjc5YWU0MDc0XkEyXkFqcGdeQXVyNjc3OTE4Nzk@._V1_FMjpg_UX1000_.jpg", ["Sci-fi", "Drama", "Time travel", "Romance"], 10, true, true],
     ["M1", "Your Name", 2016, "04 March 2023", 5, "https://w0.peakpx.com/wallpaper/380/636/HD-wallpaper-your-name-anime-mitsuha-taki-your-name.jpg", ["Drama", "Romance"], 10, true, true],
-    [8, "One Punch Man", 2015, "March 2023", 36, "https://m.media-amazon.com/images/M/MV5BZjJlNzE5YzEtYzQwYS00NTBjLTk5YzAtYzUwOWQyM2E3OGI2XkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_.jpg", ["Action", "Comedy", "Supernatural"], 8.9],
-    [9, "A Bridge to the Starry Skies", 2011, "April 2023", 13, "https://m.media-amazon.com/images/M/MV5BY2ZkZjIxMjMtY2UxMC00YzRiLTlkNmMtMTYwNTdiMGFhYjVhXkEyXkFqcGdeQXVyMTA3OTEyODI1._V1_FMjpg_UX1000_.jpg", ["School"], 6.5],
+    [8, "One Punch Man", 2015, "March 2023", 48, "https://m.media-amazon.com/images/M/MV5BZjJlNzE5YzEtYzQwYS00NTBjLTk5YzAtYzUwOWQyM2E3OGI2XkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_.jpg", ["Action", "Comedy", "Supernatural"], 8.9],
+    [9, "A Bridge to the Starry Skies", 2011, "April 2023", 13, "https://m.media-amazon.com/images/M/MV5BMmExNzQ1ZWItYTM2MS00ODFiLTg4ODYtYTBjNGEwNWMyMDE4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", ["School"], 6.5],
     [10, "Rent a Girlfriend", 2020, "May 2023", 36, "https://upload.wikimedia.org/wikipedia/en/1/12/Rent-A-Girlfriend_volume_1_cover.jpg", ["Harem"], 7.9],
     ["M2", "Weathering With You", 2019, "14 June 2023", 6, "https://w0.peakpx.com/wallpaper/316/99/HD-wallpaper-weathering-with-you-weathering-with-you-scenery.jpg", ["Drama", "Romance"], 10, true, true],
     [11, "Love Flops", 2022, "June 2023", 12, "https://static.animecorner.me/2022/09/love-flops-kv.jpg", ["Harem", "Romance", "Drama", "Emotional"], 10, true, true],
@@ -48,7 +48,7 @@ let data = {
     [35, "My love story with Yamada-kun at Lvl999", 2023, "March 2024", 13, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL61UfnV6EVuqgye2BG9k7B4T9DaZhQPEQww&usqp=CAU", ["Rom-com"], 5.1],
     [36, "Erased", 2016, "March 2024", 12, "https://m.media-amazon.com/images/M/MV5BYzJmZjZkMjQtZjJmZC00M2JkLTg5MzktN2FkOTllNTc5MmMzXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg", ["Thriller", "Time travel", "Mystery"], 8],
     [37, "Our love has always been 10 centimeters apart", 2017, "March 2024", 6, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEQB1MJIfgmlR5bSRdAmni5CQrT0O_zYPqD1AlgadIvndZA5y6gCSCaIc&s=10.jpg", ["Rom-com", "School"], 4.5],
-    [38, "Edens Zero", 2021, "March 2024", 50, "https://m.media-amazon.com/images/M/MV5BZDM2NjI5ODUtYWM4OC00Zjg2LWE5MzUtYThjYWFhOWQzN2M4XkEyXkFqcGdeQXVyODMyNTM0MjM@._V1_.jpg", ["Supernatural", "Action"], 8.1],
+    [38, "Edens Zero", 2021, "March 2024", 50, "https://m.media-amazon.com/images/M/MV5BMjhlYWVlN2ItZDg3Yy00NGYxLWJkODYtMjFjZTE1YzVlYjdjXkEyXkFqcGc@._V1_.jpg", ["Supernatural", "Action"], 8.1],
     [39, "Date a Live", 2013, "March 2024", 65, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMLC87jm7GLxbXiQt47V5seLJmSmXHYErJgA&usqp=CAU", ["Supernatural", "Rom-com", "Drama"], 5],
     [40, "Toradora", 2008, "April 2024", 27, "https://m.media-amazon.com/images/M/MV5BNWEwMjE2MjQtZTQ3NC00OTUxLWEwMWUtMThjZjg4Zjc5ZDYwXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg", ["Romance", "Comedy", "Drama"], 8.7],
     [41, "Insomniacs After School", 2023, "April 2024", 13, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZdy49oCmU2DIpEpOv5MlBCTZQyE_NqxME5Q&usqp=CAU", ["Rom-com", "School"], 6],
@@ -78,9 +78,9 @@ let data = {
     [60, "DARLING in the FRANXX", 2018, "July 2024", 24, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsty1igug9wke5ys_3igF9JMkosV-yKmGjkEfiH4ohgKS0Dlrdmf6yWgdL&s=10", ["Action", "Drama", "Romance"], 8.3],
     [61, "Chainsaw Man", 2022, "July 2024", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6BXc8DFi93_d10o_8de1hoewyrtiuMTn48N83yQbjHNisVnlesmYaz40r&s=10", ["Action", "Gore"], 8],
     [62, "Hell's Paradise", 2023, "August 2024", 13, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlgqihjI1qMa2HCdV1sq-A2SzDcptOUOQSMHF3Vx6yB0LhWVorrgmjTIjE&s=10", ["Action", "Fantasy"], 8],
-    [63, "Is It Wrong to Try to Pick Up Girls in a Dungeon?", 2015, "August 2024", 75, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwJIxppfcRO1Ks1amcgB4W8TIXAq9KM7LY6VRSb4YkfuKd5HkVAh46xqJj&s=10", ["Action", "Adventure", "Fantasy"], 8],
+    [63, "Is It Wrong to Try to Pick Up Girls in a Dungeon?", 2015, "August 2024", 75, "https://m.media-amazon.com/images/M/MV5BN2NkOTJiMDMtYzY0ZC00YjAxLWFlYjUtMTk2NjhmZTEzMmI4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", ["Action", "Adventure", "Fantasy"], 8],
     [64, "KonoSuba: God's Blessing on This Wonderful World!", 2016, "August 2024", 50, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq4Qtx0VXqCeG6rcwXfcpYqERkTimNUkxJwCfd29Tzz73-EEC_IZ5HMgLX&s=10", ["Isekai", "Comedy", "Adventure", "Fantasy"], 8.8],
-    [65, "The Rising of The Shield Hero", 2019, "August 2024", 62, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJXeCCt4Z6DlRb1NHJhixR7pZ4BHKYJuAO4bU_s3B83enngSMRSyHc2uU&s=10", ["Isekai", "Adventure", "Action", "Fantasy", "Drama"], 8.3],
+    [65, "The Rising of The Shield Hero", 2019, "August 2024", 74, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJXeCCt4Z6DlRb1NHJhixR7pZ4BHKYJuAO4bU_s3B83enngSMRSyHc2uU&s=10", ["Isekai", "Adventure", "Action", "Fantasy", "Drama"], 8.3],
     [66, "WorldEnd: What do you do at the end of the world?", 2017, "September 2024", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1cALDN3X8_K288A402V5CaPTGL0tdhOqtIw&usqp=CAU", ["Romance", "Emotional", "Action", "Drama"], 8.5],
     ["M8", "To Me, the One Who Loved You", 2022, "14 September 2024", 5, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSysFULKPlz7yNOeuPB4-JOgD86q9KdOAiHEnunSOxgznaCsknQ096r234j&s=10", ["Sci-fi", "Drama", "Romance", "Supernatural"], 8.1],
     ["M9", "To Every You I've Loved Before", 2022, "14 September 2024", 5, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuC62gQAafniYGr5fYK5aT_YToqVlbnDBU9qpjzmpgfhanjDOmUvQopoc&s=10", ["Sci-fi", "Drama", "Romance", "Supernatural"], 8],
@@ -104,7 +104,7 @@ let data = {
     [77, "Violet Evergarden", 2018, "March 2025", 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR8QtbSGULYUM47S4oXix-zYKd6y5fPEYyg6MydQSJ1JkVNw1e0Ea_kWeP&s=10", ["Drama", "Romance", "Emotional"], 8.1],
     [78, "Orb: On the Movements of the Earth", 2024, "March 2025", 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2xKEOzo7Sy_i1YnpMWouMLpAJ-6ErLqTYSufdVcYBiIJtKweGhpmRyesJ&s=10", ["Sci-Fi", "Drama"], 8.8],
     [79, "Code Geass", 2006, "March 2025", 56, "https://static.wikia.nocookie.net/animangademocracy/images/3/3d/Codegeass.jpg", ["Action", "Drama"], 8.9],
-    [80, "Grand Blue", 2018, "April 2025", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxhOFYRDhxUUrULFQHWyk2i9e1E_33iWaW4r8zOhRbPGLKq8OOVcmhNjRf&s=10", ["Comedy"], 8.7],
+    [80, "Grand Blue", 2018, "April 2025", 24, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxhOFYRDhxUUrULFQHWyk2i9e1E_33iWaW4r8zOhRbPGLKq8OOVcmhNjRf&s=10", ["Comedy"], 8.7],
     [81, "Monster", 2004, "April 2025", 74, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuiZVxy312vTGSlB-A4CbAr-bUTIIIZBWsxNWFDMVl3Xc6iroqBoDf5WM&s=10", ["Psychological", "Mystery", "Drama"], 8.8],
     [82, "Solo Leveling", 2024, "May 2025", 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAkkDEHJpd8pvKrRh_sCWVUQU_y6K3hpOy8zstx8jW9hT84WSVV5Ewhh4&s=10", ["Action", "Adventure", "Fantasy"], 8.7],
 
@@ -113,7 +113,10 @@ let data = {
     ["M16", "Goodbye, Don Glees!", 2022, "01 September 2025", 4, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh4iVxhf7IkMoAxoNnM9V0myz_nE8UiYI7odewKyGFjLj68AmTYI--ues&s=10", ["Adventure", "Drama"], 8.5],
     ["M17", "The Anthem of the Heart", 2015, "01 September 2025", 6, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd_kwcIuRaIhTLzE_zMrSDGgf_ZL7Lwyew9WVLiWF7YuNYidibPxHlulFe&s=10", ["Drama", "School", "Romance"], 7.4],
     ["M18", "Words Bubble Up Like Soda Pop", 2021, "04 September 2025", 4, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD2OwVIYTOPee3AuPmKTYFZXVbWQeAay24oneR4KPzdA&s=10", ["Drama"], 6],
-    [84, "Uncle from Another World", 2022, "September 2025", 13, "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p22500600_b_v10_aa.jpg", ["Isekai", "Comedy"], 8.3]
+    [84, "Uncle from Another World", 2022, "September 2025", 13, "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p22500600_b_v10_aa.jpg", ["Isekai", "Comedy"], 8.3],
+    
+    [85, "Irozuku: The World in Colors", 2018, "December 2025", 13, "https://m.media-amazon.com/images/M/MV5BODIxMDZiMGQtMzg2Ny00YzRlLWI0OTctYTUzNWViYmQxMzU5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", ["School", "Rom-com"], 6.5],
+    [86, "Ranking of Kings", 2021, "December 2025", 23, "https://m.media-amazon.com/images/M/MV5BNjM3OWRmODQtODVjYS00YzY5LWFiNmQtOGExM2M4OWQ3Nzk1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", ["Action", "Emotional", "Fantasy"], 8.4]
 
   ],
   
