@@ -116,7 +116,8 @@ let data = {
     [84, "Uncle from Another World", 2022, "September 2025", 13, "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p22500600_b_v10_aa.jpg", ["Isekai", "Comedy"], 8.3],
     
     [85, "Irozuku: The World in Colors", 2018, "December 2025", 13, "https://m.media-amazon.com/images/M/MV5BODIxMDZiMGQtMzg2Ny00YzRlLWI0OTctYTUzNWViYmQxMzU5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", ["School", "Rom-com"], 6.5],
-    [86, "Ranking of Kings", 2021, "December 2025", 23, "https://m.media-amazon.com/images/M/MV5BNjM3OWRmODQtODVjYS00YzY5LWFiNmQtOGExM2M4OWQ3Nzk1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", ["Action", "Emotional", "Fantasy"], 8.4]
+    [86, "Ranking of Kings", 2021, "December 2025", 23, "https://m.media-amazon.com/images/M/MV5BNjM3OWRmODQtODVjYS00YzY5LWFiNmQtOGExM2M4OWQ3Nzk1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", ["Action", "Emotional", "Fantasy"], 8.4],
+    [87, "Record of Ragnarok", 2021, "January 2026", 42, "https://m.media-amazon.com/images/M/MV5BYmUxZjczNDctOGQ5ZC00MGJlLTk3YTgtZWQwZDYyMWY2MzM4XkEyXkFqcGc@._V1_.jpg", ["Action", "Fantasy"], 8.3]
 
   ],
   
