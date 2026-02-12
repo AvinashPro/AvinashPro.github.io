@@ -13,7 +13,7 @@ let data = {
     [3, "Death Note", 2006, "July 2022", 37, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMaCry5fwYr3VpBHurOBjBdlnH-Ek3r3B1kfp1I7TUpF_K2eZiPcl9y-s&s=10", ["Thriller", "Psychological"], 10, true, true],
     [4, "The Promised Neverland", 2019, "July 2022", 23, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHAa0D-1FDsFvRq9qxqhkAUwxsEx4VjmNstI2XN_8HYuo1_nKeFJSoX-Ea&s=10", ["Supernatural"], 7],
     [5, "Attack on Titan", 2013, "August 2022", 102, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpfb582pKTYQCzIIuMJisxzQZ0O2OWW-eV5jpk0gwc9DOL09FJaI7Sn7L-&s=10", ["Action", "Drama"], 10, true, true],
-    [6, "Jujutsu Kaisen", 2020, "September 2022", 47, "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/09/jujutsu-kaisen.jpg", ["Action", "Supernatural"], 8.8],
+    [6, "Jujutsu Kaisen", 2020, "September 2022", 59, "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/09/jujutsu-kaisen.jpg", ["Action", "Supernatural"], 8.8],
     [7, "Steins;Gate", 2011, "December 2022", 51, "https://m.media-amazon.com/images/M/MV5BMjUxMzE4ZDctODNjMS00MzIwLThjNDktODkwYjc5YWU0MDc0XkEyXkFqcGdeQXVyNjc3OTE4Nzk@._V1_FMjpg_UX1000_.jpg", ["Sci-fi", "Drama", "Time travel", "Romance"], 10, true, true],
     ["M1", "Your Name", 2016, "04 March 2023", 5, "https://w0.peakpx.com/wallpaper/380/636/HD-wallpaper-your-name-anime-mitsuha-taki-your-name.jpg", ["Drama", "Romance"], 10, true, true],
     [8, "One Punch Man", 2015, "March 2023", 48, "https://m.media-amazon.com/images/M/MV5BZjJlNzE5YzEtYzQwYS00NTBjLTk5YzAtYzUwOWQyM2E3OGI2XkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_.jpg", ["Action", "Comedy", "Supernatural"], 8.9],
@@ -85,7 +85,7 @@ let data = {
     ["M8", "To Me, the One Who Loved You", 2022, "14 September 2024", 5, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSysFULKPlz7yNOeuPB4-JOgD86q9KdOAiHEnunSOxgznaCsknQ096r234j&s=10", ["Sci-fi", "Drama", "Romance", "Supernatural"], 8.1],
     ["M9", "To Every You I've Loved Before", 2022, "14 September 2024", 5, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuC62gQAafniYGr5fYK5aT_YToqVlbnDBU9qpjzmpgfhanjDOmUvQopoc&s=10", ["Sci-fi", "Drama", "Romance", "Supernatural"], 8],
     [67, "You and me", 2011, "September 2024", 26, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWMY_KIOykBnMEXLJaR7zu0goH-2qF3ktYjQ&usqp=CAU", ["slice of life", "Comedy", "School"], 8.1],
-    ["M10", "Josee, the Tiger and the Fish", 2020, "19 September 2024", 5, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG-mF-8YY3Igt0XPJhw45kkES51uL_-0o180G_AUAeOLnzEPz9smXqJ2fE&s=10", ["Drama"], 7.9],
+    ["M10", "Josee, the Tiger and the Fish", 2020, "19 September 2024", 5, "https://m.media-amazon.com/images/I/81nvHysPyjL._AC_UF1000,1000_QL80_.jpg", ["Drama"], 7.9],
     
     [68, "Our Last Crusade or the Rise of a New World", 2020, "September 2024", 24, "https://m.media-amazon.com/images/M/MV5BOWY4OTRmM2EtOGE0Ny00MThjLTlkMWItOGMzMjcwMDc4MzlhXkEyXkFqcGc@._V1_.jpg", ["Action", "Rom-com", "Fantasy"], 6.2],
     [69, "That Time I Got Reincarnated as a Slime", 2018, "October 2024", 98, "https://m.media-amazon.com/images/M/MV5BOTczMjM3MDUtYmZjMC00YzZhLWE4ODQtNjg5YWU4NTJjNzY2XkEyXkFqcGc@._V1_.jpg", ["Isekai", "Comedy", "Fantasy"], 7.4],
@@ -118,24 +118,25 @@ let data = {
     [85, "Irozuku: The World in Colors", 2018, "December 2025", 13, "https://m.media-amazon.com/images/M/MV5BODIxMDZiMGQtMzg2Ny00YzRlLWI0OTctYTUzNWViYmQxMzU5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", ["School", "Rom-com"], 6.5],
     [86, "Ranking of Kings", 2021, "December 2025", 23, "https://m.media-amazon.com/images/M/MV5BNjM3OWRmODQtODVjYS00YzY5LWFiNmQtOGExM2M4OWQ3Nzk1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", ["Action", "Emotional", "Fantasy"], 8.4],
     [87, "Record of Ragnarok", 2021, "January 2026", 42, "https://m.media-amazon.com/images/M/MV5BYmUxZjczNDctOGQ5ZC00MGJlLTk3YTgtZWQwZDYyMWY2MzM4XkEyXkFqcGc@._V1_.jpg", ["Action", "Fantasy"], 8.3],
-    [88, "Takopi's Original Sin", 2025, "January 2026", 6, "https://m.media-amazon.com/images/M/MV5BYmRkN2I1OGEtOWM3Yi00NjViLWJjMDktYTNmZTMxYjBiNTU3XkEyXkFqcGc@._V1_.jpg", ["Psychological", "Emotional", "Time Travel"], 8.7]
+    [88, "Takopi's Original Sin", 2025, "January 2026", 6, "https://m.media-amazon.com/images/M/MV5BYmRkN2I1OGEtOWM3Yi00NjViLWJjMDktYTNmZTMxYjBiNTU3XkEyXkFqcGc@._V1_.jpg", ["Psychological", "Emotional", "Time Travel"], 8.7],
+    [89, "Made in Abyss", 2017, "February 2026", 30, "https://image.tmdb.org/t/p/original/jLkCeh5xNCuQPHIbTfuLgSqt2OQ.jpg", ["Action", "Adventure", "Gore", "Fantasy", "Mystery"], 8.3]
 
   ],
   
   
   ecchi: [
     [1, "Why the hell are you here, teacher?", 2019, "April 2023", 6, "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRoZ_czYMT9A32FKeF4w_rLuDFq9IpJGRxNAiu6LxJZVzatANFD", ["Comedy", "School"], 7],
-    [2, "To love ru", 2008, "April 2023", 81, "https://m.media-amazon.com/images/M/MV5BNmFkYjljODUtYTQyOS00N2U5LTk1NjktMDc1ZTVjMDhkNDAyXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg", ["Comedy", "School", "Supernatural", "Harem"], 8.7],
+    [2, "To love ru", 2008, "April 2023", 81, "https://m.media-amazon.com/images/M/MV5BOGVhMWYyN2MtZDMyMC00MWU3LThhYWYtNGJkMTczZmU3ZGYyXkEyXkFqcGc@._V1_.jpg", ["Comedy", "School", "Supernatural", "Harem"], 8.7],
     [3, "Sky of Connection", 2010, "April 2023", 12, "https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Yosuganosora_package.jpg/220px-Yosuganosora_package.jpg", ["Drama", "Romance"], 8],
-    [4, "Kiss x Sis", 2008, "May 2023", 12, "https://m.media-amazon.com/images/M/MV5BNjM4NmI4MDQtNjdlMS00YTBmLWFmZDgtYzdmYmQ2ZjVjYmZiXkEyXkFqcGdeQXVyMjc0MjUzMzU@._V1_FMjpg_UX1000_.jpg", ["school", "Comedy", "Harem"], 5.2],
+    [4, "Kiss x Sis", 2008, "May 2023", 12, "https://m.media-amazon.com/images/M/MV5BMDE5NWM4MDAtZjk4Yi00ODc0LTk0OTItNTdhOGU3YTUxYTUzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", ["school", "Comedy", "Harem"], 5.2],
     [5, "High school DxD", 2012, "May 2023", 55, "https://m.media-amazon.com/images/M/MV5BYjhlYWI2MGUtNjk4ZS00OWJjLWJiZTEtYWYxNTY5MzVhYzI0XkEyXkFqcGdeQXVyNDgyODgxNjE@._V1_.jpg", ["Action", "Magic", "School", "Comedy", "Supernatural", "Harem"], 9],
     [6, "Domestic Girlfriend", 2019, "June 2023", 12, "https://m.media-amazon.com/images/M/MV5BM2RmZmI2NmUtNDhjMi00MGQ4LWIyYTEtZmMxM2E1ZjBkYTU0XkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg", ["Drama", "School", "Harem"], 4.2],
     [7, "The Testament of Sister New Devil", 2015, "July 2023", 22, "https://m.media-amazon.com/images/M/MV5BZTZmNmY1MDMtNzM4OC00Nzc5LWE1ZmUtYjNmNDMwMGIyZjg5L2ltYWdlXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg", ["Magic", "Supernatural", "Harem", "Action"], 5.5],
-    [8, "Mother of the Goddess' Dormitory", 2021, "July 2023", 10, "https://m.media-amazon.com/images/M/MV5BYWU3MTUwMzYtZDk3ZC00NTM4LTkzNWMtNGE2MmM1ZDRlZTJjXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg", ["Comedy"], 8.2],
+    [8, "Mother of the Goddess' Dormitory", 2021, "July 2023", 10, "https://m.media-amazon.com/images/M/MV5BNDk2YjI1ZmMtOTgwNC00ZDRlLTk5ZjUtN2Y0OWM3MzBlZWE2XkEyXkFqcGc@._V1_.jpg", ["Comedy"], 8.2],
     [9, "Okusama Ga Seitokaichou!", 2015, "October 2023", 8, "https://cdn.myanimelist.net/images/anime/12/75012.jpg", ["School", "Rom-com", "Comedy"], 6.2],
     [10, "Chained Soldier", 2024, "February 2024", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD9MqWnLJeudjBj1TD6ff-J_pSf3skX3G06wlospCnBmxNIhvK9kbb-7xZ&s=10", ["Harem", "Action", "Supernatural"], 7.2],
     [11, "The Comic Artist & his assistants", 2014, "February 2024", 9, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7bjd3BPAp7U7yBBf7U9lKKL4baGjmslcVh1G8zJbfRqWTsH-s", ["Comedy"], 6.2],
-    [12, "Tales of Wedding Rings", 2024, "March 2024", 12, "https://m.media-amazon.com/images/M/MV5BMDM0OGUwN2QtZWFiOS00NWMyLWI0ZDgtMjJlNDUxYTY2YjJhXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg", ["Action", "Magic", "Isekai", "Fantasy", "Harem"], 8],
+    [12, "Tales of Wedding Rings", 2024, "March 2024", 12, "https://www.animenewsnetwork.com/hotlink/images/encyc/A26935-2661618769.1700259830.jpg", ["Action", "Magic", "Isekai", "Fantasy", "Harem"], 8],
     [13, "Elfen Lied", 2004, "June 2024", 14, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOlVI_2Lll-0qQaWZNdhRGV6ZuFljGQar6XYNhRV0IKtvuWWan3ZXpQu1v&s=10", ["Gore", "Action", "Psychological"], 7.8]
 
 
