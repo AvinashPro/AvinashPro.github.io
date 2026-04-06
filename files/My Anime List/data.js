@@ -128,7 +128,7 @@ let data = {
   ecchi: [
     [1, "Why the hell are you here, teacher?", 2019, "April 2023", 6, "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRoZ_czYMT9A32FKeF4w_rLuDFq9IpJGRxNAiu6LxJZVzatANFD", ["Comedy", "School"], 7],
     [2, "To love ru", 2008, "April 2023", 81, "https://m.media-amazon.com/images/M/MV5BOGVhMWYyN2MtZDMyMC00MWU3LThhYWYtNGJkMTczZmU3ZGYyXkEyXkFqcGc@._V1_.jpg", ["Comedy", "School", "Supernatural", "Harem"], 8.7],
-    [3, "Sky of Connection", 2010, "April 2023", 12, "https://static.wikia.nocookie.net/yosuganosora/images/a/ab/VisualArtCollection.jpg/revision/latest?cb=20240604112553", ["Drama", "Romance"], 8],
+    [3, "Sky of Connection", 2010, "April 2023", 12, "https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Yosuganosora_package.jpg/250px-Yosuganosora_package.jpg", ["Drama", "Romance"], 8],
     [4, "Kiss x Sis", 2008, "May 2023", 12, "https://m.media-amazon.com/images/M/MV5BMDE5NWM4MDAtZjk4Yi00ODc0LTk0OTItNTdhOGU3YTUxYTUzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", ["school", "Comedy", "Harem"], 5.2],
     [5, "High school DxD", 2012, "May 2023", 55, "https://m.media-amazon.com/images/M/MV5BYjhlYWI2MGUtNjk4ZS00OWJjLWJiZTEtYWYxNTY5MzVhYzI0XkEyXkFqcGdeQXVyNDgyODgxNjE@._V1_.jpg", ["Action", "Magic", "School", "Comedy", "Supernatural", "Harem"], 9],
     [6, "Domestic Girlfriend", 2019, "June 2023", 12, "https://m.media-amazon.com/images/M/MV5BM2RmZmI2NmUtNDhjMi00MGQ4LWIyYTEtZmMxM2E1ZjBkYTU0XkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg", ["Drama", "School", "Harem"], 4.2],
