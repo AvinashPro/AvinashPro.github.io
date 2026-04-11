@@ -9,12 +9,12 @@ let data = {
   
   main: [
     [1, "Dr.STONE", 2019, "May 2021", 83, "https://picfiles.alphacoders.com/597/597667.jpeg", ["Sci-fi", "Adventure"], 10, true, true],
-    [2, "Demon Slayer", 2019, "June 2022", 63, "https://m.media-amazon.com/images/M/MV5BYTIxNjk3YjItYmYzMC00ZTdmLTk0NGUtZmNlZTA0NWFkZDMwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg", ["Action", "Supernatural"], 10, true, true],
+    [2, "Demon Slayer", 2019, "June 2022", 70, "https://m.media-amazon.com/images/M/MV5BYTIxNjk3YjItYmYzMC00ZTdmLTk0NGUtZmNlZTA0NWFkZDMwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg", ["Action", "Supernatural"], 10, true, true],
     [3, "Death Note", 2006, "July 2022", 37, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMaCry5fwYr3VpBHurOBjBdlnH-Ek3r3B1kfp1I7TUpF_K2eZiPcl9y-s&s=10", ["Thriller", "Psychological"], 10, true, true],
     [4, "The Promised Neverland", 2019, "July 2022", 23, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHAa0D-1FDsFvRq9qxqhkAUwxsEx4VjmNstI2XN_8HYuo1_nKeFJSoX-Ea&s=10", ["Supernatural"], 7],
     [5, "Attack on Titan", 2013, "August 2022", 102, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpfb582pKTYQCzIIuMJisxzQZ0O2OWW-eV5jpk0gwc9DOL09FJaI7Sn7L-&s=10", ["Action", "Drama"], 10, true, true],
     [6, "Jujutsu Kaisen", 2020, "September 2022", 64, "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/09/jujutsu-kaisen.jpg", ["Action", "Supernatural"], 8.8],
-    [7, "Steins;Gate", 2011, "December 2022", 51, "https://m.media-amazon.com/images/M/MV5BMjUxMzE4ZDctODNjMS00MzIwLThjNDktODkwYjc5YWU0MDc0XkEyXkFqcGdeQXVyNjc3OTE4Nzk@._V1_FMjpg_UX1000_.jpg", ["Sci-fi", "Drama", "Time travel", "Romance"], 10, true, true],
+    [7, "Steins;Gate", 2011, "December 2022", 54, "https://m.media-amazon.com/images/M/MV5BMjUxMzE4ZDctODNjMS00MzIwLThjNDktODkwYjc5YWU0MDc0XkEyXkFqcGdeQXVyNjc3OTE4Nzk@._V1_FMjpg_UX1000_.jpg", ["Sci-fi", "Drama", "Time travel", "Romance"], 10, true, true],
     ["M1", "Your Name", 2016, "04 March 2023", 5, "https://w0.peakpx.com/wallpaper/380/636/HD-wallpaper-your-name-anime-mitsuha-taki-your-name.jpg", ["Drama", "Romance"], 10, true, true],
     [8, "One Punch Man", 2015, "March 2023", 48, "https://m.media-amazon.com/images/M/MV5BZjJlNzE5YzEtYzQwYS00NTBjLTk5YzAtYzUwOWQyM2E3OGI2XkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_.jpg", ["Action", "Comedy", "Supernatural"], 8.9],
     [9, "A Bridge to the Starry Skies", 2011, "April 2023", 13, "https://m.media-amazon.com/images/M/MV5BMmExNzQ1ZWItYTM2MS00ODFiLTg4ODYtYTBjNGEwNWMyMDE4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", ["School"], 6.5],
@@ -30,7 +30,7 @@ let data = {
     [18, "Eromanga Sensei", 2017, "September 2023", 14, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj3H2ycCcMgQEF996-XGo3m_7NminekM34kKqrGvay6CrrAV7A-W0kak8&s=10", ["Rom-com"], 6.4],
     [19, "Kubo won't let me be invisible", 2023, "October 2023", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVopmstJi5Vj3w7G_s7_rgk__rnL6AT7CmGS7c4RrnoZVBpnX8Z_LlAGtQ&s=10", ["Rom-com", "School"], 7.4],
     [20, "Liar Liar", 2023, "October 2023",12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFE0E5aRA3MqeVmcL5nFS7bGvGbjjwIlWmMaWegL0Jpe9k3dF6lH548cdZ&s=10", ["Psychological", "School"], 8.4],
-    [21, "Classroom of the Elite", 2017, "October 2023", 38, "https://m.media-amazon.com/images/M/MV5BMDg3MGVhNWUtYTQ2NS00ZDdiLTg5MTMtZmM5MjUzN2IxN2I4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", ["Psychological", "School", "Drama"], 8.3],
+    [21, "Classroom of the Elite", 2017, "October 2023", 54, "https://m.media-amazon.com/images/M/MV5BMDg3MGVhNWUtYTQ2NS00ZDdiLTg5MTMtZmM5MjUzN2IxN2I4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", ["Psychological", "School", "Drama"], 8.3],
     [22, "The Quintessential Quintuplets", 2019, "October 2023", 33, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMZfuOUogjUn0xzGzCitrjhg-FumOoscuVkqhfB-BTs1WqvPFmAlBPEt3A&s=10", ["Harem", "School", "Rom-com"], 7.8],
     [23, "Masamune-kun's Revenge", 2017, "October 2023", 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrRe_oW7_Kz_vq8P8qKNookiuTLq4oZLXH2Q&usqp=CAU", ["Drama", "Romance", "School"], 10, true, true],
     [24, "The Dangers in my heart", 2023, "October 2023", 26, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVHaT8m0Z-o-M_Zjn5tvJ56VMF1kOgbjr093u9CVnpsxMTMgueV9wKEkF&s=10", ["Rom-com", "School"], 8.4],
@@ -38,7 +38,7 @@ let data = {
     [26, "Heavenly Delusion", 2023, "November 2023", 13, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmpj-ARYrMKM-PG68kSSEt4QyEOGXFfQ2vtw&usqp=CAU", ["Post apocalyptic", "Supernatural", "Drama"], 9.8, true],
     [27, "Shikimori's not just a cutie", 2022, "November 2023", 12, "https://m.media-amazon.com/images/M/MV5BYjhkY2EyYjEtYjhlNS00ZmRiLWFmNjktNjJjNTJmYWQ2ZjMyXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg", ["Rom-com", "School"], 7.5],
     [28, "The dreaming boy is a realist", 2023, "November 2023", 12, "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRye0mjfz92Zwh3CE786KqL1aDs-MNhN4FVokONaIQbtkd7dQuz", ["Rom-com", "School"], 7.4],
-    [29, "Girlfriend, Girlfriend", 2021, "November 2023", 24, "https://cdn.myanimelist.net/images/anime/1713/117119.jpg", ["Harem", "Rom-com", "School"], 6.5],
+    [29, "Girlfriend, Girlfriend", 2021, "November 2023", 12, "https://cdn.myanimelist.net/images/anime/1713/117119.jpg", ["Harem", "Rom-com", "School"], 6.5],
     [30, "Oregairu", 2013, "November 2023", 41, "https://i0.wp.com/img1.ak.crunchyroll.com/i/spire2/320673efcacdbdb0d6222156f8d797ce1476015938_full.jpg", ["Drama", "Romance"], 9.5, true],
     [31, "Plastic Memories", 2015, "February 2024", 13, "https://m.media-amazon.com/images/M/MV5BZmM1Yjc3MjItMjk4NC00NmEwLWIyOWYtMmM4ODU5NDM0MDZmXkEyXkFqcGc@._V1_.jpg", ["Drama", "Romance", "Emotional"], 10, true, true],
     [32, "Don't Toy with me, Miss Nagatoro", 2021, "February 2024", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCssk5JH09bkCWaHDYjSpyS0R0p9EcIb-Ubg&usqp=CAU", ["Rom-com", "School"], 7],
@@ -52,7 +52,7 @@ let data = {
     [39, "Date a Live", 2013, "March 2024", 65, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMLC87jm7GLxbXiQt47V5seLJmSmXHYErJgA&usqp=CAU", ["Supernatural", "Rom-com", "Drama"], 5],
     [40, "Toradora", 2008, "April 2024", 27, "https://m.media-amazon.com/images/M/MV5BNWEwMjE2MjQtZTQ3NC00OTUxLWEwMWUtMThjZjg4Zjc5ZDYwXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg", ["Romance", "Comedy", "Drama"], 8.7],
     [41, "Insomniacs After School", 2023, "April 2024", 13, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZdy49oCmU2DIpEpOv5MlBCTZQyE_NqxME5Q&usqp=CAU", ["Rom-com", "School"], 6],
-    [42, "The Daily Life of Immortal King", 2020, "April 2024", 51, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2CPweVbDEx2CLv6FlBZyKHDeYUrhbHVBkY7tEX2K-m7_CtJEH855bt6Ab&s=10", ["Rom-com"], 5.8],
+    [42, "The Daily Life of Immortal King", 2020, "April 2024", 40, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2CPweVbDEx2CLv6FlBZyKHDeYUrhbHVBkY7tEX2K-m7_CtJEH855bt6Ab&s=10", ["Rom-com"], 5.8],
     [43, "Your Lie in April", 2014, "April 2024", 23, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyVsa0jVUyCvyYRNNbn68djt29e6-71fOdxgF0RMQ0G48QuIDSd0ib0YHX&s=10000_.jpg", ["Music", "Drama", "Romance"], 7],
     [44, "My Dress-Up Darling", 2022, "April 2024", 12, "https://m.media-amazon.com/images/I/91z5aNQoudL._AC_UF1000,1000_QL80_DpWeblab_.jpg", ["Rom-com", "School"], 7.2],
     [45, "Charlotte", 2015, "May 2024", 14, "https://m.media-amazon.com/images/M/MV5BNDYwNjdjYjktOWMyYS00NmNlLTgwYWItYzNjZGNmNjFjNDk2L2ltYWdlXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg", ["Supernatural", "Romance", "Drama"], 9.6, true],
@@ -120,7 +120,8 @@ let data = {
     [87, "Record of Ragnarok", 2021, "January 2026", 42, "https://m.media-amazon.com/images/M/MV5BYmUxZjczNDctOGQ5ZC00MGJlLTk3YTgtZWQwZDYyMWY2MzM4XkEyXkFqcGc@._V1_.jpg", ["Action", "Fantasy"], 8.3],
     [88, "Takopi's Original Sin", 2025, "January 2026", 6, "https://m.media-amazon.com/images/M/MV5BYmRkN2I1OGEtOWM3Yi00NjViLWJjMDktYTNmZTMxYjBiNTU3XkEyXkFqcGc@._V1_.jpg", ["Psychological", "Emotional", "Time Travel"], 8.7],
     [89, "Made in Abyss", 2017, "February 2026", 30, "https://image.tmdb.org/t/p/original/jLkCeh5xNCuQPHIbTfuLgSqt2OQ.jpg", ["Action", "Adventure", "Gore", "Fantasy", "Mystery"], 8.3],
-    [90, "The Eminence in Shadow", 2022, "April 2026", 32, "https://m.media-amazon.com/images/M/MV5BMDFmMWJlMWYtMDFkNi00OWViLTkzOGEtNDI0YWNmM2M5MzI5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", ["Action", "Magic", "School", "Isekai", "Comedy"], 8.6]
+    [90, "The Eminence in Shadow", 2022, "April 2026", 32, "https://m.media-amazon.com/images/M/MV5BMDFmMWJlMWYtMDFkNi00OWViLTkzOGEtNDI0YWNmM2M5MzI5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", ["Action", "Magic", "School", "Isekai", "Comedy"], 8.6],
+    [91, "One Week Friends", 2014, "April 2026", 12, "https://m.media-amazon.com/images/M/MV5BYzdiMjRiMGUtYmNmYy00MWZkLTk1YmQtZTc2MzI3MGI0YjFjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", ["Drama", "School"], 8.1]
 
   ],
   
@@ -138,7 +139,8 @@ let data = {
     [10, "Chained Soldier", 2024, "February 2024", 12, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD9MqWnLJeudjBj1TD6ff-J_pSf3skX3G06wlospCnBmxNIhvK9kbb-7xZ&s=10", ["Harem", "Action", "Supernatural"], 7.2],
     [11, "The Comic Artist & his assistants", 2014, "February 2024", 9, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7bjd3BPAp7U7yBBf7U9lKKL4baGjmslcVh1G8zJbfRqWTsH-s", ["Comedy"], 6.2],
     [12, "Tales of Wedding Rings", 2024, "March 2024", 12, "https://www.animenewsnetwork.com/hotlink/images/encyc/A26935-2661618769.1700259830.jpg", ["Action", "Magic", "Isekai", "Fantasy", "Harem"], 8],
-    [13, "Elfen Lied", 2004, "June 2024", 14, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOlVI_2Lll-0qQaWZNdhRGV6ZuFljGQar6XYNhRV0IKtvuWWan3ZXpQu1v&s=10", ["Gore", "Action", "Psychological"], 7.8]
+    [13, "Elfen Lied", 2004, "June 2024", 14, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOlVI_2Lll-0qQaWZNdhRGV6ZuFljGQar6XYNhRV0IKtvuWWan3ZXpQu1v&s=10", ["Gore", "Action", "Psychological"], 7.8],
+    [14, "Prison School", 2015, "April 2026", 13, "https://m.media-amazon.com/images/I/81EmGqrgL9L._AC_UF1000,1000_QL80_.jpg", ["Comedy", "School"], 8.5]
 
 
   ]
