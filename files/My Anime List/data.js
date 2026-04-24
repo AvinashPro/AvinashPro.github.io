@@ -140,7 +140,8 @@ let data = {
     [11, "The Comic Artist & his assistants", 2014, "February 2024", 9, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7bjd3BPAp7U7yBBf7U9lKKL4baGjmslcVh1G8zJbfRqWTsH-s", ["Comedy"], 6.2],
     [12, "Tales of Wedding Rings", 2024, "March 2024", 12, "https://www.animenewsnetwork.com/hotlink/images/encyc/A26935-2661618769.1700259830.jpg", ["Action", "Magic", "Isekai", "Fantasy", "Harem"], 8],
     [13, "Elfen Lied", 2004, "June 2024", 14, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOlVI_2Lll-0qQaWZNdhRGV6ZuFljGQar6XYNhRV0IKtvuWWan3ZXpQu1v&s=10", ["Gore", "Action", "Psychological"], 7.8],
-    [14, "Prison School", 2015, "April 2026", 13, "https://m.media-amazon.com/images/I/81EmGqrgL9L._AC_UF1000,1000_QL80_.jpg", ["Comedy", "School"], 8.5]
+    [14, "Prison School", 2015, "April 2026", 13, "https://m.media-amazon.com/images/I/81EmGqrgL9L._AC_UF1000,1000_QL80_.jpg", ["Comedy", "School"], 8.5],
+    [15, "Aho Girl", 2017, "April 2026", 6, "https://m.media-amazon.com/images/M/MV5BOWRkMjEyNDAtZTg0Ny00YzU0LWIwYjItY2EyZjQ5ZTdhNDFmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", ["School", "Comedy"], 8]
 
 
   ]
