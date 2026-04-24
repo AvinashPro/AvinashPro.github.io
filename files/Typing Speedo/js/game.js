@@ -692,7 +692,7 @@ function createBlock() {
         message = message.replace(/\n/g,
             "<br>");
         message += `<br>${name}`;
-        let email = "avinashkumar1332006@gmail.com";
+        let email = "iventdart@gmail.com";
 
         let url = `mailto:${email}?subject=${subject}&body=${message}`;
         location.href = url;
