@@ -121,7 +121,8 @@ let data = {
     [88, "Takopi's Original Sin", 2025, "January 2026", 6, "https://m.media-amazon.com/images/M/MV5BYmRkN2I1OGEtOWM3Yi00NjViLWJjMDktYTNmZTMxYjBiNTU3XkEyXkFqcGc@._V1_.jpg", ["Psychological", "Emotional", "Time Travel"], 8.7],
     [89, "Made in Abyss", 2017, "February 2026", 30, "https://image.tmdb.org/t/p/original/jLkCeh5xNCuQPHIbTfuLgSqt2OQ.jpg", ["Action", "Adventure", "Gore", "Fantasy", "Mystery"], 8.3],
     [90, "The Eminence in Shadow", 2022, "April 2026", 32, "https://m.media-amazon.com/images/M/MV5BMDFmMWJlMWYtMDFkNi00OWViLTkzOGEtNDI0YWNmM2M5MzI5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", ["Action", "Magic", "School", "Isekai", "Comedy"], 8.6],
-    [91, "One Week Friends", 2014, "April 2026", 12, "https://m.media-amazon.com/images/M/MV5BYzdiMjRiMGUtYmNmYy00MWZkLTk1YmQtZTc2MzI3MGI0YjFjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", ["Drama", "School"], 8.1]
+    [91, "One Week Friends", 2014, "April 2026", 12, "https://m.media-amazon.com/images/M/MV5BYzdiMjRiMGUtYmNmYy00MWZkLTk1YmQtZTc2MzI3MGI0YjFjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", ["Drama", "School"], 8.1],
+    [92, "Tokyo Revengers", 2021, "May 2026", 50, "https://m.media-amazon.com/images/M/MV5BNGYzMjBhMTMtM2Q4YS00OGMyLTk2ZWItYTg3MDk2YWIxNmVkXkEyXkFqcGc@._V1_.jpg", ["Time travel", "Drama", "Action"], 8.5]
 
   ],
   
