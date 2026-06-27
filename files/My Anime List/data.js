@@ -125,7 +125,7 @@ let data = {
     [92, "Tokyo Revengers", 2021, "May 2026", 50, "https://m.media-amazon.com/images/M/MV5BNGYzMjBhMTMtM2Q4YS00OGMyLTk2ZWItYTg3MDk2YWIxNmVkXkEyXkFqcGc@._V1_.jpg", ["Time travel", "Drama", "Action"], 8.5],
     [93, "The Devil is a Part-Timer!", 2013, "May 2026", 37, "https://m.media-amazon.com/images/M/MV5BODdjMWIyYjQtNzI4ZC00ZjA1LWJmYzMtYTA1ZjFiNTMxZWI5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", ["Magic"], 6.7],
     [94, "Gosick", 2011, "June 2026", 24, "https://m.media-amazon.com/images/M/MV5BNjAxYzM4OGMtZmMxZC00NGQ0LThkYTItZDQ1ZjI5NTg0OTg4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", ["Drama", "Mystery"], 8.5],
-    [95, "3D Kanojo: Real Girl", 2018, "June 2026", 24, "https://static.wikia.nocookie.net/3d-kanojo/images/0/02/Season_2_Visual.jpg/revision/latest?cb=20200319201429", ["Romance", "School"], 8.2],
+    [95, "3D Kanojo: Real Girl", 2018, "June 2026", 24, "https://m.media-amazon.com/images/I/81UDt+v5-4L._AC_UF894,1000_QL80_.jpg", ["Romance", "School"], 8.2],
     [96, "Combatants Will Be Dispatched!", 2021, "June 2026", 12, "https://m.media-amazon.com/images/I/81D-cAWcxtL._AC_UF1000,1000_QL80_.jpg", ["Action", "Fantasy", "Comedy", "Isekai"], 8.4],
     [97, "86", 2021, "June 2026", 23, "https://m.media-amazon.com/images/M/MV5BOWNmY2IzOGItMmQyNy00ZTM0LThiNjItODM3YzdkYjRlNWU1XkEyXkFqcGc@._V1_.jpg", ["Action", "Drama"], 8.7]
 
